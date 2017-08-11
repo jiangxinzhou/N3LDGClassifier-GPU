@@ -1,0 +1,12 @@
+include_directories(include)
+if(USE_CUDA)
+	include_directories(cnmem/include)
+	add_subdirectory(cnmem)
+	cuda_add_library(matrix src/gpu_matrix.cu src/cpu_matrix.cc)
+	cuda_add_cublas_to_target(matrix)
+	target_link_libraries(matrix cnmem)
+else()
+	add_library(matrix src/cpu_matrix.cc)
+endif()
+
+target_link_libraries(matrix ${LIBS})

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcnmem.a  CMakeFiles/cnmem.dir/src/cnmem.cpp.o
+/usr/bin/ranlib libcnmem.a

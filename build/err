@@ -1,0 +1,278 @@
+In file included from /usr/include/c++/4.8/cassert:43:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/eigen/Eigen/Core:261,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/eigen/Eigen/Dense:1,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:4,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h: In member function ‘void cpu_matrix::concat(const std::vector<cpu_matrix>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:185:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(col == rhs_vec.size());
+                              ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc:1:0:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h: In constructor ‘cpu_matrix::cpu_matrix()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:58:16: warning: ‘cpu_matrix::size’ will be initialized after [-Wreorder]
+  int row, col, size;
+                ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:57:9: warning:   ‘dtype* cpu_matrix::v’ [-Wreorder]
+  dtype *v;
+         ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc:33:1: warning:   when initialized here [-Wreorder]
+ cpu_matrix::cpu_matrix() : row(0), col(0), size(0), v(NULL){}
+ ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc:3:0:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/functors.h: In member function ‘dtype Activate::operator()(const dtype&) const’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/functors.h:32:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/functors.h: In member function ‘dtype dActivate::operator()(const dtype&, const dtype&) const’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/functors.h:51:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+In file included from /usr/include/c++/4.8/cassert:43:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/eigen/Eigen/Core:261,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/eigen/Eigen/Dense:1,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:4,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:10,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h: In member function ‘void cpu_matrix::concat(const std::vector<cpu_matrix>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include/cpu_matrix.h:185:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(col == rhs_vec.size());
+                              ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Graph.h:15:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:14,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void str2uint_vec(const std::vector<std::basic_string<char> >&, std::vector<unsigned int>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:354:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (; i < vecStr.size(); ++i) {
+                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void str2int_vec(const std::vector<std::basic_string<char> >&, std::vector<int>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:362:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (; i < vecStr.size(); ++i) {
+                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void int2str_vec(const std::vector<int>&, std::vector<std::basic_string<char> >&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:377:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (; i < vecInt.size(); ++i) {
+                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void join_bystr(const std::vector<std::basic_string<char> >&, std::string&, const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:390:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (; i < vec.size(); ++i) {
+                         ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void split_pair_vector(const std::vector<std::pair<int, std::basic_string<char> > >&, std::vector<int>&, std::vector<std::basic_string<char> >&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:414:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (; i < vecPair.size(); ++i) {
+                             ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void split_by_separator(const string&, std::vector<std::basic_string<char> >&, std::string)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:567:60: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     while ((pos2 = find_GB_char(str, separator, pos1)) != -1) {
+                                                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h: In function ‘void getSegs(const std::vector<std::basic_string<char> >&, std::vector<segIndex>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:646:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (idx < labels.size()) {
+                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/MyLib.h:650:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             while (idy < labels.size()) {
+                                      ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h:17:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:24,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::addParam(const std::vector<BaseParam*>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:43:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < params.size(); idx++) {
+                                             ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::update()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:50:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _params.size(); idx++) {
+                                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::update(dtype)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:58:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _params.size(); idx++) {
+                                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:68:50: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             for (int idx = 0; idx < _params.size(); idx++) {
+                                                  ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::rescaleGrad(dtype)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:104:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _params.size(); idx++) {
+                                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::clearGrad()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:110:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _params.size(); idx++) {
+                                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h: In member function ‘void ModelUpdate::gradClip(dtype)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:117:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _params.size(); idx++) {
+                                              ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/ModelUpdate.h:127:50: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             for (int idx = 0; idx < _params.size(); idx++) {
+                                                  ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:24:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h: In member function ‘bool LookupTable::initialWeights(const string&, bool, bool)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h:112:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < sLines.size(); idx++) {
+                                             ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h:114:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             if (vecInfo.size() != nDim + 1) {
+                                          ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:30:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Pooling.h: In member function ‘virtual void MaxPoolNode::setMask()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Pooling.h:139:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < in_matrix.size(); i++) {
+                                      ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Pooling.h: In member function ‘virtual void MinPoolNode::setMask()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Pooling.h:184:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < in_matrix.size(); i++) {
+                                      ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:31:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Concat.h: In member function ‘void ConcatNode::forward(Graph*, const std::vector<Node*>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Concat.h:41:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < x.size(); i++) {
+                                    ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/HyperParams.h:6:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/ModelParams.h:3,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/ComputionGraph.h:4,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h:16,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:6,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Options.h: In member function ‘void Options::setOptions(const std::vector<std::basic_string<char> >&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Options.h:80:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (; i < vecOption.size(); ++i) {
+                                   ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Options.h: In member function ‘void Options::showOptions()’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Options.h:154:48: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < testFiles.size(); idx++) {
+                                                ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h:16:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:6,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/ComputionGraph.h: In member function ‘void GraphBuilder::initial(ModelParams&, HyperParams&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/ComputionGraph.h:54:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int idx = 0; idx < _word_inputs.size(); idx++) {
+                                                   ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:6:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h: In member function ‘dtype Driver::train(const std::vector<Example>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h:102:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (example_num > _builders.size()) {
+                                          ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h: In member function ‘void Driver::predict(const std::vector<Feature>&, std::vector<int>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/model/Driver.h:133:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num > _builders.size()) {
+                            ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:11:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h: In function ‘std::string getUTF8CharType(const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h:200:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (digit.find(s) != -1) {
+                               ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h:202:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         } else if (eng.find(s) != -1) {
+                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h: In function ‘std::string wordtype(const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h:216:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i = 0; i < chars.size(); i++) {
+                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h: In function ‘std::string normalize_to_lowerwithdigit(const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/basic/Utf.h:235:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i = 0; i < chars.size(); i++) {
+                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘int Classifier::createAlphabet(const std::vector<Instance>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:26:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (numInstance = 0; numInstance < vecInsts.size(); numInstance++) {
+                                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘int Classifier::addTestAlpha(const std::vector<Instance>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:72:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (numInstance = 0; numInstance < vecInsts.size(); numInstance++) {
+                                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘void Classifier::initialExamples(const std::vector<Instance>&, std::vector<Example>&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:125:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (numInstance = 0; numInstance < vecInsts.size(); numInstance++) {
+                                                    ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘void Classifier::train(const string&, const string&, const string&, const string&, const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:160:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int idx = 0; idx < m_options.testFiles.size(); idx++) {
+                                                   ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:167:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int idx = 0; idx < otherInsts.size(); idx++) {
+                                          ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:179:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int idx = 0; idx < otherInsts.size(); idx++) {
+                                          ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:286:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int idx = 0; idx < devExamples.size(); idx++) {
+                                             ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:311:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int idx = 0; idx < testInsts.size(); idx++) {
+                                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:329:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int idx = 0; idx < otherInsts.size(); idx++) {
+                                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:336:50: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int idy = 0; idy < otherInsts[idx].size(); idy++) {
+                                                  ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘void Classifier::predict(const std::vector<Example>&, std::vector<std::basic_string<char> >&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:375:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (batch_sentences.size() == m_options.batchSize || idx == sentNum - 1) {
+                                           ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:378:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int idy = 0; idy < batch_labelIdxs.size(); idy++) {
+                                                 ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp: In member function ‘void Classifier::test(const string&, const string&, const string&)’:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:406:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int idx = 0; idx < testExamples.size(); idx++) {
+                                            ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:399:6: warning: unused variable ‘testNum’ [-Wunused-variable]
+  int testNum = testExamples.size();
+      ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Graph.h:14:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:14,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Node.h: At global scope:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Node.h:133:25: warning: inline function ‘virtual void Execute::backward()’ used but never defined [enabled by default]
+     virtual inline void backward() = 0;
+                         ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Node.h:99:29: warning: inline function ‘virtual Execute* Node::generate(bool)’ used but never defined [enabled by default]
+     virtual inline Execute* generate(bool bTrain) = 0;
+                             ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Node.h:132:25: warning: inline function ‘virtual void Execute::forward()’ used but never defined [enabled by default]
+     virtual inline void forward() = 0;
+                         ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/SparseParam.h:11:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h:12,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:24,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/BaseParam.h:18:25: warning: inline function ‘virtual void BaseParam::updateAdagrad(dtype, dtype, dtype)’ used but never defined [enabled by default]
+     virtual inline void updateAdagrad(dtype alpha, dtype reg, dtype eps) = 0;
+                         ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/BaseParam.h:22:25: warning: inline function ‘virtual void BaseParam::clearGrad()’ used but never defined [enabled by default]
+     virtual inline void clearGrad() = 0;
+                         ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/BaseParam.h:26:26: warning: inline function ‘virtual dtype BaseParam::squareGradNorm()’ used but never defined [enabled by default]
+     virtual inline dtype squareGradNorm() = 0;
+                          ^
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/BaseParam.h:27:25: warning: inline function ‘virtual void BaseParam::rescaleGrad(dtype)’ used but never defined [enabled by default]
+     virtual inline void rescaleGrad(dtype scale) = 0;
+                         ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:30:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/Pooling.h:85:25: warning: inline function ‘virtual void PoolNode::setMask()’ used but never defined [enabled by default]
+     virtual inline void setMask() = 0;
+                         ^
+In file included from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/SparseParam.h:11:0,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/LookupTable.h:12,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/N3LDG.h:24,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h:5,
+                 from /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp:1:
+/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core/BaseParam.h:25:25: warning: inline function ‘virtual void BaseParam::randpoint(int&, int&)’ used but never defined [enabled by default]
+     virtual inline void randpoint(int& idx, int &idy) = 0;
+                         ^
