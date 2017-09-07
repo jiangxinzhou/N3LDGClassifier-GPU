@@ -340,5 +340,5 @@ src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.o
  ../src/basic/Reader.h
  ../src/basic/Utf.h
  ../src/basic/Writer.h
- /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp
- /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h
+ /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/NNCNNLabeler.cpp
+ /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/NNCNNLabeler.h

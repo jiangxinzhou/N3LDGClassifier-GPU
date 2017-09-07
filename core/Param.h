@@ -13,20 +13,33 @@
 
 // Notice: aux is an auxiliary variable to help parameter updating
 class Param : public BaseParam {
-  public:
-    matrix aux_square;
-    matrix aux_mean;
+public:
+#if USE_GPU
+	  gpu_matrix aux_square;
+	  gpu_matrix aux_mean;
+#else
+	  cpu_matrix aux_square;
+	  cpu_matrix aux_mean;
+#endif
+
     int iter;
 
     // allow sparse and dense parameters have different parameter initialization methods
     inline void initial(int outDim, int inDim) {
-        val.init(outDim, inDim);
-        grad.init(outDim, inDim);
+		val.init(outDim, inDim);
+		grad.init(outDim, inDim);
         aux_square.init(outDim, inDim);
         aux_mean.init(outDim, inDim);
 
         dtype bound = sqrt(6.0 / (outDim + inDim + 1));
+#if USE_GPU
+		cval.init(outDim, inDim);
+		cgrad.init(outDim, inDim);
+		cval.random(bound);
+		dump2gpu();
+#else
         val.random(bound);
+#endif
         iter = 0;
     }
 
@@ -43,22 +56,22 @@ class Param : public BaseParam {
     }
 
     inline void updateAdagrad(dtype alpha, dtype reg, dtype eps) {
-		if (val.col > 1 && val.row > 1) grad.special_add(0, grad, 1, val, reg);
-		aux_square.special_add1(0, aux_square, grad);
-		val.special_add2(0, val, grad, aux_square, alpha, eps);
-       /* if (val.col > 1 && val.row > 1)grad.vec() = grad.vec() + val.vec() * reg;
+        /*if (val.col > 1 && val.row > 1)grad.vec() = grad.vec() + val.vec() * reg;
         aux_square.vec() = aux_square.vec() + grad.vec().square();
         val.vec() = val.vec() - grad.vec() * alpha / (aux_square.vec() + eps).sqrt();*/
+		if (val.col > 1 && val.row > 1) grad.special_add(grad, 1, val, reg);
+		aux_square.special_add1(aux_square, grad);
+		val.special_add2(val, grad, aux_square, alpha, eps);
     }
 
- /*   inline void updateAdam(dtype belta1, dtype belta2, dtype alpha, dtype reg, dtype eps) {
-        if (val.col > 1 && val.row > 1)grad.vec() = grad.vec() + val.vec() * reg;
-        aux_mean.vec() = belta1 * aux_mean.vec() + (1 - belta1) * grad.vec();
-        aux_square.vec() = belta2 * aux_square.vec() + (1 - belta2) * grad.vec().square();
-        dtype lr_t = alpha * sqrt(1 - pow(belta2, iter + 1)) / (1 - pow(belta1, iter + 1));
-        val.vec() = val.vec() - aux_mean.vec() * lr_t / (aux_square.vec() + eps).sqrt();
-        iter++;
-    }*/
+    //inline void updateAdam(dtype belta1, dtype belta2, dtype alpha, dtype reg, dtype eps) {
+    //    if (val.col > 1 && val.row > 1)grad.vec() = grad.vec() + val.vec() * reg;
+    //    aux_mean.vec() = belta1 * aux_mean.vec() + (1 - belta1) * grad.vec();
+    //    aux_square.vec() = belta2 * aux_square.vec() + (1 - belta2) * grad.vec().square();
+    //    dtype lr_t = alpha * sqrt(1 - pow(belta2, iter + 1)) / (1 - pow(belta1, iter + 1));
+    //    val.vec() = val.vec() - aux_mean.vec() * lr_t / (aux_square.vec() + eps).sqrt();
+    //    iter++;
+    //}
 
     inline void randpoint(int& idx, int &idy) {
         //select indexes randomly
@@ -79,16 +92,16 @@ class Param : public BaseParam {
 
     inline dtype squareGradNorm() {
         dtype sumNorm = 0.0;
-		sumNorm += grad.square_sum();
       /*  for (int i = 0; i < grad.size; i++) {
             sumNorm += grad.v[i] * grad.v[i];
         }*/
+		sumNorm += grad.square_sum();
         return sumNorm;
     }
 
     inline void rescaleGrad(dtype scale) {
-		grad.multiply(grad, scale);
         /*grad.vec() = grad.vec() * scale;*/
+		grad.multiply(grad, scale);
     }
 
     inline void save(std::ofstream &os)const {

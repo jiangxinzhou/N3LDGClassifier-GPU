@@ -216,7 +216,7 @@ void gpu_matrix::resize(int r, int c)
 		return;
 	
 	if(v){
-		assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&v, sizeof(dtype) * size, NULL));
+		assert(CNMEM_STATUS_SUCCESS == cnmemFree(v, NULL));
 	}
 
 	init(r, c);
@@ -639,6 +639,34 @@ void gpu_matrix::special_add2(int index, const gpu_matrix &a, const gpu_matrix &
 	thrust::transform(ptr3, ptr3 + a.row, ptr0, ptr4, thrust::minus<dtype>());
 }
 
+void gpu_matrix::special_add(const gpu_matrix &a, dtype m, const gpu_matrix &b, dtype n){
+	thrust::device_ptr<dtype> ptr0(v);
+	thrust::device_ptr<dtype> ptr1(a.v);
+	thrust::device_ptr<dtype> ptr2(b.v);
+	thrust::transform(ptr1, ptr1 + a.size, ptr2, ptr0, special_add_func(m, n));
+}
+
+void gpu_matrix::special_add1(const gpu_matrix &a, const gpu_matrix &b){
+	thrust::device_ptr<dtype> ptr0(v);
+	thrust::device_ptr<dtype> ptr1(a.v);
+	thrust::device_ptr<dtype> ptr2(b.v);
+	thrust::transform(ptr1, ptr1 + a.size, ptr2, ptr0, special_add1_func());
+}
+
+void gpu_matrix::special_add2(const gpu_matrix &a, const gpu_matrix &b, const gpu_matrix &c, dtype alpha, dtype eps){
+	gpu_matrix tmp;
+	tmp.init(row, 1);
+	
+	thrust::device_ptr<dtype> ptr0(tmp.v);
+	thrust::device_ptr<dtype> ptr1(b.v);
+	thrust::device_ptr<dtype> ptr2(c.v);
+	thrust::transform(ptr1, ptr1 + b.size, ptr2, ptr0, special_add2_func(alpha, eps));
+	
+	thrust::device_ptr<dtype> ptr3(a.v);
+	thrust::device_ptr<dtype> ptr4(v);
+	thrust::transform(ptr3, ptr3 + a.size, ptr0, ptr4, thrust::minus<dtype>());
+}
+
 // void gpu_matrix::sqrt(const gpu_matrix &a) {
 	// thrust::device_ptr<dtype> ptr0(v);
 	// thrust::device_ptr<dtype> ptr1(a.v);
@@ -648,7 +676,7 @@ void gpu_matrix::special_add2(int index, const gpu_matrix &a, const gpu_matrix &
 
 void max_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask) {
 	int dim = ins[0].size;
-	int size = mask.size();
+	int size = ins.size();
 	vector<cpu_matrix> t_ins;// needn't delloc manually
 
 	t_ins.resize(ins.size());
@@ -672,7 +700,7 @@ void max_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask) {
 
 void min_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask) {
 	int dim = ins[0].size;
-	int size = mask.size();
+	int size = ins.size();
 	vector<cpu_matrix> t_ins;// needn't delloc manually
 
 	t_ins.resize(ins.size());

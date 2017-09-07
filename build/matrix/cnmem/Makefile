@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /data/xzjiang/GPU-study/N3LDG-classifier-gpu
+CMAKE_SOURCE_DIR = /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build
+CMAKE_BINARY_DIR = /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/cnmem/CMakeFiles/progress.marks
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles 0
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/cnmem/CMakeFiles/progress.marks
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/clean
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/preinstall
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/preinstall
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 matrix/cnmem/CMakeFiles/cnmem.dir/rule:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/CMakeFiles/cnmem.dir/rule
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 matrix/cnmem/CMakeFiles/cnmem.dir/rule
 .PHONY : matrix/cnmem/CMakeFiles/cnmem.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ cnmem: matrix/cnmem/CMakeFiles/cnmem.dir/rule
 
 # fast build rule for target.
 cnmem/fast:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/build
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/build
 .PHONY : cnmem/fast
 
 src/cnmem.o: src/cnmem.cpp.o
@@ -131,7 +131,7 @@ src/cnmem.o: src/cnmem.cpp.o
 
 # target to build an object file
 src/cnmem.cpp.o:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.o
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.o
 .PHONY : src/cnmem.cpp.o
 
 src/cnmem.i: src/cnmem.cpp.i
@@ -140,7 +140,7 @@ src/cnmem.i: src/cnmem.cpp.i
 
 # target to preprocess a source file
 src/cnmem.cpp.i:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.i
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.i
 .PHONY : src/cnmem.cpp.i
 
 src/cnmem.s: src/cnmem.cpp.s
@@ -149,7 +149,7 @@ src/cnmem.s: src/cnmem.cpp.s
 
 # target to generate assembly for a file
 src/cnmem.cpp.s:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.s
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f matrix/cnmem/CMakeFiles/cnmem.dir/build.make matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.s
 .PHONY : src/cnmem.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

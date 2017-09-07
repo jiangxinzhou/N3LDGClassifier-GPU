@@ -308,4 +308,4 @@ matrix/CMakeFiles/matrix.dir/src/cpu_matrix.cc.o
  ../matrix/include/cpu_matrix.h
  ../matrix/include/functors.h
  ../matrix/include/gpu_matrix.h
- /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc
+ /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/src/cpu_matrix.cc

@@ -1,0 +1,2059 @@
+wordCutOff = 0
+featCutOff = 0
+initRange = 0.01
+maxIter = 100
+batchSize = 10
+adaEps = 1e-06
+adaAlpha = 0.01
+regParameter = 1e-08
+dropProb = -1
+hiddenSize = 50
+wordEmbSize = 50
+wordcontext = 2
+wordEmbFineTune = 1
+cnnLayerSize = 2
+verboseIter = 1
+saveItermediate = 1
+train = 0
+maxInstance = 100
+outBest = .debug
+seg = 0
+wordFile = 
+
+instance num: 100
+
+instance num: 100
+
+instance num: 100
+Creating Alphabet...
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+Label num: 2
+Sparse Feature num: 0
+Word num: 776
+Adding word Alphabet...
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+Adding word Alphabet...
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 
+81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 100 
+##### Iteration 0
+current: 1, Cost = 0.792684, Correct(%) = 0.5, time = 0.0122413
+current: 2, Cost = 0.652948, Correct(%) = 0.55, time = 0.0245857
+current: 3, Cost = 0.598996, Correct(%) = 0.6, time = 0.0367575
+current: 4, Cost = 0.60252, Correct(%) = 0.6, time = 0.0488045
+current: 5, Cost = 0.544944, Correct(%) = 0.62, time = 0.059115
+current: 6, Cost = 0.639285, Correct(%) = 0.633333, time = 0.0712296
+current: 7, Cost = 0.596544, Correct(%) = 0.642857, time = 0.0825145
+current: 8, Cost = 0.47488, Correct(%) = 0.675, time = 0.0928521
+current: 9, Cost = 0.525119, Correct(%) = 0.677778, time = 0.100583
+current: 10, Cost = 0.47968, Correct(%) = 0.69, time = 0.112831
+current: 1, Correct(%) = 0.69, time = 0.113
+Dev start.
+Dev finished. Total time taken is: 0.0304918
+dev:
+Accuracy:	P=80/100=0.8
+Test start.
+Test finished. Total time taken is: 0.0262496
+test:
+Accuracy:	P=61/100=0.61
+Exceeds best previous DIS of 0. Saving model file..
+open output file error
+##### Iteration 1
+current: 1, Cost = 0.433888, Correct(%) = 1, time = 0.00869639
+current: 2, Cost = 0.495738, Correct(%) = 0.9, time = 0.0170571
+current: 3, Cost = 0.488569, Correct(%) = 0.866667, time = 0.028279
+current: 4, Cost = 0.400767, Correct(%) = 0.875, time = 0.038632
+current: 5, Cost = 0.43683, Correct(%) = 0.88, time = 0.0469839
+current: 6, Cost = 0.381264, Correct(%) = 0.883333, time = 0.059134
+current: 7, Cost = 0.540091, Correct(%) = 0.857143, time = 0.0727575
+current: 8, Cost = 0.38497, Correct(%) = 0.8625, time = 0.0810324
+current: 9, Cost = 0.484062, Correct(%) = 0.866667, time = 0.0918757
+current: 10, Cost = 0.37901, Correct(%) = 0.88, time = 0.104306
+current: 2, Correct(%) = 0.88, time = 0.104473
+Dev start.
+Dev finished. Total time taken is: 0.0302442
+dev:
+Accuracy:	P=92/100=0.92
+Test start.
+Test finished. Total time taken is: 0.025947
+test:
+Accuracy:	P=67/100=0.67
+Exceeds best previous DIS of 0.8. Saving model file..
+open output file error
+##### Iteration 2
+current: 1, Cost = 0.331679, Correct(%) = 0.9, time = 0.00925333
+current: 2, Cost = 0.408346, Correct(%) = 0.9, time = 0.0170632
+current: 3, Cost = 0.354166, Correct(%) = 0.933333, time = 0.0285545
+current: 4, Cost = 0.37622, Correct(%) = 0.925, time = 0.0354283
+current: 5, Cost = 0.371491, Correct(%) = 0.92, time = 0.0438413
+current: 6, Cost = 0.283317, Correct(%) = 0.933333, time = 0.0511412
+current: 7, Cost = 0.287804, Correct(%) = 0.928571, time = 0.0585099
+current: 8, Cost = 0.265088, Correct(%) = 0.9375, time = 0.0677464
+current: 9, Cost = 0.24556, Correct(%) = 0.944444, time = 0.0745628
+current: 10, Cost = 0.260901, Correct(%) = 0.95, time = 0.0841004
+current: 3, Correct(%) = 0.95, time = 0.084253
+Dev start.
+Dev finished. Total time taken is: 0.0302134
+dev:
+Accuracy:	P=95/100=0.95
+Test start.
+Test finished. Total time taken is: 0.0259067
+test:
+Accuracy:	P=66/100=0.66
+Exceeds best previous DIS of 0.92. Saving model file..
+open output file error
+##### Iteration 3
+current: 1, Cost = 0.217091, Correct(%) = 1, time = 0.00784105
+current: 2, Cost = 0.321976, Correct(%) = 0.95, time = 0.0181567
+current: 3, Cost = 0.259468, Correct(%) = 0.933333, time = 0.0328261
+current: 4, Cost = 0.180204, Correct(%) = 0.95, time = 0.0413806
+current: 5, Cost = 0.511415, Correct(%) = 0.9, time = 0.0531088
+current: 6, Cost = 0.264444, Correct(%) = 0.916667, time = 0.0645713
+current: 7, Cost = 0.237158, Correct(%) = 0.928571, time = 0.0757106
+current: 8, Cost = 0.217187, Correct(%) = 0.9375, time = 0.0836788
+current: 9, Cost = 0.320058, Correct(%) = 0.933333, time = 0.094833
+current: 10, Cost = 0.231646, Correct(%) = 0.94, time = 0.106227
+current: 4, Correct(%) = 0.94, time = 0.106389
+Dev start.
+Dev finished. Total time taken is: 0.0302446
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0200667
+test:
+Accuracy:	P=72/100=0.72
+Exceeds best previous DIS of 0.95. Saving model file..
+open output file error
+##### Iteration 4
+current: 1, Cost = 0.196591, Correct(%) = 1, time = 0.00901105
+current: 2, Cost = 0.188808, Correct(%) = 1, time = 0.0159174
+current: 3, Cost = 0.185221, Correct(%) = 1, time = 0.0248151
+current: 4, Cost = 0.22276, Correct(%) = 1, time = 0.0316543
+current: 5, Cost = 0.207788, Correct(%) = 1, time = 0.0372352
+current: 6, Cost = 0.178976, Correct(%) = 1, time = 0.0477168
+current: 7, Cost = 0.133727, Correct(%) = 1, time = 0.0550947
+current: 8, Cost = 0.21958, Correct(%) = 1, time = 0.0630696
+current: 9, Cost = 0.17405, Correct(%) = 1, time = 0.0709147
+current: 10, Cost = 0.215851, Correct(%) = 1, time = 0.0814765
+current: 5, Correct(%) = 1, time = 0.0816045
+Dev start.
+Dev finished. Total time taken is: 0.0222606
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0189928
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 5
+current: 1, Cost = 0.153778, Correct(%) = 1, time = 0.00826459
+current: 2, Cost = 0.194931, Correct(%) = 1, time = 0.0172389
+current: 3, Cost = 0.171111, Correct(%) = 1, time = 0.0230343
+current: 4, Cost = 0.119507, Correct(%) = 1, time = 0.0296242
+current: 5, Cost = 0.180129, Correct(%) = 1, time = 0.0365928
+current: 6, Cost = 0.136282, Correct(%) = 1, time = 0.0427682
+current: 7, Cost = 0.192528, Correct(%) = 1, time = 0.0488874
+current: 8, Cost = 0.149354, Correct(%) = 1, time = 0.0583927
+current: 9, Cost = 0.141834, Correct(%) = 1, time = 0.0651391
+current: 10, Cost = 0.109836, Correct(%) = 1, time = 0.0733579
+current: 6, Correct(%) = 1, time = 0.0734773
+Dev start.
+Dev finished. Total time taken is: 0.0221978
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0189989
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 6
+current: 1, Cost = 0.122876, Correct(%) = 1, time = 0.0069354
+current: 2, Cost = 0.140173, Correct(%) = 1, time = 0.0131385
+current: 3, Cost = 0.155071, Correct(%) = 1, time = 0.0218307
+current: 4, Cost = 0.0959361, Correct(%) = 1, time = 0.0257451
+current: 5, Cost = 0.124936, Correct(%) = 1, time = 0.0338072
+current: 6, Cost = 0.114298, Correct(%) = 1, time = 0.0418502
+current: 7, Cost = 0.123631, Correct(%) = 1, time = 0.0505904
+current: 8, Cost = 0.0824015, Correct(%) = 1, time = 0.0579401
+current: 9, Cost = 0.105007, Correct(%) = 1, time = 0.0630587
+current: 10, Cost = 0.124282, Correct(%) = 1, time = 0.0684046
+current: 7, Correct(%) = 1, time = 0.0685058
+Dev start.
+Dev finished. Total time taken is: 0.0222617
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0190088
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 7
+current: 1, Cost = 0.157312, Correct(%) = 1, time = 0.00589901
+current: 2, Cost = 0.0994029, Correct(%) = 1, time = 0.0136927
+current: 3, Cost = 0.0876421, Correct(%) = 1, time = 0.0204261
+current: 4, Cost = 0.074803, Correct(%) = 1, time = 0.0281485
+current: 5, Cost = 0.0861301, Correct(%) = 1, time = 0.0358507
+current: 6, Cost = 0.100457, Correct(%) = 1, time = 0.0419137
+current: 7, Cost = 0.0895899, Correct(%) = 1, time = 0.0487837
+current: 8, Cost = 0.133435, Correct(%) = 1, time = 0.0559345
+current: 9, Cost = 0.0762725, Correct(%) = 1, time = 0.0622697
+current: 10, Cost = 0.0732828, Correct(%) = 1, time = 0.070079
+current: 8, Correct(%) = 1, time = 0.0701952
+Dev start.
+Dev finished. Total time taken is: 0.0221353
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186215
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 8
+current: 1, Cost = 0.0845149, Correct(%) = 1, time = 0.00844791
+current: 2, Cost = 0.104609, Correct(%) = 1, time = 0.0151081
+current: 3, Cost = 0.137048, Correct(%) = 1, time = 0.0248377
+current: 4, Cost = 0.0511058, Correct(%) = 1, time = 0.0309755
+current: 5, Cost = 0.103958, Correct(%) = 1, time = 0.0404334
+current: 6, Cost = 0.067987, Correct(%) = 1, time = 0.0490724
+current: 7, Cost = 0.0567317, Correct(%) = 1, time = 0.0581343
+current: 8, Cost = 0.0642702, Correct(%) = 1, time = 0.0638185
+current: 9, Cost = 0.0607904, Correct(%) = 1, time = 0.069977
+current: 10, Cost = 0.0689931, Correct(%) = 1, time = 0.079239
+current: 9, Correct(%) = 1, time = 0.0793603
+Dev start.
+Dev finished. Total time taken is: 0.0217721
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186172
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 9
+current: 1, Cost = 0.0637239, Correct(%) = 1, time = 0.00880874
+current: 2, Cost = 0.0588718, Correct(%) = 1, time = 0.0154758
+current: 3, Cost = 0.070581, Correct(%) = 1, time = 0.0217479
+current: 4, Cost = 0.0506164, Correct(%) = 1, time = 0.031108
+current: 5, Cost = 0.063851, Correct(%) = 1, time = 0.0374851
+current: 6, Cost = 0.0696008, Correct(%) = 1, time = 0.0444866
+current: 7, Cost = 0.0605981, Correct(%) = 1, time = 0.0508632
+current: 8, Cost = 0.075925, Correct(%) = 1, time = 0.0592016
+current: 9, Cost = 0.0925855, Correct(%) = 1, time = 0.0671091
+current: 10, Cost = 0.0692905, Correct(%) = 1, time = 0.0791751
+current: 10, Correct(%) = 1, time = 0.0793106
+Dev start.
+Dev finished. Total time taken is: 0.0218293
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187447
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 10
+current: 1, Cost = 0.0672855, Correct(%) = 1, time = 0.005859
+current: 2, Cost = 0.0750265, Correct(%) = 1, time = 0.011149
+current: 3, Cost = 0.0468948, Correct(%) = 1, time = 0.0190407
+current: 4, Cost = 0.0632233, Correct(%) = 1, time = 0.02801
+current: 5, Cost = 0.0769609, Correct(%) = 1, time = 0.0338985
+current: 6, Cost = 0.0695304, Correct(%) = 1, time = 0.0423123
+current: 7, Cost = 0.0615208, Correct(%) = 1, time = 0.0490639
+current: 8, Cost = 0.0519238, Correct(%) = 1, time = 0.055367
+current: 9, Cost = 0.0499153, Correct(%) = 1, time = 0.0620572
+current: 10, Cost = 0.0533285, Correct(%) = 1, time = 0.0686424
+current: 11, Correct(%) = 1, time = 0.068755
+Dev start.
+Dev finished. Total time taken is: 0.0217371
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186433
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 11
+current: 1, Cost = 0.0765135, Correct(%) = 1, time = 0.00661555
+current: 2, Cost = 0.0449947, Correct(%) = 1, time = 0.0124004
+current: 3, Cost = 0.0460252, Correct(%) = 1, time = 0.0217651
+current: 4, Cost = 0.04083, Correct(%) = 1, time = 0.029971
+current: 5, Cost = 0.055556, Correct(%) = 1, time = 0.0365242
+current: 6, Cost = 0.0497884, Correct(%) = 1, time = 0.0432644
+current: 7, Cost = 0.0438603, Correct(%) = 1, time = 0.0517879
+current: 8, Cost = 0.0500047, Correct(%) = 1, time = 0.0588249
+current: 9, Cost = 0.0617843, Correct(%) = 1, time = 0.0687511
+current: 10, Cost = 0.0476904, Correct(%) = 1, time = 0.0760916
+current: 12, Correct(%) = 1, time = 0.0762058
+Dev start.
+Dev finished. Total time taken is: 0.021753
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186761
+test:
+Accuracy:	P=70/100=0.7
+##### Iteration 12
+current: 1, Cost = 0.0548212, Correct(%) = 1, time = 0.0073464
+current: 2, Cost = 0.0596816, Correct(%) = 1, time = 0.012057
+current: 3, Cost = 0.0461663, Correct(%) = 1, time = 0.0180185
+current: 4, Cost = 0.0471942, Correct(%) = 1, time = 0.0250638
+current: 5, Cost = 0.0263209, Correct(%) = 1, time = 0.0300468
+current: 6, Cost = 0.0358014, Correct(%) = 1, time = 0.0368777
+current: 7, Cost = 0.0317196, Correct(%) = 1, time = 0.0432996
+current: 8, Cost = 0.0331473, Correct(%) = 1, time = 0.048854
+current: 9, Cost = 0.0256965, Correct(%) = 1, time = 0.0557886
+current: 10, Cost = 0.044215, Correct(%) = 1, time = 0.0616298
+current: 13, Correct(%) = 1, time = 0.0617334
+Dev start.
+Dev finished. Total time taken is: 0.0217346
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186272
+test:
+Accuracy:	P=69/100=0.69
+##### Iteration 13
+current: 1, Cost = 0.0536557, Correct(%) = 1, time = 0.00583839
+current: 2, Cost = 0.024967, Correct(%) = 1, time = 0.0133038
+current: 3, Cost = 0.0356018, Correct(%) = 1, time = 0.0213104
+current: 4, Cost = 0.0531111, Correct(%) = 1, time = 0.0282724
+current: 5, Cost = 0.0346464, Correct(%) = 1, time = 0.0361768
+current: 6, Cost = 0.0411335, Correct(%) = 1, time = 0.0425027
+current: 7, Cost = 0.0339921, Correct(%) = 1, time = 0.051197
+current: 8, Cost = 0.0268739, Correct(%) = 1, time = 0.0590394
+current: 9, Cost = 0.0463063, Correct(%) = 1, time = 0.0673658
+current: 10, Cost = 0.0521812, Correct(%) = 1, time = 0.0740656
+current: 14, Correct(%) = 1, time = 0.0741782
+Dev start.
+Dev finished. Total time taken is: 0.0217252
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186377
+test:
+Accuracy:	P=69/100=0.69
+##### Iteration 14
+current: 1, Cost = 0.0288206, Correct(%) = 1, time = 0.00943067
+current: 2, Cost = 0.0394595, Correct(%) = 1, time = 0.0174989
+current: 3, Cost = 0.0278767, Correct(%) = 1, time = 0.0254767
+current: 4, Cost = 0.0371858, Correct(%) = 1, time = 0.0307078
+current: 5, Cost = 0.0314465, Correct(%) = 1, time = 0.0366246
+current: 6, Cost = 0.0294324, Correct(%) = 1, time = 0.0423002
+current: 7, Cost = 0.0451401, Correct(%) = 1, time = 0.0504739
+current: 8, Cost = 0.0375784, Correct(%) = 1, time = 0.0603158
+current: 9, Cost = 0.0227739, Correct(%) = 1, time = 0.0669735
+current: 10, Cost = 0.0363039, Correct(%) = 1, time = 0.0747764
+current: 15, Correct(%) = 1, time = 0.0748955
+Dev start.
+Dev finished. Total time taken is: 0.0217521
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186503
+test:
+Accuracy:	P=69/100=0.69
+##### Iteration 15
+current: 1, Cost = 0.0306218, Correct(%) = 1, time = 0.0111251
+current: 2, Cost = 0.0284334, Correct(%) = 1, time = 0.0189881
+current: 3, Cost = 0.0423466, Correct(%) = 1, time = 0.0279135
+current: 4, Cost = 0.0196228, Correct(%) = 1, time = 0.0353828
+current: 5, Cost = 0.024976, Correct(%) = 1, time = 0.0422728
+current: 6, Cost = 0.0273404, Correct(%) = 1, time = 0.0511573
+current: 7, Cost = 0.0190135, Correct(%) = 1, time = 0.0565974
+current: 8, Cost = 0.0212127, Correct(%) = 1, time = 0.0639631
+current: 9, Cost = 0.0269024, Correct(%) = 1, time = 0.0728071
+current: 10, Cost = 0.0225452, Correct(%) = 1, time = 0.0808108
+current: 16, Correct(%) = 1, time = 0.0809277
+Dev start.
+Dev finished. Total time taken is: 0.0219931
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0188516
+test:
+Accuracy:	P=69/100=0.69
+##### Iteration 16
+current: 1, Cost = 0.0279234, Correct(%) = 1, time = 0.00801501
+current: 2, Cost = 0.017959, Correct(%) = 1, time = 0.0163712
+current: 3, Cost = 0.0319399, Correct(%) = 1, time = 0.0274082
+current: 4, Cost = 0.0256543, Correct(%) = 1, time = 0.0343207
+current: 5, Cost = 0.0303134, Correct(%) = 1, time = 0.0427537
+current: 6, Cost = 0.0257268, Correct(%) = 1, time = 0.0529607
+current: 7, Cost = 0.0220798, Correct(%) = 1, time = 0.0586482
+current: 8, Cost = 0.0250016, Correct(%) = 1, time = 0.0651126
+current: 9, Cost = 0.0183792, Correct(%) = 1, time = 0.0718918
+current: 10, Cost = 0.0181021, Correct(%) = 1, time = 0.0790221
+current: 17, Correct(%) = 1, time = 0.0791361
+Dev start.
+Dev finished. Total time taken is: 0.0217596
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186394
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 17
+current: 1, Cost = 0.0319989, Correct(%) = 1, time = 0.00696323
+current: 2, Cost = 0.0276196, Correct(%) = 1, time = 0.0152529
+current: 3, Cost = 0.0265573, Correct(%) = 1, time = 0.026569
+current: 4, Cost = 0.0196345, Correct(%) = 1, time = 0.0326567
+current: 5, Cost = 0.0196358, Correct(%) = 1, time = 0.0391769
+current: 6, Cost = 0.0227767, Correct(%) = 1, time = 0.0472773
+current: 7, Cost = 0.029259, Correct(%) = 1, time = 0.0551379
+current: 8, Cost = 0.0232724, Correct(%) = 1, time = 0.062883
+current: 9, Cost = 0.0292284, Correct(%) = 1, time = 0.0706863
+current: 10, Cost = 0.0296513, Correct(%) = 1, time = 0.0775891
+current: 18, Correct(%) = 1, time = 0.077696
+Dev start.
+Dev finished. Total time taken is: 0.0217491
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186355
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 18
+current: 1, Cost = 0.022605, Correct(%) = 1, time = 0.00797542
+current: 2, Cost = 0.0271321, Correct(%) = 1, time = 0.0140658
+current: 3, Cost = 0.0259355, Correct(%) = 1, time = 0.0226934
+current: 4, Cost = 0.0248291, Correct(%) = 1, time = 0.0282942
+current: 5, Cost = 0.023585, Correct(%) = 1, time = 0.0368115
+current: 6, Cost = 0.0246454, Correct(%) = 1, time = 0.0438085
+current: 7, Cost = 0.024659, Correct(%) = 1, time = 0.0510402
+current: 8, Cost = 0.018332, Correct(%) = 1, time = 0.0595528
+current: 9, Cost = 0.022153, Correct(%) = 1, time = 0.0685693
+current: 10, Cost = 0.0215409, Correct(%) = 1, time = 0.0788881
+current: 19, Correct(%) = 1, time = 0.0790159
+Dev start.
+Dev finished. Total time taken is: 0.0218067
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186465
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 19
+current: 1, Cost = 0.019774, Correct(%) = 1, time = 0.00812807
+current: 2, Cost = 0.0272469, Correct(%) = 1, time = 0.015769
+current: 3, Cost = 0.0190251, Correct(%) = 1, time = 0.0213385
+current: 4, Cost = 0.0199025, Correct(%) = 1, time = 0.0283419
+current: 5, Cost = 0.0176513, Correct(%) = 1, time = 0.036068
+current: 6, Cost = 0.0162376, Correct(%) = 1, time = 0.0425065
+current: 7, Cost = 0.0203048, Correct(%) = 1, time = 0.0497559
+current: 8, Cost = 0.0183871, Correct(%) = 1, time = 0.0552663
+current: 9, Cost = 0.016276, Correct(%) = 1, time = 0.0616267
+current: 10, Cost = 0.020876, Correct(%) = 1, time = 0.070287
+current: 20, Correct(%) = 1, time = 0.0704058
+Dev start.
+Dev finished. Total time taken is: 0.0217851
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186464
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 20
+current: 1, Cost = 0.0213233, Correct(%) = 1, time = 0.00546455
+current: 2, Cost = 0.0215475, Correct(%) = 1, time = 0.012795
+current: 3, Cost = 0.0197329, Correct(%) = 1, time = 0.0202798
+current: 4, Cost = 0.0129656, Correct(%) = 1, time = 0.0268276
+current: 5, Cost = 0.0130172, Correct(%) = 1, time = 0.0350459
+current: 6, Cost = 0.0207689, Correct(%) = 1, time = 0.0439061
+current: 7, Cost = 0.0196421, Correct(%) = 1, time = 0.0513928
+current: 8, Cost = 0.0188256, Correct(%) = 1, time = 0.058794
+current: 9, Cost = 0.0242607, Correct(%) = 1, time = 0.0672981
+current: 10, Cost = 0.0153406, Correct(%) = 1, time = 0.0748214
+current: 21, Correct(%) = 1, time = 0.0749318
+Dev start.
+Dev finished. Total time taken is: 0.0217667
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186601
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 21
+current: 1, Cost = 0.0129654, Correct(%) = 1, time = 0.00517228
+current: 2, Cost = 0.0161244, Correct(%) = 1, time = 0.0122217
+current: 3, Cost = 0.0201739, Correct(%) = 1, time = 0.0214076
+current: 4, Cost = 0.019557, Correct(%) = 1, time = 0.0291947
+current: 5, Cost = 0.0144446, Correct(%) = 1, time = 0.0372105
+current: 6, Cost = 0.0134433, Correct(%) = 1, time = 0.0429643
+current: 7, Cost = 0.0120782, Correct(%) = 1, time = 0.0528269
+current: 8, Cost = 0.0229418, Correct(%) = 1, time = 0.0606926
+current: 9, Cost = 0.0169072, Correct(%) = 1, time = 0.0692369
+current: 10, Cost = 0.0190972, Correct(%) = 1, time = 0.0796815
+current: 22, Correct(%) = 1, time = 0.079807
+Dev start.
+Dev finished. Total time taken is: 0.021808
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186542
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 22
+current: 1, Cost = 0.0126616, Correct(%) = 1, time = 0.00608776
+current: 2, Cost = 0.0161666, Correct(%) = 1, time = 0.015858
+current: 3, Cost = 0.0159547, Correct(%) = 1, time = 0.0221858
+current: 4, Cost = 0.0244954, Correct(%) = 1, time = 0.0292691
+current: 5, Cost = 0.0162796, Correct(%) = 1, time = 0.0353119
+current: 6, Cost = 0.0170779, Correct(%) = 1, time = 0.0406016
+current: 7, Cost = 0.0143887, Correct(%) = 1, time = 0.0486378
+current: 8, Cost = 0.014762, Correct(%) = 1, time = 0.0541512
+current: 9, Cost = 0.0189065, Correct(%) = 1, time = 0.0616321
+current: 10, Cost = 0.0129663, Correct(%) = 1, time = 0.0682107
+current: 23, Correct(%) = 1, time = 0.0683186
+Dev start.
+Dev finished. Total time taken is: 0.0218563
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186498
+test:
+Accuracy:	P=68/100=0.68
+##### Iteration 23
+current: 1, Cost = 0.0124629, Correct(%) = 1, time = 0.00470315
+current: 2, Cost = 0.0183493, Correct(%) = 1, time = 0.0116504
+current: 3, Cost = 0.0160306, Correct(%) = 1, time = 0.0178862
+current: 4, Cost = 0.0122508, Correct(%) = 1, time = 0.0225712
+current: 5, Cost = 0.0148707, Correct(%) = 1, time = 0.0301934
+current: 6, Cost = 0.0196178, Correct(%) = 1, time = 0.0392044
+current: 7, Cost = 0.0125237, Correct(%) = 1, time = 0.0469323
+current: 8, Cost = 0.0135121, Correct(%) = 1, time = 0.0547772
+current: 9, Cost = 0.0166414, Correct(%) = 1, time = 0.0653784
+current: 10, Cost = 0.0166062, Correct(%) = 1, time = 0.0732944
+current: 24, Correct(%) = 1, time = 0.0734103
+Dev start.
+Dev finished. Total time taken is: 0.0217806
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186772
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 24
+current: 1, Cost = 0.0173143, Correct(%) = 1, time = 0.00799888
+current: 2, Cost = 0.017169, Correct(%) = 1, time = 0.0167054
+current: 3, Cost = 0.0152876, Correct(%) = 1, time = 0.024676
+current: 4, Cost = 0.0150455, Correct(%) = 1, time = 0.0304235
+current: 5, Cost = 0.0152979, Correct(%) = 1, time = 0.0375476
+current: 6, Cost = 0.0149232, Correct(%) = 1, time = 0.0469739
+current: 7, Cost = 0.0133268, Correct(%) = 1, time = 0.0536405
+current: 8, Cost = 0.015368, Correct(%) = 1, time = 0.0602981
+current: 9, Cost = 0.0148812, Correct(%) = 1, time = 0.0680965
+current: 10, Cost = 0.0122658, Correct(%) = 1, time = 0.0762258
+current: 25, Correct(%) = 1, time = 0.0763453
+Dev start.
+Dev finished. Total time taken is: 0.0217771
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186621
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 25
+current: 1, Cost = 0.0138079, Correct(%) = 1, time = 0.00806468
+current: 2, Cost = 0.0123869, Correct(%) = 1, time = 0.0144854
+current: 3, Cost = 0.00943345, Correct(%) = 1, time = 0.019296
+current: 4, Cost = 0.0114561, Correct(%) = 1, time = 0.0283791
+current: 5, Cost = 0.0138497, Correct(%) = 1, time = 0.0371734
+current: 6, Cost = 0.0147569, Correct(%) = 1, time = 0.0458165
+current: 7, Cost = 0.0147639, Correct(%) = 1, time = 0.0510317
+current: 8, Cost = 0.0131454, Correct(%) = 1, time = 0.0594062
+current: 9, Cost = 0.0112819, Correct(%) = 1, time = 0.0688621
+current: 10, Cost = 0.0121537, Correct(%) = 1, time = 0.0776974
+current: 26, Correct(%) = 1, time = 0.0778186
+Dev start.
+Dev finished. Total time taken is: 0.0218133
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186646
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 26
+current: 1, Cost = 0.0107632, Correct(%) = 1, time = 0.00686151
+current: 2, Cost = 0.0165355, Correct(%) = 1, time = 0.017964
+current: 3, Cost = 0.0109987, Correct(%) = 1, time = 0.0249092
+current: 4, Cost = 0.00831562, Correct(%) = 1, time = 0.0317142
+current: 5, Cost = 0.00926383, Correct(%) = 1, time = 0.037347
+current: 6, Cost = 0.0124711, Correct(%) = 1, time = 0.0442357
+current: 7, Cost = 0.00728547, Correct(%) = 1, time = 0.0506352
+current: 8, Cost = 0.0144716, Correct(%) = 1, time = 0.0596111
+current: 9, Cost = 0.0156692, Correct(%) = 1, time = 0.069044
+current: 10, Cost = 0.00833402, Correct(%) = 1, time = 0.0746729
+current: 27, Correct(%) = 1, time = 0.0747754
+Dev start.
+Dev finished. Total time taken is: 0.021735
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186474
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 27
+current: 1, Cost = 0.0107843, Correct(%) = 1, time = 0.0093132
+current: 2, Cost = 0.0137934, Correct(%) = 1, time = 0.0175702
+current: 3, Cost = 0.0159085, Correct(%) = 1, time = 0.0253783
+current: 4, Cost = 0.0111017, Correct(%) = 1, time = 0.0318337
+current: 5, Cost = 0.00952674, Correct(%) = 1, time = 0.0383332
+current: 6, Cost = 0.0132269, Correct(%) = 1, time = 0.0448973
+current: 7, Cost = 0.0109416, Correct(%) = 1, time = 0.0522624
+current: 8, Cost = 0.0158846, Correct(%) = 1, time = 0.0613276
+current: 9, Cost = 0.0131695, Correct(%) = 1, time = 0.0695495
+current: 10, Cost = 0.011168, Correct(%) = 1, time = 0.0776594
+current: 28, Correct(%) = 1, time = 0.0777774
+Dev start.
+Dev finished. Total time taken is: 0.0217738
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186683
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 28
+current: 1, Cost = 0.00931968, Correct(%) = 1, time = 0.00857555
+current: 2, Cost = 0.0105339, Correct(%) = 1, time = 0.0174111
+current: 3, Cost = 0.00866743, Correct(%) = 1, time = 0.0223026
+current: 4, Cost = 0.00958273, Correct(%) = 1, time = 0.0311345
+current: 5, Cost = 0.0103114, Correct(%) = 1, time = 0.0367508
+current: 6, Cost = 0.00807933, Correct(%) = 1, time = 0.0424443
+current: 7, Cost = 0.0114041, Correct(%) = 1, time = 0.0508586
+current: 8, Cost = 0.00837794, Correct(%) = 1, time = 0.0569677
+current: 9, Cost = 0.0112335, Correct(%) = 1, time = 0.0644932
+current: 10, Cost = 0.0133149, Correct(%) = 1, time = 0.0771763
+current: 29, Correct(%) = 1, time = 0.0773162
+Dev start.
+Dev finished. Total time taken is: 0.0218852
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186565
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 29
+current: 1, Cost = 0.0113985, Correct(%) = 1, time = 0.00794571
+current: 2, Cost = 0.0105542, Correct(%) = 1, time = 0.013548
+current: 3, Cost = 0.0114131, Correct(%) = 1, time = 0.0203225
+current: 4, Cost = 0.00898866, Correct(%) = 1, time = 0.0271219
+current: 5, Cost = 0.00939659, Correct(%) = 1, time = 0.0366419
+current: 6, Cost = 0.00978404, Correct(%) = 1, time = 0.0458552
+current: 7, Cost = 0.0121126, Correct(%) = 1, time = 0.0556106
+current: 8, Cost = 0.0113404, Correct(%) = 1, time = 0.0636271
+current: 9, Cost = 0.0113076, Correct(%) = 1, time = 0.0696413
+current: 10, Cost = 0.00822366, Correct(%) = 1, time = 0.0747106
+current: 30, Correct(%) = 1, time = 0.074813
+Dev start.
+Dev finished. Total time taken is: 0.021752
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186476
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 30
+current: 1, Cost = 0.011116, Correct(%) = 1, time = 0.0056014
+current: 2, Cost = 0.0116888, Correct(%) = 1, time = 0.0145671
+current: 3, Cost = 0.00992615, Correct(%) = 1, time = 0.0219854
+current: 4, Cost = 0.00906709, Correct(%) = 1, time = 0.0293984
+current: 5, Cost = 0.00950252, Correct(%) = 1, time = 0.0376639
+current: 6, Cost = 0.00883044, Correct(%) = 1, time = 0.0444083
+current: 7, Cost = 0.0121552, Correct(%) = 1, time = 0.0530411
+current: 8, Cost = 0.0106361, Correct(%) = 1, time = 0.0599397
+current: 9, Cost = 0.0104239, Correct(%) = 1, time = 0.0694537
+current: 10, Cost = 0.00857941, Correct(%) = 1, time = 0.0744296
+current: 31, Correct(%) = 1, time = 0.0745284
+Dev start.
+Dev finished. Total time taken is: 0.0218827
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018799
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 31
+current: 1, Cost = 0.00658364, Correct(%) = 1, time = 0.00492436
+current: 2, Cost = 0.0072604, Correct(%) = 1, time = 0.0133986
+current: 3, Cost = 0.0105338, Correct(%) = 1, time = 0.0229817
+current: 4, Cost = 0.00766352, Correct(%) = 1, time = 0.0301613
+current: 5, Cost = 0.00730482, Correct(%) = 1, time = 0.0363717
+current: 6, Cost = 0.00983632, Correct(%) = 1, time = 0.0448731
+current: 7, Cost = 0.00663456, Correct(%) = 1, time = 0.0518301
+current: 8, Cost = 0.0104719, Correct(%) = 1, time = 0.0589261
+current: 9, Cost = 0.0093201, Correct(%) = 1, time = 0.0666694
+current: 10, Cost = 0.00856703, Correct(%) = 1, time = 0.0743712
+current: 32, Correct(%) = 1, time = 0.0744852
+Dev start.
+Dev finished. Total time taken is: 0.0217923
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186752
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 32
+current: 1, Cost = 0.00903094, Correct(%) = 1, time = 0.00630129
+current: 2, Cost = 0.00789256, Correct(%) = 1, time = 0.0139315
+current: 3, Cost = 0.0074623, Correct(%) = 1, time = 0.0201126
+current: 4, Cost = 0.00719088, Correct(%) = 1, time = 0.0269663
+current: 5, Cost = 0.00963893, Correct(%) = 1, time = 0.033657
+current: 6, Cost = 0.00930041, Correct(%) = 1, time = 0.0409641
+current: 7, Cost = 0.00676669, Correct(%) = 1, time = 0.0477597
+current: 8, Cost = 0.0083132, Correct(%) = 1, time = 0.0543158
+current: 9, Cost = 0.0114542, Correct(%) = 1, time = 0.0617958
+current: 10, Cost = 0.00947533, Correct(%) = 1, time = 0.0681794
+current: 33, Correct(%) = 1, time = 0.0682911
+Dev start.
+Dev finished. Total time taken is: 0.0220781
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0188956
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 33
+current: 1, Cost = 0.00659586, Correct(%) = 1, time = 0.00690517
+current: 2, Cost = 0.00963191, Correct(%) = 1, time = 0.0158271
+current: 3, Cost = 0.00815385, Correct(%) = 1, time = 0.02299
+current: 4, Cost = 0.00777264, Correct(%) = 1, time = 0.029096
+current: 5, Cost = 0.00798458, Correct(%) = 1, time = 0.0384599
+current: 6, Cost = 0.00961824, Correct(%) = 1, time = 0.0475464
+current: 7, Cost = 0.0115616, Correct(%) = 1, time = 0.0572978
+current: 8, Cost = 0.00623871, Correct(%) = 1, time = 0.0646548
+current: 9, Cost = 0.00541415, Correct(%) = 1, time = 0.0691998
+current: 10, Cost = 0.00771393, Correct(%) = 1, time = 0.0767985
+current: 34, Correct(%) = 1, time = 0.0769131
+Dev start.
+Dev finished. Total time taken is: 0.0217883
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018655
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 34
+current: 1, Cost = 0.00845509, Correct(%) = 1, time = 0.00772842
+current: 2, Cost = 0.0116859, Correct(%) = 1, time = 0.0184576
+current: 3, Cost = 0.00858139, Correct(%) = 1, time = 0.0253918
+current: 4, Cost = 0.00912961, Correct(%) = 1, time = 0.0319582
+current: 5, Cost = 0.00851711, Correct(%) = 1, time = 0.0413785
+current: 6, Cost = 0.00818088, Correct(%) = 1, time = 0.0521634
+current: 7, Cost = 0.00766285, Correct(%) = 1, time = 0.057044
+current: 8, Cost = 0.00761821, Correct(%) = 1, time = 0.0645332
+current: 9, Cost = 0.00888774, Correct(%) = 1, time = 0.073212
+current: 10, Cost = 0.00689462, Correct(%) = 1, time = 0.0780996
+current: 35, Correct(%) = 1, time = 0.0782061
+Dev start.
+Dev finished. Total time taken is: 0.021748
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186521
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 35
+current: 1, Cost = 0.0118506, Correct(%) = 1, time = 0.00661712
+current: 2, Cost = 0.00665735, Correct(%) = 1, time = 0.0143281
+current: 3, Cost = 0.00718955, Correct(%) = 1, time = 0.0202349
+current: 4, Cost = 0.00808208, Correct(%) = 1, time = 0.0279326
+current: 5, Cost = 0.00591917, Correct(%) = 1, time = 0.0337754
+current: 6, Cost = 0.00786643, Correct(%) = 1, time = 0.0398789
+current: 7, Cost = 0.00562801, Correct(%) = 1, time = 0.0476946
+current: 8, Cost = 0.00704817, Correct(%) = 1, time = 0.0564578
+current: 9, Cost = 0.00672559, Correct(%) = 1, time = 0.0618958
+current: 10, Cost = 0.00673876, Correct(%) = 1, time = 0.0700098
+current: 36, Correct(%) = 1, time = 0.0701408
+Dev start.
+Dev finished. Total time taken is: 0.0220196
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186753
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 36
+current: 1, Cost = 0.00787221, Correct(%) = 1, time = 0.007644
+current: 2, Cost = 0.00788357, Correct(%) = 1, time = 0.0136687
+current: 3, Cost = 0.01053, Correct(%) = 1, time = 0.0248531
+current: 4, Cost = 0.00999594, Correct(%) = 1, time = 0.0332851
+current: 5, Cost = 0.00766953, Correct(%) = 1, time = 0.0401438
+current: 6, Cost = 0.00682309, Correct(%) = 1, time = 0.0472698
+current: 7, Cost = 0.00823121, Correct(%) = 1, time = 0.0555424
+current: 8, Cost = 0.00635805, Correct(%) = 1, time = 0.0615151
+current: 9, Cost = 0.00751828, Correct(%) = 1, time = 0.0691847
+current: 10, Cost = 0.00772466, Correct(%) = 1, time = 0.0749047
+current: 37, Correct(%) = 1, time = 0.0750104
+Dev start.
+Dev finished. Total time taken is: 0.0217577
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186678
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 37
+current: 1, Cost = 0.00619913, Correct(%) = 1, time = 0.00868912
+current: 2, Cost = 0.00850783, Correct(%) = 1, time = 0.0173082
+current: 3, Cost = 0.00532397, Correct(%) = 1, time = 0.0242672
+current: 4, Cost = 0.0082584, Correct(%) = 1, time = 0.0287415
+current: 5, Cost = 0.00752609, Correct(%) = 1, time = 0.0356391
+current: 6, Cost = 0.00737042, Correct(%) = 1, time = 0.0416726
+current: 7, Cost = 0.00744746, Correct(%) = 1, time = 0.0483186
+current: 8, Cost = 0.00770792, Correct(%) = 1, time = 0.0581763
+current: 9, Cost = 0.00879199, Correct(%) = 1, time = 0.0647984
+current: 10, Cost = 0.00465256, Correct(%) = 1, time = 0.0693858
+current: 38, Correct(%) = 1, time = 0.0694849
+Dev start.
+Dev finished. Total time taken is: 0.0217349
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.01866
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 38
+current: 1, Cost = 0.00788995, Correct(%) = 1, time = 0.0074577
+current: 2, Cost = 0.0051818, Correct(%) = 1, time = 0.0131878
+current: 3, Cost = 0.00718191, Correct(%) = 1, time = 0.021625
+current: 4, Cost = 0.0067896, Correct(%) = 1, time = 0.0300331
+current: 5, Cost = 0.0045275, Correct(%) = 1, time = 0.0377001
+current: 6, Cost = 0.00839641, Correct(%) = 1, time = 0.0438005
+current: 7, Cost = 0.00628691, Correct(%) = 1, time = 0.0525095
+current: 8, Cost = 0.00454431, Correct(%) = 1, time = 0.0581619
+current: 9, Cost = 0.0070039, Correct(%) = 1, time = 0.0658018
+current: 10, Cost = 0.00667459, Correct(%) = 1, time = 0.0748843
+current: 39, Correct(%) = 1, time = 0.0750068
+Dev start.
+Dev finished. Total time taken is: 0.0218
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018674
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 39
+current: 1, Cost = 0.00642165, Correct(%) = 1, time = 0.00689119
+current: 2, Cost = 0.00954808, Correct(%) = 1, time = 0.0165722
+current: 3, Cost = 0.00736504, Correct(%) = 1, time = 0.0235632
+current: 4, Cost = 0.00665851, Correct(%) = 1, time = 0.0304352
+current: 5, Cost = 0.00479279, Correct(%) = 1, time = 0.0385757
+current: 6, Cost = 0.00521735, Correct(%) = 1, time = 0.0453016
+current: 7, Cost = 0.00868392, Correct(%) = 1, time = 0.0549877
+current: 8, Cost = 0.00764103, Correct(%) = 1, time = 0.0647416
+current: 9, Cost = 0.00591691, Correct(%) = 1, time = 0.0722798
+current: 10, Cost = 0.00508196, Correct(%) = 1, time = 0.0779076
+current: 40, Correct(%) = 1, time = 0.0780145
+Dev start.
+Dev finished. Total time taken is: 0.0218408
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186632
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 40
+current: 1, Cost = 0.00646445, Correct(%) = 1, time = 0.00863095
+current: 2, Cost = 0.00823552, Correct(%) = 1, time = 0.0175398
+current: 3, Cost = 0.00354862, Correct(%) = 1, time = 0.0243198
+current: 4, Cost = 0.00701275, Correct(%) = 1, time = 0.0337607
+current: 5, Cost = 0.00944665, Correct(%) = 1, time = 0.0402232
+current: 6, Cost = 0.00764536, Correct(%) = 1, time = 0.0462303
+current: 7, Cost = 0.00713665, Correct(%) = 1, time = 0.0520721
+current: 8, Cost = 0.00658948, Correct(%) = 1, time = 0.0600527
+current: 9, Cost = 0.00609297, Correct(%) = 1, time = 0.0667127
+current: 10, Cost = 0.00750179, Correct(%) = 1, time = 0.0772412
+current: 41, Correct(%) = 1, time = 0.0773707
+Dev start.
+Dev finished. Total time taken is: 0.0219099
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186682
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 41
+current: 1, Cost = 0.00487132, Correct(%) = 1, time = 0.00555076
+current: 2, Cost = 0.00411062, Correct(%) = 1, time = 0.0117796
+current: 3, Cost = 0.00661093, Correct(%) = 1, time = 0.018207
+current: 4, Cost = 0.00427582, Correct(%) = 1, time = 0.0257198
+current: 5, Cost = 0.00712738, Correct(%) = 1, time = 0.0341188
+current: 6, Cost = 0.00576714, Correct(%) = 1, time = 0.0415702
+current: 7, Cost = 0.00743364, Correct(%) = 1, time = 0.0484497
+current: 8, Cost = 0.00871602, Correct(%) = 1, time = 0.0553578
+current: 9, Cost = 0.00635011, Correct(%) = 1, time = 0.0614096
+current: 10, Cost = 0.00639318, Correct(%) = 1, time = 0.0689369
+current: 42, Correct(%) = 1, time = 0.0690477
+Dev start.
+Dev finished. Total time taken is: 0.0218776
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186588
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 42
+current: 1, Cost = 0.00430173, Correct(%) = 1, time = 0.0057407
+current: 2, Cost = 0.00433513, Correct(%) = 1, time = 0.0126335
+current: 3, Cost = 0.00794714, Correct(%) = 1, time = 0.0234587
+current: 4, Cost = 0.00527651, Correct(%) = 1, time = 0.031868
+current: 5, Cost = 0.00675413, Correct(%) = 1, time = 0.0381986
+current: 6, Cost = 0.00672376, Correct(%) = 1, time = 0.0460036
+current: 7, Cost = 0.00781167, Correct(%) = 1, time = 0.0548381
+current: 8, Cost = 0.00689461, Correct(%) = 1, time = 0.0601606
+current: 9, Cost = 0.00581103, Correct(%) = 1, time = 0.0672518
+current: 10, Cost = 0.00468181, Correct(%) = 1, time = 0.0751298
+current: 43, Correct(%) = 1, time = 0.0752463
+Dev start.
+Dev finished. Total time taken is: 0.0218024
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186574
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 43
+current: 1, Cost = 0.00519495, Correct(%) = 1, time = 0.00680229
+current: 2, Cost = 0.00517829, Correct(%) = 1, time = 0.0124773
+current: 3, Cost = 0.00427891, Correct(%) = 1, time = 0.0190929
+current: 4, Cost = 0.00511327, Correct(%) = 1, time = 0.0261548
+current: 5, Cost = 0.00556778, Correct(%) = 1, time = 0.0351883
+current: 6, Cost = 0.00802628, Correct(%) = 1, time = 0.043898
+current: 7, Cost = 0.00829364, Correct(%) = 1, time = 0.0516276
+current: 8, Cost = 0.00607669, Correct(%) = 1, time = 0.0585547
+current: 9, Cost = 0.00428774, Correct(%) = 1, time = 0.0640553
+current: 10, Cost = 0.00504514, Correct(%) = 1, time = 0.0685973
+current: 44, Correct(%) = 1, time = 0.0686998
+Dev start.
+Dev finished. Total time taken is: 0.0217541
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187523
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 44
+current: 1, Cost = 0.00459923, Correct(%) = 1, time = 0.00994165
+current: 2, Cost = 0.0058767, Correct(%) = 1, time = 0.016437
+current: 3, Cost = 0.00476871, Correct(%) = 1, time = 0.0244615
+current: 4, Cost = 0.00567624, Correct(%) = 1, time = 0.0325792
+current: 5, Cost = 0.00523494, Correct(%) = 1, time = 0.0422045
+current: 6, Cost = 0.00619209, Correct(%) = 1, time = 0.048743
+current: 7, Cost = 0.00668102, Correct(%) = 1, time = 0.0564941
+current: 8, Cost = 0.00836764, Correct(%) = 1, time = 0.0641254
+current: 9, Cost = 0.0048708, Correct(%) = 1, time = 0.0704986
+current: 10, Cost = 0.00557553, Correct(%) = 1, time = 0.080409
+current: 45, Correct(%) = 1, time = 0.0805579
+Dev start.
+Dev finished. Total time taken is: 0.0218665
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186884
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 45
+current: 1, Cost = 0.00554012, Correct(%) = 1, time = 0.00672798
+current: 2, Cost = 0.00625946, Correct(%) = 1, time = 0.0159648
+current: 3, Cost = 0.00599676, Correct(%) = 1, time = 0.0238547
+current: 4, Cost = 0.00575238, Correct(%) = 1, time = 0.0315925
+current: 5, Cost = 0.00537637, Correct(%) = 1, time = 0.0405915
+current: 6, Cost = 0.00414517, Correct(%) = 1, time = 0.0474698
+current: 7, Cost = 0.00405473, Correct(%) = 1, time = 0.053508
+current: 8, Cost = 0.00661169, Correct(%) = 1, time = 0.0594925
+current: 9, Cost = 0.00563929, Correct(%) = 1, time = 0.0654035
+current: 10, Cost = 0.00738275, Correct(%) = 1, time = 0.0729318
+current: 46, Correct(%) = 1, time = 0.0730437
+Dev start.
+Dev finished. Total time taken is: 0.0217981
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186857
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 46
+current: 1, Cost = 0.00494098, Correct(%) = 1, time = 0.00646756
+current: 2, Cost = 0.003708, Correct(%) = 1, time = 0.0145492
+current: 3, Cost = 0.00402296, Correct(%) = 1, time = 0.0231355
+current: 4, Cost = 0.00722249, Correct(%) = 1, time = 0.0315163
+current: 5, Cost = 0.00609738, Correct(%) = 1, time = 0.0384325
+current: 6, Cost = 0.00511116, Correct(%) = 1, time = 0.0445113
+current: 7, Cost = 0.00455773, Correct(%) = 1, time = 0.0492832
+current: 8, Cost = 0.00572484, Correct(%) = 1, time = 0.0563115
+current: 9, Cost = 0.004622, Correct(%) = 1, time = 0.063012
+current: 10, Cost = 0.00546909, Correct(%) = 1, time = 0.0704267
+current: 47, Correct(%) = 1, time = 0.0705414
+Dev start.
+Dev finished. Total time taken is: 0.0217789
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186526
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 47
+current: 1, Cost = 0.00388525, Correct(%) = 1, time = 0.00700564
+current: 2, Cost = 0.0048253, Correct(%) = 1, time = 0.0144909
+current: 3, Cost = 0.00540957, Correct(%) = 1, time = 0.0232882
+current: 4, Cost = 0.00498498, Correct(%) = 1, time = 0.0317496
+current: 5, Cost = 0.00477228, Correct(%) = 1, time = 0.0378093
+current: 6, Cost = 0.00727269, Correct(%) = 1, time = 0.0463851
+current: 7, Cost = 0.00467139, Correct(%) = 1, time = 0.0527896
+current: 8, Cost = 0.00508521, Correct(%) = 1, time = 0.0598096
+current: 9, Cost = 0.00465733, Correct(%) = 1, time = 0.0664767
+current: 10, Cost = 0.00304074, Correct(%) = 1, time = 0.0715942
+current: 48, Correct(%) = 1, time = 0.0716947
+Dev start.
+Dev finished. Total time taken is: 0.0217432
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186666
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 48
+current: 1, Cost = 0.00412511, Correct(%) = 1, time = 0.00784273
+current: 2, Cost = 0.00325431, Correct(%) = 1, time = 0.0146649
+current: 3, Cost = 0.00664774, Correct(%) = 1, time = 0.023549
+current: 4, Cost = 0.00498673, Correct(%) = 1, time = 0.0291148
+current: 5, Cost = 0.00403656, Correct(%) = 1, time = 0.0347892
+current: 6, Cost = 0.00396121, Correct(%) = 1, time = 0.0419133
+current: 7, Cost = 0.0035832, Correct(%) = 1, time = 0.0499385
+current: 8, Cost = 0.00614845, Correct(%) = 1, time = 0.0564963
+current: 9, Cost = 0.0041725, Correct(%) = 1, time = 0.0620639
+current: 10, Cost = 0.00483314, Correct(%) = 1, time = 0.0704634
+current: 49, Correct(%) = 1, time = 0.070589
+Dev start.
+Dev finished. Total time taken is: 0.0218266
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186754
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 49
+current: 1, Cost = 0.00351304, Correct(%) = 1, time = 0.00831307
+current: 2, Cost = 0.00382648, Correct(%) = 1, time = 0.0160967
+current: 3, Cost = 0.00330285, Correct(%) = 1, time = 0.0221221
+current: 4, Cost = 0.00342184, Correct(%) = 1, time = 0.0276235
+current: 5, Cost = 0.00463635, Correct(%) = 1, time = 0.0354596
+current: 6, Cost = 0.00306261, Correct(%) = 1, time = 0.0428937
+current: 7, Cost = 0.00511916, Correct(%) = 1, time = 0.0496912
+current: 8, Cost = 0.00262393, Correct(%) = 1, time = 0.0550834
+current: 9, Cost = 0.00313461, Correct(%) = 1, time = 0.0620645
+current: 10, Cost = 0.00546606, Correct(%) = 1, time = 0.0693483
+current: 50, Correct(%) = 1, time = 0.0694614
+Dev start.
+Dev finished. Total time taken is: 0.0226671
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0190182
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 50
+current: 1, Cost = 0.00588673, Correct(%) = 1, time = 0.00737572
+current: 2, Cost = 0.00478835, Correct(%) = 1, time = 0.0147216
+current: 3, Cost = 0.00387854, Correct(%) = 1, time = 0.0205691
+current: 4, Cost = 0.00258287, Correct(%) = 1, time = 0.0271447
+current: 5, Cost = 0.0046738, Correct(%) = 1, time = 0.0344107
+current: 6, Cost = 0.00662662, Correct(%) = 1, time = 0.041911
+current: 7, Cost = 0.00327622, Correct(%) = 1, time = 0.0487264
+current: 8, Cost = 0.00302353, Correct(%) = 1, time = 0.0533567
+current: 9, Cost = 0.00405697, Correct(%) = 1, time = 0.0618913
+current: 10, Cost = 0.00433128, Correct(%) = 1, time = 0.0694653
+current: 51, Correct(%) = 1, time = 0.0695794
+Dev start.
+Dev finished. Total time taken is: 0.0219207
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186509
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 51
+current: 1, Cost = 0.0045423, Correct(%) = 1, time = 0.00700399
+current: 2, Cost = 0.00359099, Correct(%) = 1, time = 0.0135706
+current: 3, Cost = 0.00432302, Correct(%) = 1, time = 0.0210435
+current: 4, Cost = 0.00216738, Correct(%) = 1, time = 0.0262513
+current: 5, Cost = 0.004914, Correct(%) = 1, time = 0.0346472
+current: 6, Cost = 0.00665861, Correct(%) = 1, time = 0.0465314
+current: 7, Cost = 0.00355167, Correct(%) = 1, time = 0.0546988
+current: 8, Cost = 0.0058794, Correct(%) = 1, time = 0.0620726
+current: 9, Cost = 0.00382593, Correct(%) = 1, time = 0.068704
+current: 10, Cost = 0.00465095, Correct(%) = 1, time = 0.0752222
+current: 52, Correct(%) = 1, time = 0.0753308
+Dev start.
+Dev finished. Total time taken is: 0.0217896
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186558
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 52
+current: 1, Cost = 0.00578391, Correct(%) = 1, time = 0.00957526
+current: 2, Cost = 0.00381025, Correct(%) = 1, time = 0.0181666
+current: 3, Cost = 0.00403162, Correct(%) = 1, time = 0.0254908
+current: 4, Cost = 0.00357545, Correct(%) = 1, time = 0.0332289
+current: 5, Cost = 0.00341256, Correct(%) = 1, time = 0.0387237
+current: 6, Cost = 0.00405322, Correct(%) = 1, time = 0.0455041
+current: 7, Cost = 0.00410884, Correct(%) = 1, time = 0.0527898
+current: 8, Cost = 0.0043262, Correct(%) = 1, time = 0.0596181
+current: 9, Cost = 0.00555606, Correct(%) = 1, time = 0.0680368
+current: 10, Cost = 0.00367516, Correct(%) = 1, time = 0.07673
+current: 53, Correct(%) = 1, time = 0.0768498
+Dev start.
+Dev finished. Total time taken is: 0.0218109
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186514
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 53
+current: 1, Cost = 0.00534877, Correct(%) = 1, time = 0.0113027
+current: 2, Cost = 0.00313525, Correct(%) = 1, time = 0.0179451
+current: 3, Cost = 0.00382306, Correct(%) = 1, time = 0.024176
+current: 4, Cost = 0.00333588, Correct(%) = 1, time = 0.0331721
+current: 5, Cost = 0.00443946, Correct(%) = 1, time = 0.042264
+current: 6, Cost = 0.00382377, Correct(%) = 1, time = 0.0506486
+current: 7, Cost = 0.0037819, Correct(%) = 1, time = 0.0568853
+current: 8, Cost = 0.0045959, Correct(%) = 1, time = 0.0632028
+current: 9, Cost = 0.00293464, Correct(%) = 1, time = 0.0679143
+current: 10, Cost = 0.00290421, Correct(%) = 1, time = 0.0752857
+current: 54, Correct(%) = 1, time = 0.0753975
+Dev start.
+Dev finished. Total time taken is: 0.021808
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187205
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 54
+current: 1, Cost = 0.00427309, Correct(%) = 1, time = 0.00762565
+current: 2, Cost = 0.00409117, Correct(%) = 1, time = 0.0152376
+current: 3, Cost = 0.00556239, Correct(%) = 1, time = 0.0266678
+current: 4, Cost = 0.00357841, Correct(%) = 1, time = 0.0336658
+current: 5, Cost = 0.00527865, Correct(%) = 1, time = 0.0436477
+current: 6, Cost = 0.00436666, Correct(%) = 1, time = 0.0508651
+current: 7, Cost = 0.0049671, Correct(%) = 1, time = 0.0566698
+current: 8, Cost = 0.00524592, Correct(%) = 1, time = 0.063011
+current: 9, Cost = 0.00537425, Correct(%) = 1, time = 0.0717666
+current: 10, Cost = 0.00292775, Correct(%) = 1, time = 0.0778571
+current: 55, Correct(%) = 1, time = 0.0779655
+Dev start.
+Dev finished. Total time taken is: 0.0217721
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187504
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 55
+current: 1, Cost = 0.00504903, Correct(%) = 1, time = 0.0107406
+current: 2, Cost = 0.0045993, Correct(%) = 1, time = 0.0167596
+current: 3, Cost = 0.00402935, Correct(%) = 1, time = 0.0232009
+current: 4, Cost = 0.00251086, Correct(%) = 1, time = 0.0294225
+current: 5, Cost = 0.00207457, Correct(%) = 1, time = 0.0360131
+current: 6, Cost = 0.00309951, Correct(%) = 1, time = 0.0424751
+current: 7, Cost = 0.00377312, Correct(%) = 1, time = 0.0485069
+current: 8, Cost = 0.00381477, Correct(%) = 1, time = 0.0545443
+current: 9, Cost = 0.00475942, Correct(%) = 1, time = 0.0619143
+current: 10, Cost = 0.00361585, Correct(%) = 1, time = 0.0670655
+current: 56, Correct(%) = 1, time = 0.0671682
+Dev start.
+Dev finished. Total time taken is: 0.0217652
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186649
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 56
+current: 1, Cost = 0.00355781, Correct(%) = 1, time = 0.00629313
+current: 2, Cost = 0.00280693, Correct(%) = 1, time = 0.0143986
+current: 3, Cost = 0.00414749, Correct(%) = 1, time = 0.0220534
+current: 4, Cost = 0.00392806, Correct(%) = 1, time = 0.0306583
+current: 5, Cost = 0.00490732, Correct(%) = 1, time = 0.0393252
+current: 6, Cost = 0.00304065, Correct(%) = 1, time = 0.0474441
+current: 7, Cost = 0.00287438, Correct(%) = 1, time = 0.0545976
+current: 8, Cost = 0.00313246, Correct(%) = 1, time = 0.0611012
+current: 9, Cost = 0.00546811, Correct(%) = 1, time = 0.0711628
+current: 10, Cost = 0.00418023, Correct(%) = 1, time = 0.0780198
+current: 57, Correct(%) = 1, time = 0.0781324
+Dev start.
+Dev finished. Total time taken is: 0.0217705
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186578
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 57
+current: 1, Cost = 0.00252059, Correct(%) = 1, time = 0.00623204
+current: 2, Cost = 0.00341478, Correct(%) = 1, time = 0.0118562
+current: 3, Cost = 0.00403943, Correct(%) = 1, time = 0.0212172
+current: 4, Cost = 0.00242719, Correct(%) = 1, time = 0.0271357
+current: 5, Cost = 0.00386022, Correct(%) = 1, time = 0.0350564
+current: 6, Cost = 0.0044877, Correct(%) = 1, time = 0.0467732
+current: 7, Cost = 0.0035589, Correct(%) = 1, time = 0.053614
+current: 8, Cost = 0.00482771, Correct(%) = 1, time = 0.0615646
+current: 9, Cost = 0.00367544, Correct(%) = 1, time = 0.0702848
+current: 10, Cost = 0.00387341, Correct(%) = 1, time = 0.0758192
+current: 58, Correct(%) = 1, time = 0.0759217
+Dev start.
+Dev finished. Total time taken is: 0.0217694
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018673
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 58
+current: 1, Cost = 0.00258727, Correct(%) = 1, time = 0.00512519
+current: 2, Cost = 0.0034178, Correct(%) = 1, time = 0.0153271
+current: 3, Cost = 0.00195321, Correct(%) = 1, time = 0.0210043
+current: 4, Cost = 0.00347493, Correct(%) = 1, time = 0.0295577
+current: 5, Cost = 0.00472411, Correct(%) = 1, time = 0.0385916
+current: 6, Cost = 0.00169481, Correct(%) = 1, time = 0.043052
+current: 7, Cost = 0.00421148, Correct(%) = 1, time = 0.0488368
+current: 8, Cost = 0.00386163, Correct(%) = 1, time = 0.0561625
+current: 9, Cost = 0.00381567, Correct(%) = 1, time = 0.06348
+current: 10, Cost = 0.00387537, Correct(%) = 1, time = 0.0704917
+current: 59, Correct(%) = 1, time = 0.0706037
+Dev start.
+Dev finished. Total time taken is: 0.0218429
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186797
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 59
+current: 1, Cost = 0.00399317, Correct(%) = 1, time = 0.0063258
+current: 2, Cost = 0.00350712, Correct(%) = 1, time = 0.01312
+current: 3, Cost = 0.00325891, Correct(%) = 1, time = 0.0213066
+current: 4, Cost = 0.00304349, Correct(%) = 1, time = 0.0281282
+current: 5, Cost = 0.00307993, Correct(%) = 1, time = 0.0357915
+current: 6, Cost = 0.00379633, Correct(%) = 1, time = 0.0436946
+current: 7, Cost = 0.00378659, Correct(%) = 1, time = 0.0505051
+current: 8, Cost = 0.00359377, Correct(%) = 1, time = 0.0564004
+current: 9, Cost = 0.00429905, Correct(%) = 1, time = 0.0659778
+current: 10, Cost = 0.00439724, Correct(%) = 1, time = 0.0732954
+current: 60, Correct(%) = 1, time = 0.0734079
+Dev start.
+Dev finished. Total time taken is: 0.0218095
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186616
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 60
+current: 1, Cost = 0.00433664, Correct(%) = 1, time = 0.00679758
+current: 2, Cost = 0.00243212, Correct(%) = 1, time = 0.0137055
+current: 3, Cost = 0.00389873, Correct(%) = 1, time = 0.0222765
+current: 4, Cost = 0.00328504, Correct(%) = 1, time = 0.0293827
+current: 5, Cost = 0.00375772, Correct(%) = 1, time = 0.036037
+current: 6, Cost = 0.00257496, Correct(%) = 1, time = 0.0412208
+current: 7, Cost = 0.00244294, Correct(%) = 1, time = 0.0490792
+current: 8, Cost = 0.00463729, Correct(%) = 1, time = 0.0564312
+current: 9, Cost = 0.00415163, Correct(%) = 1, time = 0.0680998
+current: 10, Cost = 0.00213995, Correct(%) = 1, time = 0.073717
+current: 61, Correct(%) = 1, time = 0.0738222
+Dev start.
+Dev finished. Total time taken is: 0.0217641
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187554
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 61
+current: 1, Cost = 0.0032809, Correct(%) = 1, time = 0.00934576
+current: 2, Cost = 0.00287295, Correct(%) = 1, time = 0.0136303
+current: 3, Cost = 0.00335506, Correct(%) = 1, time = 0.0227919
+current: 4, Cost = 0.0019859, Correct(%) = 1, time = 0.0284475
+current: 5, Cost = 0.0033283, Correct(%) = 1, time = 0.0365111
+current: 6, Cost = 0.00253589, Correct(%) = 1, time = 0.0444514
+current: 7, Cost = 0.00425682, Correct(%) = 1, time = 0.0537928
+current: 8, Cost = 0.00497262, Correct(%) = 1, time = 0.0604671
+current: 9, Cost = 0.00406368, Correct(%) = 1, time = 0.0685677
+current: 10, Cost = 0.00260202, Correct(%) = 1, time = 0.0780842
+current: 62, Correct(%) = 1, time = 0.0782075
+Dev start.
+Dev finished. Total time taken is: 0.0218262
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186697
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 62
+current: 1, Cost = 0.00361986, Correct(%) = 1, time = 0.00687365
+current: 2, Cost = 0.00339817, Correct(%) = 1, time = 0.0164517
+current: 3, Cost = 0.00327281, Correct(%) = 1, time = 0.0243467
+current: 4, Cost = 0.00535665, Correct(%) = 1, time = 0.031863
+current: 5, Cost = 0.00379108, Correct(%) = 1, time = 0.0399993
+current: 6, Cost = 0.00300251, Correct(%) = 1, time = 0.0478301
+current: 7, Cost = 0.00335898, Correct(%) = 1, time = 0.0551582
+current: 8, Cost = 0.00366498, Correct(%) = 1, time = 0.0652909
+current: 9, Cost = 0.00295499, Correct(%) = 1, time = 0.073139
+current: 10, Cost = 0.00272225, Correct(%) = 1, time = 0.0789711
+current: 63, Correct(%) = 1, time = 0.0790761
+Dev start.
+Dev finished. Total time taken is: 0.0217708
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186583
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 63
+current: 1, Cost = 0.00358658, Correct(%) = 1, time = 0.00660984
+current: 2, Cost = 0.00428355, Correct(%) = 1, time = 0.0156262
+current: 3, Cost = 0.00321354, Correct(%) = 1, time = 0.0251351
+current: 4, Cost = 0.00325334, Correct(%) = 1, time = 0.0322564
+current: 5, Cost = 0.00245494, Correct(%) = 1, time = 0.0379214
+current: 6, Cost = 0.00393653, Correct(%) = 1, time = 0.0454173
+current: 7, Cost = 0.00293397, Correct(%) = 1, time = 0.0526282
+current: 8, Cost = 0.00281296, Correct(%) = 1, time = 0.0589878
+current: 9, Cost = 0.0026053, Correct(%) = 1, time = 0.0646974
+current: 10, Cost = 0.00324143, Correct(%) = 1, time = 0.071663
+current: 64, Correct(%) = 1, time = 0.0717737
+Dev start.
+Dev finished. Total time taken is: 0.021822
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186677
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 64
+current: 1, Cost = 0.00270416, Correct(%) = 1, time = 0.00939391
+current: 2, Cost = 0.00294721, Correct(%) = 1, time = 0.0176513
+current: 3, Cost = 0.00362463, Correct(%) = 1, time = 0.0262717
+current: 4, Cost = 0.00362649, Correct(%) = 1, time = 0.0342811
+current: 5, Cost = 0.0034236, Correct(%) = 1, time = 0.0403739
+current: 6, Cost = 0.00450298, Correct(%) = 1, time = 0.0473871
+current: 7, Cost = 0.00379997, Correct(%) = 1, time = 0.0562526
+current: 8, Cost = 0.0031725, Correct(%) = 1, time = 0.0640213
+current: 9, Cost = 0.00441798, Correct(%) = 1, time = 0.0741857
+current: 10, Cost = 0.00421674, Correct(%) = 1, time = 0.0836657
+current: 65, Correct(%) = 1, time = 0.0837905
+Dev start.
+Dev finished. Total time taken is: 0.0218429
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186651
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 65
+current: 1, Cost = 0.0030535, Correct(%) = 1, time = 0.00635772
+current: 2, Cost = 0.00366944, Correct(%) = 1, time = 0.0144836
+current: 3, Cost = 0.00300137, Correct(%) = 1, time = 0.022814
+current: 4, Cost = 0.0027505, Correct(%) = 1, time = 0.0282693
+current: 5, Cost = 0.00327326, Correct(%) = 1, time = 0.0352864
+current: 6, Cost = 0.00318128, Correct(%) = 1, time = 0.0431738
+current: 7, Cost = 0.00317929, Correct(%) = 1, time = 0.0502809
+current: 8, Cost = 0.00308072, Correct(%) = 1, time = 0.0593844
+current: 9, Cost = 0.00324281, Correct(%) = 1, time = 0.0657224
+current: 10, Cost = 0.00381452, Correct(%) = 1, time = 0.0732001
+current: 66, Correct(%) = 1, time = 0.0733155
+Dev start.
+Dev finished. Total time taken is: 0.0218003
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186773
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 66
+current: 1, Cost = 0.00205739, Correct(%) = 1, time = 0.00659752
+current: 2, Cost = 0.0026507, Correct(%) = 1, time = 0.0150771
+current: 3, Cost = 0.00414171, Correct(%) = 1, time = 0.0244229
+current: 4, Cost = 0.00379157, Correct(%) = 1, time = 0.0323662
+current: 5, Cost = 0.00286018, Correct(%) = 1, time = 0.0398839
+current: 6, Cost = 0.00249279, Correct(%) = 1, time = 0.0466161
+current: 7, Cost = 0.00346082, Correct(%) = 1, time = 0.0578916
+current: 8, Cost = 0.00323196, Correct(%) = 1, time = 0.0657209
+current: 9, Cost = 0.00252263, Correct(%) = 1, time = 0.0730464
+current: 10, Cost = 0.00325156, Correct(%) = 1, time = 0.0792275
+current: 67, Correct(%) = 1, time = 0.0793347
+Dev start.
+Dev finished. Total time taken is: 0.0217699
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186767
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 67
+current: 1, Cost = 0.00311191, Correct(%) = 1, time = 0.00746544
+current: 2, Cost = 0.00253456, Correct(%) = 1, time = 0.0137424
+current: 3, Cost = 0.00353341, Correct(%) = 1, time = 0.0199627
+current: 4, Cost = 0.00206713, Correct(%) = 1, time = 0.025836
+current: 5, Cost = 0.00211709, Correct(%) = 1, time = 0.0324679
+current: 6, Cost = 0.00193793, Correct(%) = 1, time = 0.0386973
+current: 7, Cost = 0.00208869, Correct(%) = 1, time = 0.0464081
+current: 8, Cost = 0.0022871, Correct(%) = 1, time = 0.0520506
+current: 9, Cost = 0.00194939, Correct(%) = 1, time = 0.0575144
+current: 10, Cost = 0.00342169, Correct(%) = 1, time = 0.0629231
+current: 68, Correct(%) = 1, time = 0.0630261
+Dev start.
+Dev finished. Total time taken is: 0.0218249
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187669
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 68
+current: 1, Cost = 0.00279501, Correct(%) = 1, time = 0.00665556
+current: 2, Cost = 0.00295599, Correct(%) = 1, time = 0.0123769
+current: 3, Cost = 0.00386132, Correct(%) = 1, time = 0.0213616
+current: 4, Cost = 0.00246272, Correct(%) = 1, time = 0.0293929
+current: 5, Cost = 0.00336307, Correct(%) = 1, time = 0.0381063
+current: 6, Cost = 0.00340677, Correct(%) = 1, time = 0.0462823
+current: 7, Cost = 0.00319452, Correct(%) = 1, time = 0.0548737
+current: 8, Cost = 0.00306704, Correct(%) = 1, time = 0.064521
+current: 9, Cost = 0.00287996, Correct(%) = 1, time = 0.0726204
+current: 10, Cost = 0.00320675, Correct(%) = 1, time = 0.0808111
+current: 69, Correct(%) = 1, time = 0.0809243
+Dev start.
+Dev finished. Total time taken is: 0.0218084
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186675
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 69
+current: 1, Cost = 0.00319036, Correct(%) = 1, time = 0.00935004
+current: 2, Cost = 0.00226667, Correct(%) = 1, time = 0.0156453
+current: 3, Cost = 0.00358137, Correct(%) = 1, time = 0.025509
+current: 4, Cost = 0.00302215, Correct(%) = 1, time = 0.0326744
+current: 5, Cost = 0.00415337, Correct(%) = 1, time = 0.0399594
+current: 6, Cost = 0.00303514, Correct(%) = 1, time = 0.0495801
+current: 7, Cost = 0.002355, Correct(%) = 1, time = 0.0554239
+current: 8, Cost = 0.00243251, Correct(%) = 1, time = 0.0611295
+current: 9, Cost = 0.00283134, Correct(%) = 1, time = 0.0675131
+current: 10, Cost = 0.0029965, Correct(%) = 1, time = 0.0750396
+current: 70, Correct(%) = 1, time = 0.075153
+Dev start.
+Dev finished. Total time taken is: 0.021826
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186685
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 70
+current: 1, Cost = 0.00206266, Correct(%) = 1, time = 0.00752346
+current: 2, Cost = 0.00355217, Correct(%) = 1, time = 0.0164942
+current: 3, Cost = 0.00264342, Correct(%) = 1, time = 0.0230709
+current: 4, Cost = 0.00197806, Correct(%) = 1, time = 0.032134
+current: 5, Cost = 0.00332499, Correct(%) = 1, time = 0.0397499
+current: 6, Cost = 0.00189944, Correct(%) = 1, time = 0.0457748
+current: 7, Cost = 0.00289774, Correct(%) = 1, time = 0.0524467
+current: 8, Cost = 0.0025754, Correct(%) = 1, time = 0.0585113
+current: 9, Cost = 0.00249902, Correct(%) = 1, time = 0.0670295
+current: 10, Cost = 0.0027979, Correct(%) = 1, time = 0.0739409
+current: 71, Correct(%) = 1, time = 0.07405
+Dev start.
+Dev finished. Total time taken is: 0.0217879
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186897
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 71
+current: 1, Cost = 0.00305622, Correct(%) = 1, time = 0.00856571
+current: 2, Cost = 0.00356561, Correct(%) = 1, time = 0.0187271
+current: 3, Cost = 0.00291699, Correct(%) = 1, time = 0.0277212
+current: 4, Cost = 0.00248633, Correct(%) = 1, time = 0.0326448
+current: 5, Cost = 0.00287493, Correct(%) = 1, time = 0.0413336
+current: 6, Cost = 0.00307279, Correct(%) = 1, time = 0.0504018
+current: 7, Cost = 0.00267843, Correct(%) = 1, time = 0.0598175
+current: 8, Cost = 0.00299176, Correct(%) = 1, time = 0.0672625
+current: 9, Cost = 0.00246567, Correct(%) = 1, time = 0.0757551
+current: 10, Cost = 0.00160464, Correct(%) = 1, time = 0.080975
+current: 72, Correct(%) = 1, time = 0.0810768
+Dev start.
+Dev finished. Total time taken is: 0.0218417
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186674
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 72
+current: 1, Cost = 0.00295044, Correct(%) = 1, time = 0.00709731
+current: 2, Cost = 0.00309781, Correct(%) = 1, time = 0.0129038
+current: 3, Cost = 0.00248104, Correct(%) = 1, time = 0.020097
+current: 4, Cost = 0.00238066, Correct(%) = 1, time = 0.0270146
+current: 5, Cost = 0.00371453, Correct(%) = 1, time = 0.0369894
+current: 6, Cost = 0.002494, Correct(%) = 1, time = 0.0451421
+current: 7, Cost = 0.00237311, Correct(%) = 1, time = 0.0524806
+current: 8, Cost = 0.00141022, Correct(%) = 1, time = 0.057518
+current: 9, Cost = 0.00202109, Correct(%) = 1, time = 0.0683762
+current: 10, Cost = 0.00253305, Correct(%) = 1, time = 0.0744801
+current: 73, Correct(%) = 1, time = 0.0745879
+Dev start.
+Dev finished. Total time taken is: 0.0217982
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186765
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 73
+current: 1, Cost = 0.0032451, Correct(%) = 1, time = 0.00588099
+current: 2, Cost = 0.00191436, Correct(%) = 1, time = 0.0120971
+current: 3, Cost = 0.0031835, Correct(%) = 1, time = 0.0180134
+current: 4, Cost = 0.00278519, Correct(%) = 1, time = 0.0248137
+current: 5, Cost = 0.00266921, Correct(%) = 1, time = 0.0308805
+current: 6, Cost = 0.00249636, Correct(%) = 1, time = 0.0377032
+current: 7, Cost = 0.00298029, Correct(%) = 1, time = 0.0441407
+current: 8, Cost = 0.00250327, Correct(%) = 1, time = 0.0528082
+current: 9, Cost = 0.00309029, Correct(%) = 1, time = 0.0599746
+current: 10, Cost = 0.00247282, Correct(%) = 1, time = 0.0677631
+current: 74, Correct(%) = 1, time = 0.0678795
+Dev start.
+Dev finished. Total time taken is: 0.0218204
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186783
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 74
+current: 1, Cost = 0.00212069, Correct(%) = 1, time = 0.00675093
+current: 2, Cost = 0.00210987, Correct(%) = 1, time = 0.0118013
+current: 3, Cost = 0.00348066, Correct(%) = 1, time = 0.0204851
+current: 4, Cost = 0.00211823, Correct(%) = 1, time = 0.0256175
+current: 5, Cost = 0.00225606, Correct(%) = 1, time = 0.0306823
+current: 6, Cost = 0.00260844, Correct(%) = 1, time = 0.0356263
+current: 7, Cost = 0.00276492, Correct(%) = 1, time = 0.0429977
+current: 8, Cost = 0.00337875, Correct(%) = 1, time = 0.0533455
+current: 9, Cost = 0.00284595, Correct(%) = 1, time = 0.0617588
+current: 10, Cost = 0.00208217, Correct(%) = 1, time = 0.0691468
+current: 75, Correct(%) = 1, time = 0.0692619
+Dev start.
+Dev finished. Total time taken is: 0.0218019
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186599
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 75
+current: 1, Cost = 0.00212285, Correct(%) = 1, time = 0.00615694
+current: 2, Cost = 0.00279786, Correct(%) = 1, time = 0.013293
+current: 3, Cost = 0.00277929, Correct(%) = 1, time = 0.0219052
+current: 4, Cost = 0.00154301, Correct(%) = 1, time = 0.0289262
+current: 5, Cost = 0.00348912, Correct(%) = 1, time = 0.0367774
+current: 6, Cost = 0.00217989, Correct(%) = 1, time = 0.0454315
+current: 7, Cost = 0.00323495, Correct(%) = 1, time = 0.056334
+current: 8, Cost = 0.00264158, Correct(%) = 1, time = 0.0635035
+current: 9, Cost = 0.00240404, Correct(%) = 1, time = 0.072465
+current: 10, Cost = 0.00256866, Correct(%) = 1, time = 0.0811041
+current: 76, Correct(%) = 1, time = 0.0812259
+Dev start.
+Dev finished. Total time taken is: 0.0218262
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186849
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 76
+current: 1, Cost = 0.00311159, Correct(%) = 1, time = 0.00772808
+current: 2, Cost = 0.00252884, Correct(%) = 1, time = 0.01652
+current: 3, Cost = 0.00217306, Correct(%) = 1, time = 0.0247017
+current: 4, Cost = 0.00275389, Correct(%) = 1, time = 0.0332547
+current: 5, Cost = 0.00215913, Correct(%) = 1, time = 0.0411847
+current: 6, Cost = 0.00304587, Correct(%) = 1, time = 0.0497502
+current: 7, Cost = 0.00285427, Correct(%) = 1, time = 0.059007
+current: 8, Cost = 0.00280756, Correct(%) = 1, time = 0.066573
+current: 9, Cost = 0.00183714, Correct(%) = 1, time = 0.0724527
+current: 10, Cost = 0.00241332, Correct(%) = 1, time = 0.0788186
+current: 77, Correct(%) = 1, time = 0.0789264
+Dev start.
+Dev finished. Total time taken is: 0.0217926
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186658
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 77
+current: 1, Cost = 0.00295284, Correct(%) = 1, time = 0.00740254
+current: 2, Cost = 0.00206573, Correct(%) = 1, time = 0.014426
+current: 3, Cost = 0.00284423, Correct(%) = 1, time = 0.0234077
+current: 4, Cost = 0.00296731, Correct(%) = 1, time = 0.0303724
+current: 5, Cost = 0.00218085, Correct(%) = 1, time = 0.0374452
+current: 6, Cost = 0.00319315, Correct(%) = 1, time = 0.0438924
+current: 7, Cost = 0.00219755, Correct(%) = 1, time = 0.0501318
+current: 8, Cost = 0.00197779, Correct(%) = 1, time = 0.058789
+current: 9, Cost = 0.00214476, Correct(%) = 1, time = 0.0663448
+current: 10, Cost = 0.00187405, Correct(%) = 1, time = 0.0746613
+current: 78, Correct(%) = 1, time = 0.0747801
+Dev start.
+Dev finished. Total time taken is: 0.0221423
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0188682
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 78
+current: 1, Cost = 0.00153793, Correct(%) = 1, time = 0.0056322
+current: 2, Cost = 0.00299675, Correct(%) = 1, time = 0.0117165
+current: 3, Cost = 0.0028714, Correct(%) = 1, time = 0.0172159
+current: 4, Cost = 0.0029208, Correct(%) = 1, time = 0.0257916
+current: 5, Cost = 0.00177824, Correct(%) = 1, time = 0.0336232
+current: 6, Cost = 0.00213566, Correct(%) = 1, time = 0.0425536
+current: 7, Cost = 0.00248427, Correct(%) = 1, time = 0.0495681
+current: 8, Cost = 0.00258719, Correct(%) = 1, time = 0.0588964
+current: 9, Cost = 0.00163383, Correct(%) = 1, time = 0.0639404
+current: 10, Cost = 0.00188757, Correct(%) = 1, time = 0.0695375
+current: 79, Correct(%) = 1, time = 0.069643
+Dev start.
+Dev finished. Total time taken is: 0.021779
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186817
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 79
+current: 1, Cost = 0.00303087, Correct(%) = 1, time = 0.0074418
+current: 2, Cost = 0.00162263, Correct(%) = 1, time = 0.0134297
+current: 3, Cost = 0.00207212, Correct(%) = 1, time = 0.0228067
+current: 4, Cost = 0.00331791, Correct(%) = 1, time = 0.0315142
+current: 5, Cost = 0.00167764, Correct(%) = 1, time = 0.0383711
+current: 6, Cost = 0.0025898, Correct(%) = 1, time = 0.0462717
+current: 7, Cost = 0.00179497, Correct(%) = 1, time = 0.0532362
+current: 8, Cost = 0.00326668, Correct(%) = 1, time = 0.0636952
+current: 9, Cost = 0.00286773, Correct(%) = 1, time = 0.0731368
+current: 10, Cost = 0.00207634, Correct(%) = 1, time = 0.0803237
+current: 80, Correct(%) = 1, time = 0.0804344
+Dev start.
+Dev finished. Total time taken is: 0.0218214
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186959
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 80
+current: 1, Cost = 0.00155545, Correct(%) = 1, time = 0.00596391
+current: 2, Cost = 0.00181833, Correct(%) = 1, time = 0.0116266
+current: 3, Cost = 0.00206312, Correct(%) = 1, time = 0.0192818
+current: 4, Cost = 0.00210858, Correct(%) = 1, time = 0.026274
+current: 5, Cost = 0.00229523, Correct(%) = 1, time = 0.0331797
+current: 6, Cost = 0.00184918, Correct(%) = 1, time = 0.0414591
+current: 7, Cost = 0.00258441, Correct(%) = 1, time = 0.0489939
+current: 8, Cost = 0.0011682, Correct(%) = 1, time = 0.0552971
+current: 9, Cost = 0.00193915, Correct(%) = 1, time = 0.0629346
+current: 10, Cost = 0.00239855, Correct(%) = 1, time = 0.0714483
+current: 81, Correct(%) = 1, time = 0.0715706
+Dev start.
+Dev finished. Total time taken is: 0.0218689
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187287
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 81
+current: 1, Cost = 0.00175729, Correct(%) = 1, time = 0.00469844
+current: 2, Cost = 0.00225378, Correct(%) = 1, time = 0.0107372
+current: 3, Cost = 0.0038769, Correct(%) = 1, time = 0.0188212
+current: 4, Cost = 0.0022014, Correct(%) = 1, time = 0.0256768
+current: 5, Cost = 0.00179158, Correct(%) = 1, time = 0.0316246
+current: 6, Cost = 0.00216285, Correct(%) = 1, time = 0.0374483
+current: 7, Cost = 0.00254014, Correct(%) = 1, time = 0.0426307
+current: 8, Cost = 0.00217162, Correct(%) = 1, time = 0.0512329
+current: 9, Cost = 0.0023354, Correct(%) = 1, time = 0.0600586
+current: 10, Cost = 0.00223973, Correct(%) = 1, time = 0.0663813
+current: 82, Correct(%) = 1, time = 0.0664907
+Dev start.
+Dev finished. Total time taken is: 0.0217948
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186861
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 82
+current: 1, Cost = 0.00211183, Correct(%) = 1, time = 0.00765791
+current: 2, Cost = 0.00226023, Correct(%) = 1, time = 0.0141585
+current: 3, Cost = 0.00253696, Correct(%) = 1, time = 0.0248528
+current: 4, Cost = 0.00239334, Correct(%) = 1, time = 0.0302841
+current: 5, Cost = 0.00289573, Correct(%) = 1, time = 0.0408798
+current: 6, Cost = 0.00283549, Correct(%) = 1, time = 0.0481116
+current: 7, Cost = 0.00151271, Correct(%) = 1, time = 0.0527664
+current: 8, Cost = 0.00171479, Correct(%) = 1, time = 0.0576149
+current: 9, Cost = 0.00175857, Correct(%) = 1, time = 0.0642061
+current: 10, Cost = 0.00248787, Correct(%) = 1, time = 0.072802
+current: 83, Correct(%) = 1, time = 0.0729224
+Dev start.
+Dev finished. Total time taken is: 0.0218298
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186904
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 83
+current: 1, Cost = 0.00150869, Correct(%) = 1, time = 0.00741422
+current: 2, Cost = 0.00199392, Correct(%) = 1, time = 0.0146511
+current: 3, Cost = 0.00273117, Correct(%) = 1, time = 0.0223306
+current: 4, Cost = 0.00158069, Correct(%) = 1, time = 0.0287588
+current: 5, Cost = 0.00127267, Correct(%) = 1, time = 0.0351915
+current: 6, Cost = 0.0024586, Correct(%) = 1, time = 0.043781
+current: 7, Cost = 0.00252409, Correct(%) = 1, time = 0.052499
+current: 8, Cost = 0.00161847, Correct(%) = 1, time = 0.0601442
+current: 9, Cost = 0.00229291, Correct(%) = 1, time = 0.0668486
+current: 10, Cost = 0.00246255, Correct(%) = 1, time = 0.0745689
+current: 84, Correct(%) = 1, time = 0.0746822
+Dev start.
+Dev finished. Total time taken is: 0.0218325
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186752
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 84
+current: 1, Cost = 0.00254416, Correct(%) = 1, time = 0.00840576
+current: 2, Cost = 0.00195359, Correct(%) = 1, time = 0.0157859
+current: 3, Cost = 0.00192461, Correct(%) = 1, time = 0.0254568
+current: 4, Cost = 0.00171266, Correct(%) = 1, time = 0.0307868
+current: 5, Cost = 0.0031619, Correct(%) = 1, time = 0.0394243
+current: 6, Cost = 0.00198687, Correct(%) = 1, time = 0.0487851
+current: 7, Cost = 0.00273112, Correct(%) = 1, time = 0.0587805
+current: 8, Cost = 0.00172533, Correct(%) = 1, time = 0.0647401
+current: 9, Cost = 0.00257016, Correct(%) = 1, time = 0.0711838
+current: 10, Cost = 0.00174594, Correct(%) = 1, time = 0.0776281
+current: 85, Correct(%) = 1, time = 0.0777363
+Dev start.
+Dev finished. Total time taken is: 0.0218241
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186731
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 85
+current: 1, Cost = 0.00260842, Correct(%) = 1, time = 0.0072827
+current: 2, Cost = 0.00170896, Correct(%) = 1, time = 0.0180326
+current: 3, Cost = 0.00110871, Correct(%) = 1, time = 0.0231935
+current: 4, Cost = 0.00192637, Correct(%) = 1, time = 0.0317912
+current: 5, Cost = 0.00174212, Correct(%) = 1, time = 0.0387408
+current: 6, Cost = 0.00232675, Correct(%) = 1, time = 0.0457531
+current: 7, Cost = 0.00229337, Correct(%) = 1, time = 0.0548512
+current: 8, Cost = 0.00230226, Correct(%) = 1, time = 0.0617349
+current: 9, Cost = 0.0011749, Correct(%) = 1, time = 0.0678821
+current: 10, Cost = 0.00230308, Correct(%) = 1, time = 0.0748713
+current: 86, Correct(%) = 1, time = 0.0749833
+Dev start.
+Dev finished. Total time taken is: 0.0217959
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018698
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 86
+current: 1, Cost = 0.00172823, Correct(%) = 1, time = 0.00721309
+current: 2, Cost = 0.00229634, Correct(%) = 1, time = 0.0138581
+current: 3, Cost = 0.00204388, Correct(%) = 1, time = 0.0209094
+current: 4, Cost = 0.00193811, Correct(%) = 1, time = 0.0265105
+current: 5, Cost = 0.00153318, Correct(%) = 1, time = 0.0344828
+current: 6, Cost = 0.00145449, Correct(%) = 1, time = 0.0430245
+current: 7, Cost = 0.00204038, Correct(%) = 1, time = 0.0495332
+current: 8, Cost = 0.00271415, Correct(%) = 1, time = 0.0583203
+current: 9, Cost = 0.00205384, Correct(%) = 1, time = 0.065849
+current: 10, Cost = 0.00203231, Correct(%) = 1, time = 0.073851
+current: 87, Correct(%) = 1, time = 0.0739682
+Dev start.
+Dev finished. Total time taken is: 0.0219979
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186698
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 87
+current: 1, Cost = 0.00146629, Correct(%) = 1, time = 0.00456712
+current: 2, Cost = 0.0012838, Correct(%) = 1, time = 0.0110896
+current: 3, Cost = 0.00261661, Correct(%) = 1, time = 0.022487
+current: 4, Cost = 0.00196121, Correct(%) = 1, time = 0.029121
+current: 5, Cost = 0.00282769, Correct(%) = 1, time = 0.0361902
+current: 6, Cost = 0.00305829, Correct(%) = 1, time = 0.0458968
+current: 7, Cost = 0.00273947, Correct(%) = 1, time = 0.0560864
+current: 8, Cost = 0.00165722, Correct(%) = 1, time = 0.0620888
+current: 9, Cost = 0.00265862, Correct(%) = 1, time = 0.0708941
+current: 10, Cost = 0.00188823, Correct(%) = 1, time = 0.0778025
+current: 88, Correct(%) = 1, time = 0.0779165
+Dev start.
+Dev finished. Total time taken is: 0.0218762
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186633
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 88
+current: 1, Cost = 0.00107594, Correct(%) = 1, time = 0.0067565
+current: 2, Cost = 0.00212732, Correct(%) = 1, time = 0.0152483
+current: 3, Cost = 0.00248918, Correct(%) = 1, time = 0.0249973
+current: 4, Cost = 0.00253119, Correct(%) = 1, time = 0.0324002
+current: 5, Cost = 0.00174659, Correct(%) = 1, time = 0.0399472
+current: 6, Cost = 0.00196308, Correct(%) = 1, time = 0.0478743
+current: 7, Cost = 0.00239692, Correct(%) = 1, time = 0.0550804
+current: 8, Cost = 0.00194265, Correct(%) = 1, time = 0.0624323
+current: 9, Cost = 0.0023693, Correct(%) = 1, time = 0.0713673
+current: 10, Cost = 0.00204466, Correct(%) = 1, time = 0.0785402
+current: 89, Correct(%) = 1, time = 0.0786541
+Dev start.
+Dev finished. Total time taken is: 0.0218953
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186719
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 89
+current: 1, Cost = 0.00188293, Correct(%) = 1, time = 0.00981073
+current: 2, Cost = 0.00148518, Correct(%) = 1, time = 0.0182838
+current: 3, Cost = 0.00174757, Correct(%) = 1, time = 0.0255542
+current: 4, Cost = 0.00180069, Correct(%) = 1, time = 0.0332232
+current: 5, Cost = 0.00165703, Correct(%) = 1, time = 0.0417264
+current: 6, Cost = 0.00174503, Correct(%) = 1, time = 0.0475574
+current: 7, Cost = 0.00263579, Correct(%) = 1, time = 0.0562511
+current: 8, Cost = 0.00280788, Correct(%) = 1, time = 0.0659141
+current: 9, Cost = 0.00177723, Correct(%) = 1, time = 0.0719606
+current: 10, Cost = 0.00177333, Correct(%) = 1, time = 0.0796002
+current: 90, Correct(%) = 1, time = 0.079716
+Dev start.
+Dev finished. Total time taken is: 0.0218229
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186933
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 90
+current: 1, Cost = 0.00235181, Correct(%) = 1, time = 0.00860761
+current: 2, Cost = 0.00197789, Correct(%) = 1, time = 0.0162048
+current: 3, Cost = 0.00280264, Correct(%) = 1, time = 0.0249744
+current: 4, Cost = 0.00193783, Correct(%) = 1, time = 0.0320137
+current: 5, Cost = 0.00152084, Correct(%) = 1, time = 0.0373127
+current: 6, Cost = 0.00112812, Correct(%) = 1, time = 0.0446808
+current: 7, Cost = 0.00262393, Correct(%) = 1, time = 0.0526996
+current: 8, Cost = 0.00301978, Correct(%) = 1, time = 0.0588212
+current: 9, Cost = 0.00196878, Correct(%) = 1, time = 0.0656531
+current: 10, Cost = 0.00194043, Correct(%) = 1, time = 0.0737847
+current: 91, Correct(%) = 1, time = 0.0738993
+Dev start.
+Dev finished. Total time taken is: 0.0218364
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186778
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 91
+current: 1, Cost = 0.001585, Correct(%) = 1, time = 0.00644058
+current: 2, Cost = 0.00175408, Correct(%) = 1, time = 0.0119935
+current: 3, Cost = 0.00118143, Correct(%) = 1, time = 0.0182834
+current: 4, Cost = 0.0023515, Correct(%) = 1, time = 0.028779
+current: 5, Cost = 0.00206318, Correct(%) = 1, time = 0.0346037
+current: 6, Cost = 0.00212611, Correct(%) = 1, time = 0.0418173
+current: 7, Cost = 0.00149214, Correct(%) = 1, time = 0.0479928
+current: 8, Cost = 0.00127857, Correct(%) = 1, time = 0.0531123
+current: 9, Cost = 0.00188262, Correct(%) = 1, time = 0.0601399
+current: 10, Cost = 0.00187539, Correct(%) = 1, time = 0.0676942
+current: 92, Correct(%) = 1, time = 0.0678062
+Dev start.
+Dev finished. Total time taken is: 0.0218308
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.018707
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 92
+current: 1, Cost = 0.00153071, Correct(%) = 1, time = 0.00592179
+current: 2, Cost = 0.00240038, Correct(%) = 1, time = 0.0142669
+current: 3, Cost = 0.00189445, Correct(%) = 1, time = 0.0240123
+current: 4, Cost = 0.00191685, Correct(%) = 1, time = 0.0322864
+current: 5, Cost = 0.00266055, Correct(%) = 1, time = 0.0410779
+current: 6, Cost = 0.00124851, Correct(%) = 1, time = 0.0476603
+current: 7, Cost = 0.00168162, Correct(%) = 1, time = 0.0570456
+current: 8, Cost = 0.00214618, Correct(%) = 1, time = 0.0632139
+current: 9, Cost = 0.0014277, Correct(%) = 1, time = 0.0714588
+current: 10, Cost = 0.00231745, Correct(%) = 1, time = 0.0800017
+current: 93, Correct(%) = 1, time = 0.0801188
+Dev start.
+Dev finished. Total time taken is: 0.0218609
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186804
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 93
+current: 1, Cost = 0.00222536, Correct(%) = 1, time = 0.00603795
+current: 2, Cost = 0.00237727, Correct(%) = 1, time = 0.0137792
+current: 3, Cost = 0.00126353, Correct(%) = 1, time = 0.0207604
+current: 4, Cost = 0.00198218, Correct(%) = 1, time = 0.0283894
+current: 5, Cost = 0.00296316, Correct(%) = 1, time = 0.0373151
+current: 6, Cost = 0.00162292, Correct(%) = 1, time = 0.0441334
+current: 7, Cost = 0.00152887, Correct(%) = 1, time = 0.0516831
+current: 8, Cost = 0.00183782, Correct(%) = 1, time = 0.0574262
+current: 9, Cost = 0.00264877, Correct(%) = 1, time = 0.067931
+current: 10, Cost = 0.00190285, Correct(%) = 1, time = 0.0753552
+current: 94, Correct(%) = 1, time = 0.0754674
+Dev start.
+Dev finished. Total time taken is: 0.0217927
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186956
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 94
+current: 1, Cost = 0.00157575, Correct(%) = 1, time = 0.00520303
+current: 2, Cost = 0.0019624, Correct(%) = 1, time = 0.0143238
+current: 3, Cost = 0.00258585, Correct(%) = 1, time = 0.0226484
+current: 4, Cost = 0.00225166, Correct(%) = 1, time = 0.0321229
+current: 5, Cost = 0.00151597, Correct(%) = 1, time = 0.0403918
+current: 6, Cost = 0.00142477, Correct(%) = 1, time = 0.0465129
+current: 7, Cost = 0.00149667, Correct(%) = 1, time = 0.0513214
+current: 8, Cost = 0.00239425, Correct(%) = 1, time = 0.0591045
+current: 9, Cost = 0.00116875, Correct(%) = 1, time = 0.0681129
+current: 10, Cost = 0.00150862, Correct(%) = 1, time = 0.0762236
+current: 95, Correct(%) = 1, time = 0.0763402
+Dev start.
+Dev finished. Total time taken is: 0.0218056
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0187012
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 95
+current: 1, Cost = 0.00151293, Correct(%) = 1, time = 0.00842639
+current: 2, Cost = 0.00181168, Correct(%) = 1, time = 0.0166016
+current: 3, Cost = 0.00149412, Correct(%) = 1, time = 0.0237497
+current: 4, Cost = 0.00192236, Correct(%) = 1, time = 0.0293123
+current: 5, Cost = 0.00190879, Correct(%) = 1, time = 0.0363712
+current: 6, Cost = 0.00193641, Correct(%) = 1, time = 0.0447942
+current: 7, Cost = 0.00183306, Correct(%) = 1, time = 0.0537313
+current: 8, Cost = 0.00192318, Correct(%) = 1, time = 0.0613579
+current: 9, Cost = 0.00167884, Correct(%) = 1, time = 0.0669379
+current: 10, Cost = 0.00151685, Correct(%) = 1, time = 0.0730198
+current: 96, Correct(%) = 1, time = 0.073129
+Dev start.
+Dev finished. Total time taken is: 0.0217947
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186732
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 96
+current: 1, Cost = 0.00155197, Correct(%) = 1, time = 0.00646943
+current: 2, Cost = 0.00183385, Correct(%) = 1, time = 0.013689
+current: 3, Cost = 0.00135462, Correct(%) = 1, time = 0.0223196
+current: 4, Cost = 0.0017329, Correct(%) = 1, time = 0.0284667
+current: 5, Cost = 0.00127053, Correct(%) = 1, time = 0.0348042
+current: 6, Cost = 0.00220371, Correct(%) = 1, time = 0.0454516
+current: 7, Cost = 0.00147186, Correct(%) = 1, time = 0.0511662
+current: 8, Cost = 0.00252343, Correct(%) = 1, time = 0.0610464
+current: 9, Cost = 0.00174219, Correct(%) = 1, time = 0.0703092
+current: 10, Cost = 0.0017799, Correct(%) = 1, time = 0.0795322
+current: 97, Correct(%) = 1, time = 0.0796552
+Dev start.
+Dev finished. Total time taken is: 0.0220975
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186747
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 97
+current: 1, Cost = 0.00171241, Correct(%) = 1, time = 0.00614533
+current: 2, Cost = 0.00138782, Correct(%) = 1, time = 0.0130519
+current: 3, Cost = 0.00156453, Correct(%) = 1, time = 0.0207235
+current: 4, Cost = 0.0017342, Correct(%) = 1, time = 0.0280568
+current: 5, Cost = 0.00138423, Correct(%) = 1, time = 0.0364806
+current: 6, Cost = 0.00139854, Correct(%) = 1, time = 0.0434812
+current: 7, Cost = 0.00146495, Correct(%) = 1, time = 0.0528599
+current: 8, Cost = 0.0021091, Correct(%) = 1, time = 0.0618866
+current: 9, Cost = 0.00129297, Correct(%) = 1, time = 0.0695111
+current: 10, Cost = 0.00144173, Correct(%) = 1, time = 0.0772125
+current: 98, Correct(%) = 1, time = 0.0773291
+Dev start.
+Dev finished. Total time taken is: 0.0218012
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0188835
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 98
+current: 1, Cost = 0.00173093, Correct(%) = 1, time = 0.00570256
+current: 2, Cost = 0.0020137, Correct(%) = 1, time = 0.0117632
+current: 3, Cost = 0.00137354, Correct(%) = 1, time = 0.0190008
+current: 4, Cost = 0.00137522, Correct(%) = 1, time = 0.0275149
+current: 5, Cost = 0.00211578, Correct(%) = 1, time = 0.0368201
+current: 6, Cost = 0.00185277, Correct(%) = 1, time = 0.0451381
+current: 7, Cost = 0.00236162, Correct(%) = 1, time = 0.0540047
+current: 8, Cost = 0.00236885, Correct(%) = 1, time = 0.06176
+current: 9, Cost = 0.00161055, Correct(%) = 1, time = 0.0704945
+current: 10, Cost = 0.00189543, Correct(%) = 1, time = 0.0787869
+current: 99, Correct(%) = 1, time = 0.0789058
+Dev start.
+Dev finished. Total time taken is: 0.0218425
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186847
+test:
+Accuracy:	P=67/100=0.67
+##### Iteration 99
+current: 1, Cost = 0.00115871, Correct(%) = 1, time = 0.00571397
+current: 2, Cost = 0.00152763, Correct(%) = 1, time = 0.0120641
+current: 3, Cost = 0.00126584, Correct(%) = 1, time = 0.0191907
+current: 4, Cost = 0.00152484, Correct(%) = 1, time = 0.028789
+current: 5, Cost = 0.00162587, Correct(%) = 1, time = 0.0365875
+current: 6, Cost = 0.00128134, Correct(%) = 1, time = 0.0437129
+current: 7, Cost = 0.00116055, Correct(%) = 1, time = 0.0507739
+current: 8, Cost = 0.00168022, Correct(%) = 1, time = 0.0578816
+current: 9, Cost = 0.0020232, Correct(%) = 1, time = 0.063507
+current: 10, Cost = 0.00159849, Correct(%) = 1, time = 0.0694973
+current: 100, Correct(%) = 1, time = 0.0696003
+Dev start.
+Dev finished. Total time taken is: 0.0218003
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.0186664
+test:
+Accuracy:	P=67/100=0.67

@@ -29,7 +29,7 @@ class BucketNode : public Node {
         //Node::clearValue();
         loss.zeros();
         degree = 0;
-        if (drop_value > 0)drop_mask.ones();
+        if (drop_value > 0) mask.ones();
         parents.clear();
     }
 

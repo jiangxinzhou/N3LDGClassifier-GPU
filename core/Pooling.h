@@ -16,7 +16,11 @@
 
 class PoolNode : public Node {
   public:
-    vector<matrix> masks;
+#if USE_GPU
+    vector<gpu_matrix> masks;
+#else
+	  vector<cpu_matrix> masks;
+#endif
     vector<PNode> ins;
 
   public:
@@ -87,32 +91,35 @@ class PoolNode : public Node {
     inline void compute() {
         int nSize = ins.size();
         setMask();
-        val.zero();
-		
-		matrix t;
+        val.zeros();
+#if USE_GPU
+		gpu_matrix t;
+#else
+		cpu_matrix t;
+#endif
 		t.init(val.row, val.col);
 		for (int i = 0; i < nSize; ++i) {
 			t.multiply(masks[i], ins[i]->val);
-			val.self_add(t);
+			val.add(val, t);
 		}
-
-        /*for (int i = 0; i < nSize; ++i) {
+       /* for (int i = 0; i < nSize; ++i) {
             val.vec() += masks[i].vec() * ins[i]->val.vec();
         }*/
     }
 
     void backward() {
         int nSize = ins.size();
-		
-		matrix t;
+#if USE_GPU
+		gpu_matrix t;
+#else
+		cpu_matrix t;
+#endif
 		t.init(val.row, val.col);
-		for (int i = 0; i < nSize; ++i) {
+		for (int i = 0; i < nSize; i++) {
 			t.multiply(loss, masks[i]);
-			ins[i]->loss.self_add(t);
+			ins[i]->loss.add(ins[i]->loss, t);
 		}
-
-
-        /*for (int i = 0; i < nSize; i++) {
+       /* for (int i = 0; i < nSize; i++) {
             ins[i]->loss.vec() += loss.vec() * masks[i].vec();
         }*/
     }
@@ -128,19 +135,35 @@ class MaxPoolNode : public PoolNode {
   public:
     //Be careful that the row is the dim of input vector, and the col is the number of input vectors
     //Another point is that we change the input vectors directly.
-    void setMask() {
-        int nSize = ins.size();
-        for (int i = 0; i < nSize; ++i) {
+	  void setMask() {
+		  int nSize = ins.size();
+		  for (int i = 0; i < nSize; ++i) {
+			  masks[i].zeros();
+		  }
+#if USE_GPU
+		  vector<gpu_matrix> vals;
+#else
+		  vector<cpu_matrix> vals;
+#endif
+		  vals.resize(nSize);
+		  for (int i = 0; i < nSize; i++) {
+			  vals[i].init(ins[i]->val.row, ins[i]->val.col);
+			  vals[i] = ins[i]->val;
+		  }
+		  max_pooling_helper(vals, masks);
+ /*       for (int i = 0; i < nSize; ++i) {
             masks[i].zero();
         }
 
-		vector<matrix> in_matrix(nSize);
-
-		for (int i = 0; i < in_matrix.size(); i++) {
-			in_matrix[i].init(ins[i]->val.row, ins[i]->val.col);
-		}
-
-		max_pooling_helper(in_matrix, masks);
+        for (int idx = 0; idx < dim; idx++) {
+            int maxIndex = -1;
+            for (int i = 0; i < nSize; ++i) {
+                if (maxIndex == -1 || ins[i]->val[idx] > ins[maxIndex]->val[idx]) {
+                    maxIndex = i;
+                }
+            }
+            masks[maxIndex][idx] = 1.0;
+        }*/
     }
 
 };
@@ -177,16 +200,28 @@ class MinPoolNode : public PoolNode {
     void setMask() {
         int nSize = ins.size();
         for (int i = 0; i < nSize; ++i) {
-            masks[i].zero();
+            masks[i].zeros();
         }
 
-		vector<matrix> in_matrix(nSize);
-		for (int i = 0; i < in_matrix.size(); i++) {
-			in_matrix[i].init(ins[i]->val.row, ins[i]->val.col);
-			in_matrix[i] = ins[i]->val;
+#if USE_GPU
+		vector<gpu_matrix> vals(nSize);
+#else
+		vector<cpu_matrix> vals(nSize);
+#endif
+		for (int i = 0; i < nSize; i++) {
+			vals[i].init(ins[i]->val.row, ins[i]->val.col);
+			vals[i] = ins[i]->val;
 		}
-
-		min_pooling_helper(in_matrix, masks);
+		min_pooling_helper(vals, masks);
+        //for (int idx = 0; idx < dim; idx++) {
+        //    int minIndex = -1;
+        //    for (int i = 0; i < nSize; ++i) {
+        //        if (minIndex == -1 || ins[i]->val[idx] < ins[minIndex]->val[idx]) {
+        //            minIndex = i;
+        //        }
+        //    }
+        //    masks[minIndex][idx] = 1.0;
+        //}
     }
 
 };
@@ -203,9 +238,10 @@ class AvgPoolNode : public PoolNode {
     //Be careful that the row is the dim of input vector, and the col is the number of input vectors
     //Another point is that we change the input vectors directly.
     void setMask() {
-		int nSize = ins.size();
+        int nSize = ins.size();
 		for (int i = 0; i < nSize; ++i) {
-			masks[i].assign(1.0 / (dtype)nSize);
+			masks[i].assign((dtype)(1.0 / nSize));
+			/*masks[i] = 1.0 / nSize;*/
 		}
     }
 };

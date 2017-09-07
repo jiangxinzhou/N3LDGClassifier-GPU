@@ -1,0 +1,154 @@
+wordCutOff = 0
+featCutOff = 0
+initRange = 0.01
+maxIter = 100
+batchSize = 10
+adaEps = 1e-06
+adaAlpha = 0.01
+regParameter = 1e-08
+dropProb = -1
+hiddenSize = 50
+wordEmbSize = 50
+wordcontext = 2
+wordEmbFineTune = 1
+cnnLayerSize = 2
+verboseIter = 10
+saveItermediate = 1
+train = 0
+maxInstance = 100
+outBest = .debug
+seg = 0
+wordFile = 
+
+instance num: 100
+
+instance num: 100
+
+instance num: 100
+Creating Alphabet...
+10 20 30 40 50 60 70 80 90 100 100 
+Label num: 2
+Sparse Feature num: 0
+Word num: 776
+Adding word Alphabet...
+10 20 30 40 50 60 70 80 90 100 100 
+Adding word Alphabet...
+10 20 30 40 50 60 70 80 90 100 100 
+10 20 30 40 50 60 70 80 90 100 100 
+10 20 30 40 50 60 70 80 90 100 100 
+10 20 30 40 50 60 70 80 90 100 100 
+##### Iteration 0
+current: 10, Cost = 0.609196, Correct(%) = 0.66, time = 1.76748
+current: 1, Correct(%) = 0.66, time = 1.76893
+Dev start.
+Dev finished. Total time taken is: 0.6196
+dev:
+Accuracy:	P=79/100=0.79
+Test start.
+Test finished. Total time taken is: 0.524644
+test:
+Accuracy:	P=57/100=0.57
+Exceeds best previous DIS of 0. Saving model file..
+open output file error
+##### Iteration 1
+current: 10, Cost = 0.531161, Correct(%) = 0.89, time = 1.86079
+current: 2, Correct(%) = 0.89, time = 1.86219
+Dev start.
+Dev finished. Total time taken is: 0.61794
+dev:
+Accuracy:	P=85/100=0.85
+Test start.
+Test finished. Total time taken is: 0.523195
+test:
+Accuracy:	P=58/100=0.58
+Exceeds best previous DIS of 0.79. Saving model file..
+open output file error
+##### Iteration 2
+current: 10, Cost = 0.494516, Correct(%) = 0.89, time = 1.72674
+current: 3, Correct(%) = 0.89, time = 1.72845
+Dev start.
+Dev finished. Total time taken is: 0.616344
+dev:
+Accuracy:	P=94/100=0.94
+Test start.
+Test finished. Total time taken is: 0.523102
+test:
+Accuracy:	P=59/100=0.59
+Exceeds best previous DIS of 0.85. Saving model file..
+open output file error
+##### Iteration 3
+current: 10, Cost = 0.466245, Correct(%) = 0.95, time = 1.86658
+current: 4, Correct(%) = 0.95, time = 1.86821
+Dev start.
+Dev finished. Total time taken is: 0.613063
+dev:
+Accuracy:	P=94/100=0.94
+Test start.
+Test finished. Total time taken is: 0.521768
+test:
+Accuracy:	P=56/100=0.56
+##### Iteration 4
+current: 10, Cost = 0.475635, Correct(%) = 0.96, time = 1.79271
+current: 5, Correct(%) = 0.96, time = 1.79413
+Dev start.
+Dev finished. Total time taken is: 0.614
+dev:
+Accuracy:	P=97/100=0.97
+Test start.
+Test finished. Total time taken is: 0.520641
+test:
+Accuracy:	P=63/100=0.63
+Exceeds best previous DIS of 0.94. Saving model file..
+open output file error
+##### Iteration 5
+current: 10, Cost = 0.440341, Correct(%) = 0.99, time = 1.69725
+current: 6, Correct(%) = 0.99, time = 1.69869
+Dev start.
+Dev finished. Total time taken is: 0.611173
+dev:
+Accuracy:	P=99/100=0.99
+Test start.
+Test finished. Total time taken is: 0.523287
+test:
+Accuracy:	P=63/100=0.63
+Exceeds best previous DIS of 0.97. Saving model file..
+open output file error
+##### Iteration 6
+current: 10, Cost = 0.442604, Correct(%) = 0.98, time = 1.87405
+current: 7, Correct(%) = 0.98, time = 1.87584
+Dev start.
+Dev finished. Total time taken is: 0.613322
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.523625
+test:
+Accuracy:	P=64/100=0.64
+Exceeds best previous DIS of 0.99. Saving model file..
+open output file error
+##### Iteration 7
+current: 10, Cost = 0.411713, Correct(%) = 1, time = 1.58267
+current: 8, Correct(%) = 1, time = 1.58384
+Dev start.
+Dev finished. Total time taken is: 0.613224
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.531501
+test:
+Accuracy:	P=63/100=0.63
+##### Iteration 8
+current: 10, Cost = 0.396603, Correct(%) = 1, time = 1.64219
+current: 9, Correct(%) = 1, time = 1.64352
+Dev start.
+Dev finished. Total time taken is: 0.610887
+dev:
+Accuracy:	P=100/100=1
+Test start.
+Test finished. Total time taken is: 0.5208
+test:
+Accuracy:	P=65/100=0.65
+##### Iteration 9
+current: 10, Cost = 0.360703, Correct(%) = 1, time = 1.76889
+current: 10, Correct(%) = 1, time = 1.77034
+Dev start.

@@ -8,10 +8,6 @@
 #ifndef SRC_Driver_H_
 #define SRC_Driver_H_
 
-#if USE_GPU 
-#include "gpu_matrix.h"
-#endif
-
 #include <iostream>
 #include "ComputionGraph.h"
 
@@ -20,15 +16,11 @@
 class Driver {
   public:
     Driver() {
-#if USE_GPU
-		InitGPU(DEVICE::getInstance(), 1000000000, 0);
-#endif
+
     }
 
     ~Driver() {
-#if USE_GPU
-		FinalizeGPU();
-#endif
+
     }
 
   public:

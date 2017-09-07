@@ -165,14 +165,20 @@ public:
 	void special_add1(int index, const gpu_matrix &a, const gpu_matrix &b);
 	
 	void special_add2(int index, const gpu_matrix &a, const gpu_matrix &b, const gpu_matrix &c, dtype  alpha, dtype eps);
+
+	void special_add(const gpu_matrix &a, dtype m, const gpu_matrix &b, dtype n);
+
+	void special_add1(const gpu_matrix &a, const gpu_matrix &b);
+
+	void special_add2(const gpu_matrix &a, const gpu_matrix &b, const gpu_matrix &c, dtype  alpha, dtype eps);
 	
-	void save(std::ostream &os) const {
+	void save(std::ofstream &os) const {
 		dtype *tv = new dtype[size];
 		CCE(cudaMemcpy(tv, v, sizeof(dtype) * size, cudaMemcpyDeviceToHost));
 		os << size << " " << row << " " << col << std::endl;
-		os << v[0];
+		os << tv[0];
 		for (int idx = 1; idx < size; idx++) {
-			os << " " << v[idx];
+			os << " " << tv[idx];
 		}
 		os << std::endl;
 		delete[] tv;

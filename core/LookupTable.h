@@ -128,7 +128,7 @@ class LookupTable {
                     dtype curValue = atof(vecInfo[idy + 1].c_str());
                     sum[idy] += curValue;
 					E.val.self_add(wordId, idy, curValue);
-                    /*E.val[wordId][idy] += curValue;*/
+                   /* E.val[wordId][idy] += curValue;*/
                 }
             }
         }
@@ -252,7 +252,7 @@ class LookupNode : public Node {
             param->E.value(xid, val);
         } else {
             if (param->bFineTune)std::cout << "Caution: unknown words are not modeled !" << std::endl;
-            val.zero();
+            val.zeros();
         }
     }
 

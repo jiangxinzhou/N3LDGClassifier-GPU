@@ -73,7 +73,7 @@ class ModelUpdate {
         update();
     }
 
- /*   inline void updateAdam() {
+   /* inline void updateAdam() {
         for (int idx = 0; idx < _params.size(); idx++) {
             _params[idx]->updateAdam(_belta1, _belta2, _alpha, _reg, _eps);
             _params[idx]->clearGrad();

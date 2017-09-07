@@ -1,4 +1,4 @@
-# Install script for directory: /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix
+# Install script for directory: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

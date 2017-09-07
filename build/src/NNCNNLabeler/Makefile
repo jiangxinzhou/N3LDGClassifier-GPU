@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /data/xzjiang/GPU-study/N3LDG-classifier-gpu
+CMAKE_SOURCE_DIR = /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build
+CMAKE_BINARY_DIR = /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/src/NNCNNLabeler/CMakeFiles/progress.marks
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles 0
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/src/NNCNNLabeler/CMakeFiles/progress.marks
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/clean
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/preinstall
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/preinstall
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/rule:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/rule
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f CMakeFiles/Makefile2 src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/rule
 .PHONY : src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ NNCNNLabeler: src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/rule
 
 # fast build rule for target.
 NNCNNLabeler/fast:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build
 .PHONY : NNCNNLabeler/fast
 
 NNCNNLabeler.o: NNCNNLabeler.cpp.o
@@ -131,7 +131,7 @@ NNCNNLabeler.o: NNCNNLabeler.cpp.o
 
 # target to build an object file
 NNCNNLabeler.cpp.o:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.o
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.o
 .PHONY : NNCNNLabeler.cpp.o
 
 NNCNNLabeler.i: NNCNNLabeler.cpp.i
@@ -140,7 +140,7 @@ NNCNNLabeler.i: NNCNNLabeler.cpp.i
 
 # target to preprocess a source file
 NNCNNLabeler.cpp.i:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.i
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.i
 .PHONY : NNCNNLabeler.cpp.i
 
 NNCNNLabeler.s: NNCNNLabeler.cpp.s
@@ -149,7 +149,7 @@ NNCNNLabeler.s: NNCNNLabeler.cpp.s
 
 # target to generate assembly for a file
 NNCNNLabeler.cpp.s:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.s
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(MAKE) -f src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/build.make src/NNCNNLabeler/CMakeFiles/NNCNNLabeler.dir/NNCNNLabeler.cpp.s
 .PHONY : NNCNNLabeler.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

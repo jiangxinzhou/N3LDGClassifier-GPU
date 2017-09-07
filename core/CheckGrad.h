@@ -38,14 +38,13 @@ class CheckGrad {
 			orginValue = _params[i]->val.get(idx, idy);
             /*orginValue = _params[i]->val[idx][idy];*/
 			_params[i]->val.assign(idx, idy, orginValue + 0.001);
-           /* _params[i]->val[idx][idy] = orginValue + 0.001;*/
+            /*_params[i]->val[idx][idy] = orginValue + 0.001;*/
             lossAdd = 0.0;
             for (int j = 0; j < examples.size(); j++) {
                 lossAdd += classifier->cost(examples[j]);
             }
-
 			_params[i]->val.assign(idx, idy, orginValue - 0.001);
-           /* _params[i]->val[idx][idy] = orginValue - 0.001;*/
+            /*_params[i]->val[idx][idy] = orginValue - 0.001;*/
             lossPlus = 0.0;
             for (int j = 0; j < examples.size(); j++) {
                 lossPlus += classifier->cost(examples[j]);
@@ -53,9 +52,8 @@ class CheckGrad {
 
             mockGrad = (lossAdd - lossPlus) / 0.002;
             mockGrad = mockGrad / examples.size();
-
 			computeGrad = _params[i]->grad.get(idx, idy);
-           /* computeGrad = _params[i]->grad[idx][idy];*/
+            /*computeGrad = _params[i]->grad[idx][idy];*/
 
 
             printf("%s, Checking gradient for %s[%d][%d]:\t", description.c_str(),

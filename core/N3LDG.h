@@ -1,46 +1,37 @@
 #ifndef N3LDG_ALL
 #define N3LDG_ALL
 
-
-#if USE_GPU
-	#include "cpu_matrix.h"
-	#include "gpu_matrix.h"
-	typedef gpu_matrix matrix;
-#else
-	#include "cpu_matrix.h"
-	typedef  cpu_matrix matrix;
-#endif
-
 #include "Graph.h"
 #include "Node.h"
 #include "Alphabet.h"
 #include "NRMat.h"
 #include "MyLib.h"
 #include "Metric.h"
-
-
-
+//#include "AtomicOP.h"
+//#include "PMultiOP.h"
+//#include "PAddOP.h"
 #include "BucketOP.h"
 #include "LookupTable.h"
 #include "Param.h"
 #include "SparseParam.h"
-
+//#include "APParam.h"
 #include "ModelUpdate.h"
 #include "CheckGrad.h"
 #include "Pooling.h"
 #include "Concat.h"
 #include "Windowlized.h"
 #include "UniOP.h"
-
-
-
-
+//#include "BiOP.h"
+//#include "TriOP.h"
+//#include "FourOP.h"
+//#include "Biaffine.h"
+//#include "LSTM1.h"
 #include "SoftMaxLoss.h"
-
-
-
-
-
+//#include "APCOP.h"
+//#include "APOP.h"
+//#include "SparseCOP.h"
+//#include "SparseOP.h"
+//#include "TransferOP.h"
 
 
 #endif

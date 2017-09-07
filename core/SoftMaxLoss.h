@@ -24,17 +24,16 @@ class SoftMaxLoss {
             if (answer[i] >= 0) {
 				if (optLabel < 0 || x->val.get(0, i) > x->val.get(0, optLabel))
 					optLabel = i;
-               /* if (optLabel < 0 || x->val.v[i] > x->val.v[optLabel])
+                /*if (optLabel < 0 || x->val[i] > x->val[optLabel])
                     optLabel = i;*/
             }
         }
 
-        dtype sum1 = 0, sum2 = 0, maxScore = x->val.get(0, optLabel);
+		dtype sum1 = 0, sum2 = 0, maxScore = x->val.get(0, optLabel);
         for (int i = 0; i < nDim; ++i) {
             scores[i] = -1e10;
             if (answer[i] >= 0) {
-				scores[i] = exp(x->val.get(0, i) - maxScore);
-             /*   scores[i] = exp(x->val.v[i] - maxScore);*/
+                scores[i] = exp(x->val.get(0, i) - maxScore);
                 if (answer[i] == 1)
                     sum1 += scores[i];
                 sum2 += scores[i];
@@ -48,10 +47,9 @@ class SoftMaxLoss {
         for (int i = 0; i < nDim; ++i) {
             if (answer[i] >= 0) {
 				x->loss.assign(0, i, (scores[i] / sum2 - answer[i]) / batchsize);
-               /* x->loss.v[i] = (scores[i] / sum2 - answer[i]) / batchsize;*/
+                /*x->loss[i] = (scores[i] / sum2 - answer[i]) / batchsize;*/
             }
         }
-
         return cost;
     }
 
@@ -60,10 +58,8 @@ class SoftMaxLoss {
 
         int optLabel = -1;
         for (int i = 0; i < nDim; ++i) {
-			if (optLabel < 0 || x->val.get(0, i) >  x->val.get(0, optLabel))
-				optLabel = i;
-           /* if (optLabel < 0 || x->val.v[i] >  x->val.v[optLabel])
-                optLabel = i;*/
+            if (optLabel < 0 || x->val.get(0, i) >  x->val.get(0, optLabel) )
+                optLabel = i;
         }
 
         dtype prob = 0.0;
@@ -71,8 +67,7 @@ class SoftMaxLoss {
         NRVec<dtype> scores(nDim);
         dtype maxScore = x->val.get(0, optLabel);
         for (int i = 0; i < nDim; ++i) {
-			scores[i] = exp(x->val.get(0, i) - maxScore);
-          /*  scores[i] = exp(x->val.v[i] - maxScore);*/
+            scores[i] = exp(x->val.get(0, i) - maxScore);
             sum += scores[i];
         }
         prob = scores[optLabel] / sum;
@@ -95,10 +90,8 @@ class SoftMaxLoss {
         int optLabel = -1;
         for (int i = 0; i < nDim; ++i) {
             if (answer[i] >= 0) {
-				if (optLabel < 0 || x->val.get(0, i) > x->val.get(0, optLabel))
-					optLabel = i;
-                /*if (optLabel < 0 || x->val.v[i] > x->val.v[optLabel])
-                    optLabel = i;*/
+                if (optLabel < 0 || x->val.get(0, i) > x->val.get(0, optLabel))
+                    optLabel = i;
             }
         }
 
@@ -106,8 +99,7 @@ class SoftMaxLoss {
         for (int i = 0; i < nDim; ++i) {
             scores[i] = -1e10;
             if (answer[i] >= 0) {
-				scores[i] = exp(x->val.get(0, i) - maxScore);
-             /*   scores[i] = exp(x->val.v[i] - maxScore);*/
+                scores[i] = exp(x->val.get(0, i) - maxScore);
                 if (answer[i] == 1)
                     sum1 += scores[i];
                 sum2 += scores[i];
@@ -116,7 +108,6 @@ class SoftMaxLoss {
         cost += (log(sum2) - log(sum1)) / batchsize;
         return cost;
     }
-
 };
 
 

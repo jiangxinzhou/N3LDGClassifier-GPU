@@ -40,14 +40,14 @@ cpu_matrix::cpu_matrix(dtype* v_data, size_t r, size_t c){
 
 #if USE_GPU
 cpu_matrix& cpu_matrix::operator = (const gpu_matrix &rhs){
-		resize(rhs.row, rhs.col);
-		CCE(cudaMemcpy(v, rhs.v, row * col * sizeof(dtype), cudaMemcpyDeviceToHost));
-		return *this;
+	assert(row == rhs.row && col == rhs.col && size == rhs.size);
+	CCE(cudaMemcpy(v, rhs.v, row * col * sizeof(dtype), cudaMemcpyDeviceToHost));
+	return *this;
 }
 #endif
 
 cpu_matrix& cpu_matrix::operator = (const cpu_matrix &rhs){
-	resize(rhs.row, rhs.col);
+	assert(row == rhs.row && col == rhs.col && size == rhs.size);
 	memcpy(v, rhs.v, sizeof(dtype) * size);
 	return *this;
 }

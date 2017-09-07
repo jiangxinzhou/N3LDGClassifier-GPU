@@ -220,7 +220,7 @@ void Classifier::train(const string& trainFile, const string& devFile, const str
 			auto t_start_train = std::chrono::high_resolution_clock::now();
 			eval.reset();
 			bEvaluate = true;
-			random_shuffle(indexes.begin(), indexes.end());
+			//random_shuffle(indexes.begin(), indexes.end());
 			std::cout << "random: " << indexes[0] << ", " << indexes[indexes.size() - 1] << std::endl;
 			for (int idy = 0; idy < inputSize; idy++) {
 				subExamples.clear();
@@ -234,8 +234,7 @@ void Classifier::train(const string& trainFile, const string& devFile, const str
 					std::cout << "current: " << idy + 1 << ", Cost = " << cost << ", Correct(%) = " << eval.getAccuracy()
 						<< ", time = " << std::chrono::duration<double>(t_end_train - t_start_train).count() << std::endl;
 				}
-
-				//m_driver.checkgrad(subExamples, iter * inputSize + idy);
+				m_driver.checkgrad(subExamples, iter * inputSize + idy);
 				m_driver.updateModel();
 			}
 			{
@@ -443,7 +442,10 @@ void Classifier::writeModelFile(const string& outputModelFile) {
 
 
 int main(int argc, char* argv[]) {
-
+#if USE_GPU
+		InitGPU(DEVICE::getInstance(), 10000000000, 7);
+#endif
+{
 	std::string trainFile = "", devFile = "", testFile = "", modelFile = "", optionFile = "";
 	std::string outputFile = "";
 	bool bTrain = false;
@@ -471,3 +473,8 @@ int main(int argc, char* argv[]) {
 	//test(argv);
 	//ah.write_values(std::cout);
 }
+#if USE_GPU
+		FinalizeGPU();
+#endif
+}
+

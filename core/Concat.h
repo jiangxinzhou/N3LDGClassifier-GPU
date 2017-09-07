@@ -154,8 +154,8 @@ class ConcatNode : public Node {
         int offset = 0;
         for (int i = 0; i < nSize; ++i) {
 			val.big_copy_small(offset, ins[i]->val);
-           /* for (int idx = 0; idx < inDims[i]; idx++) {
-                val.v[offset + idx] = ins[i]->val.v[idx];
+            /*for (int idx = 0; idx < inDims[i]; idx++) {
+                val[offset + idx] = ins[i]->val[idx];
             }*/
             offset += inDims[i];
         }
@@ -167,8 +167,8 @@ class ConcatNode : public Node {
         int offset = 0;
         for (int i = 0; i < nSize; ++i) {
 			ins[i]->loss.short_add_long(ins[i]->loss, loss, offset);
-            /*for (int idx = 0; idx < inDims[i]; idx++) {
-                ins[i]->loss.v[idx] += loss.v[offset + idx];
+           /* for (int idx = 0; idx < inDims[i]; idx++) {
+                ins[i]->loss[idx] += loss[offset + idx];
             }*/
             offset += inDims[i];
         }

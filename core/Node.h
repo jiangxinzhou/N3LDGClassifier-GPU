@@ -13,87 +13,100 @@
 *      Author: mszhang
 */
 
+#include "cpu_matrix.h"
+
+#if USE_GPU
+	#include "gpu_matrix.h"
+#endif
+
 class Execute;
 
 // one Node means a vector
 // the col should be 1, because we aimed for NLP only
 class Node {
-  public:
-    vector<Node*> parents;
-  public:
-	matrix val;
-	matrix loss;
+public:
+	vector<Node*> parents;
+public:
+	/*Tensor1D val;
+	Tensor1D loss*/;
+#if USE_GPU
+	  gpu_matrix val, loss, mask;
+	  cpu_matrix cval, closs, cmask;
+#else
+	  cpu_matrix val, loss, mask;
+#endif
 
-  public:
-    int dim;
-    int degree;
-    string node_type;
+public:
+	int dim;
+	int degree;
+	string node_type;
+	dtype drop_value;
 
-  public:
-    matrix drop_mask;
-    dtype drop_value;
+public:
+	Node() {
+		dim = 0;
+		degree = 0;
+		parents.clear();
+		node_type = "interface";
+		drop_value = -1;
+	}
 
-
-  public:
-    Node() {
-        dim = 0;
-        degree = 0;
-        parents.clear();
-        node_type = "interface";
-        drop_value = -1;
-    }
-
-    virtual ~Node() {
+	virtual ~Node() {
 		val.zeros();
 		loss.zeros();
-        degree = 0;
-        parents.clear();
-        node_type.clear();
-    }
+		degree = 0;
+		parents.clear();
+		node_type.clear();
+	}
 
-
-  public:
-    virtual inline void clearValue() {
+public:
+	virtual inline void clearValue() {
 		val.zeros();
 		loss.zeros();
-        degree = 0;
-		if (drop_value > 0) drop_mask.ones();
-        parents.clear();
-    }
+		degree = 0;
+		if (drop_value > 0) mask.ones();
+		parents.clear();
+	}
 
-    virtual inline void init(int ndim, dtype dropout) {
-        dim = ndim;
-        val.init(dim, 1);
-        loss.init(dim, 1);
-        drop_mask.init(dim, 1);
-        if (dropout > 0 && dropout <= 1) {
-            drop_value = dropout;
-        } else {
-            drop_value = -1;
-        }
-        parents.clear();
-    }
+	virtual inline void init(int ndim, dtype dropout) {
+		dim = ndim;
+		val.init(dim, 1);
+		loss.init(dim, 1);
+		mask.init(dim, 1);
+		if (dropout > 0 && dropout <= 1) {
+			drop_value = dropout;
+		}
+		else {
+			drop_value = -1;
+		}
+		parents.clear();
+	}
 
 
-    inline void forward_drop(bool bTrain) {
-        if (drop_value > 0) {
-            if (bTrain) {
-				val.dropout(drop_mask, drop_value, 0);
-            } else {
-				val.multiply(val, 0,  1 - drop_value);
-                /*val.vec() = val.vec() * (1 - drop_value);*/
-            }
-        }
-        degree = -1;
-    }
+	template<class Matrix>
+	inline void dropout(Matrix& val, Matrix& mask, bool bTrain) {
+		if (bTrain) {
+			int seed = rand();
+			val.dropout(mask, drop_value, seed);
+			val.multiply(val, mask);
+		}
+		else {
+			val.multiply(val, 1 - drop_value);
+		}
+	}
+
+	inline void forward_drop(bool bTrain) {
+		if (drop_value > 0) {
+			dropout(val, mask, bTrain);
+			degree = -1;
+		}
+	}
 
     inline void backward_drop() {
-        if (drop_value > 0) {
-			loss.multiply(loss, drop_mask);
-            /*loss.vec() = loss.vec() * drop_mask.vec();*/
-        }
+		if (drop_value > 0) {
+			loss.multiply(loss, mask);
+		}
     }
-
   public:
 
     virtual inline Execute* generate(bool bTrain) = 0;
@@ -112,8 +125,6 @@ class Node {
             parent->degree++;
         }
     }
-
-
 };
 
 typedef  Node* PNode;

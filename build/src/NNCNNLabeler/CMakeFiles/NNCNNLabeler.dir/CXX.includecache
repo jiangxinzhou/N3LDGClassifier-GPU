@@ -31,6 +31,10 @@ string.h
 -
 
 ../core/BaseParam.h
+cpu_matrix.h
+../core/cpu_matrix.h
+gpu_matrix.h
+../core/gpu_matrix.h
 
 ../core/BucketOP.h
 Eigen/Dense
@@ -123,12 +127,6 @@ Eigen/Dense
 ../core/Eigen/Dense
 
 ../core/N3LDG.h
-cpu_matrix.h
-../core/cpu_matrix.h
-gpu_matrix.h
-../core/gpu_matrix.h
-cpu_matrix.h
-../core/cpu_matrix.h
 Graph.h
 ../core/Graph.h
 Node.h
@@ -169,6 +167,10 @@ vector
 -
 
 ../core/Node.h
+cpu_matrix.h
+../core/cpu_matrix.h
+gpu_matrix.h
+../core/gpu_matrix.h
 
 ../core/Param.h
 Eigen/Dense
@@ -1757,8 +1759,6 @@ ModelParams.h
 ../src/NNCNNLabeler/model/ModelParams.h
 
 ../src/NNCNNLabeler/model/Driver.h
-gpu_matrix.h
-../src/NNCNNLabeler/model/gpu_matrix.h
 iostream
 -
 ComputionGraph.h
@@ -1856,27 +1856,27 @@ iostream
 Instance.h
 ../src/basic/Instance.h
 
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.cpp
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/NNCNNLabeler.cpp
 NNCNNLabeler.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/NNCNNLabeler.h
 chrono
 -
 Argument_helper.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Argument_helper.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Argument_helper.h
 
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/NNCNNLabeler.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/NNCNNLabeler.h
 N3LDG.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/N3LDG.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/N3LDG.h
 Driver.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Driver.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Driver.h
 Options.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Options.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Options.h
 Instance.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Instance.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Instance.h
 Example.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Example.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Example.h
 Pipe.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Pipe.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Pipe.h
 Utf.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/src/NNCNNLabeler/Utf.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src/NNCNNLabeler/Utf.h
 

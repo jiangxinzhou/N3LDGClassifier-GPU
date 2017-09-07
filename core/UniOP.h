@@ -78,17 +78,16 @@ class UniNode : public Node {
   public:
     PNode in;
     UniParams* param;
-	dtype(*activate)(const dtype&);   // activation function
-	dtype(*derivate)(const dtype&, const dtype&);  // derivation function of activation function
+    dtype(*activate)(const dtype&);   // activation function
+    dtype(*derivate)(const dtype&, const dtype&);  // derivation function of activation function
 	int activate_function;
 	int derivate_function;
-
 
   public:
     UniNode() : Node() {
         in = NULL;
-		activate = ftanh;
-		derivate = dtanh;
+        activate = ftanh;
+        derivate = dtanh;
 		activate_function = 0;
 		derivate_function = 0;
         param = NULL;
@@ -110,10 +109,10 @@ class UniNode : public Node {
     }
 
     // define the activate function and its derivation form
-	inline void setFunctions(dtype(*f)(const dtype&), dtype(*f_deri)(const dtype&, const dtype&)) {
-		activate = f;
-		derivate = f_deri;
-	}
+    inline void setFunctions(dtype(*f)(const dtype&), dtype(*f_deri)(const dtype&, const dtype&)) {
+        activate = f;
+        derivate = f_deri;
+    }
 
   public:
     void forward(Graph *cg, PNode x) {
@@ -124,25 +123,37 @@ class UniNode : public Node {
     }
 
   public:
-    inline void compute(matrix& ty) {
-       /* ty.mat() = param->W.val.mat() * in->val.mat();
+	template<class Matrix>
+    inline void compute(Matrix& ty) {
+		ty.product(1, 0, false, false, param->W.val, in->val);
+		if (param->bUseB) {
+			ty.add(ty, param->b.val);
+		}
+		val.activate(ty, activate_function);
+        /*ty.mat() = param->W.val.mat() * in->val.mat();
         if (param->bUseB) {
             ty.vec() += param->b.val.vec();
         }
-
-		val.vec() = ty.vec().unaryExpr(ptr_fun(activate));*/
+        val.vec() = ty.vec().unaryExpr(ptr_fun(activate));*/
     }
 
-    inline void backward(matrix &ty, matrix& lty) {
-		/*lty.vec() = loss.vec() * ty.vec().binaryExpr(val.vec(), ptr_fun(derivate));
-
-
+	template<class Matrix>
+    inline void backward(Matrix& ty, Matrix& lty) {
+		Matrix mt;
+		mt.init(val.row, val.col);
+		mt.dactivate(ty, val, derivate_function);
+		lty.multiply(loss, mt);
 		param->W.grad.product(1, 1, false, true, lty, in->val);
-
+		if (param->bUseB) {
+			param->b.grad.add(param->b.grad, lty);
+		}
+		in->loss.product(1, 1, true, false, param->W.val, lty);
+       /* lty.vec() = loss.vec() * ty.vec().binaryExpr(val.vec(), ptr_fun(derivate));
+        param->W.grad.mat() += lty.mat() * in->val.tmat();
         if (param->bUseB) {
             param->b.grad.vec() += lty.vec();
         }
-		in->loss.product(1, 1, true, false, param->W.val, lty);*/
+        in->loss.mat() += param->W.val.mat().transpose() * lty.mat();*/
     }
 
   public:
@@ -157,7 +168,7 @@ class UniNode : public Node {
         if (param != conv_other->param) {
             return false;
         }
-		if (activate != conv_other->activate || derivate != conv_other->derivate) {
+        if (activate != conv_other->activate || derivate != conv_other->derivate) {
             return false;
         }
 
@@ -274,12 +285,15 @@ class LinearNode : public Node {
 
   public:
     inline void compute() {
+		val.product(1, 0, false, false, param->W.val, in->val);
        /* val.mat() = param->W.val.mat() * in->val.mat();*/
     }
 
     inline void backward() {
-		/*param->W.grad.product(1, 1, false, true, loss, in->val);
-		in->loss.product(1, 1, true, false, param->W.val, loss);*/
+		param->W.grad.product(1, 1, false, true, loss, in->val);
+		in->loss.product(1, 1, true, false, param->W.val, loss);
+        /*param->W.grad.mat() += loss.mat() * in->val.tmat();
+        in->loss.mat() += param->W.val.mat().transpose() * loss.mat();*/
     }
 
   public:
@@ -301,106 +315,149 @@ class LinearNode : public Node {
 
 
 class UniExecute :public Execute {
-  public:
-    matrix x, ty, y, b;
+	public:
+#if USE_GPU
+	vector<gpu_matrix> ty; 
+#else
+	vector<cpu_matrix> ty;
+#endif
+// #if USE_GPU
+		// gpu_matrix x, ty, y, b;
+// #else
+		// cpu_matrix x, ty, y, b;
+// #endif
     int inDim, outDim;
     UniParams* param;
-	dtype(*activate)(const dtype&);   // activation function
-	dtype(*derivate)(const dtype&, const dtype&);  // derivation function of activation function
+    dtype(*activate)(const dtype&);   // activation function
+    dtype(*derivate)(const dtype&, const dtype&);  // derivation function of activation function
 	int activate_function;
 	int derivate_function;
-
     bool bTrain;
 
   public:
     inline void  forward() {
         int count = batch.size();
-        x.init(inDim, count);
-        b.init(outDim, count);
-        ty.init(outDim, count);
-        y.init(outDim, count);
-
-
-        for (int idx = 0; idx < count; idx++) {
-            UniNode* ptr = (UniNode*)batch[idx];
-			x.mat_copy_vec(idx, ptr->in->val);
-          /*  for (int idy = 0; idy < inDim; idy++) {
-                x[idx][idy] = ptr->in->val.v[idy];
-            }*/
-            if (param->bUseB) {
-				b.mat_copy_vec(idx, param->b.val);
-               /* for (int idy = 0; idy < outDim; idy++) {
-                    b[idx][idy] = param->b.val.v[idy];
-                }*/
-            }
-        }
-
-		ty.product(1, 0, false, false, param->W.val, x);
-       /* ty.mat() = param->W.val.mat() * x.mat();*/
-
-        if (param->bUseB) {
-			ty.self_add(b);
-           /* ty.vec() = ty.vec() + b.vec();*/
-        }
-
-		/*y.vec() = ty.vec().unaryExpr(ptr_fun(activate));*/
-		y.activate(ty, activate_function);
-
-        for (int idx = 0; idx < count; idx++) {
-            UniNode* ptr = (UniNode*)batch[idx];
-			ptr->val.vec_copy_mat(y, idx);
-           /* for (int idy = 0; idy < outDim; idy++) {
-                ptr->val.v[idy] = y[idx][idy];
-            }*/
-            ptr->forward_drop(bTrain);
-        }
+		ty.resize(count);
+		for (int idx = 0; idx < count; idx++) {
+			UniNode* ptr = (UniNode*)batch[idx];
+			ty[idx].resize(outDim, 1);
+			ptr->compute(ty[idx]);
+			ptr->forward_drop(bTrain);
+		}
     }
 
-    inline void backward() {
-        int count = batch.size();
-        matrix lx, lty, ly;
-        lx.init(inDim, count);
-        lty.init(outDim, count);
-        ly.init(outDim, count);
+	// inline void  forward() {
+		// int count = batch.size();
+		// x.init(inDim, count);
+		// b.init(outDim, count);
+		// ty.init(outDim, count);
+		// y.init(outDim, count);
 
-        for (int idx = 0; idx < count; idx++) {
-            UniNode* ptr = (UniNode*)batch[idx];
-            ptr->backward_drop();
-			ly.mat_copy_vec(idx, ptr->loss);
-          /*  for (int idy = 0; idy < outDim; idy++) {
-                ly[idx][idy] = ptr->loss.v[idy];
-            }*/
-        }
 
-		/*lty.vec() = ly.vec() * ty.vec().binaryExpr(y.vec(), ptr_fun(derivate));*/
-		matrix ctmp;
-		ctmp.init(outDim, count);
-		ctmp.dactivate(ty, y, derivate_function);
-		lty.multiply(ly, ctmp);
-        
-		param->W.grad.product(1, 1, false, true, lty, x);
-       /* param->W.grad.mat() += lty.mat() * x.mat().transpose();*/
+		// for (int idx = 0; idx < count; idx++) {
+			// UniNode* ptr = (UniNode*)batch[idx];
+			// x.mat_copy_vec(idx, ptr->in->val);
+			// /* for (int idy = 0; idy < inDim; idy++) {
+			// x[idx][idy] = ptr->in->val[idy];
+			// }*/
+			// if (param->bUseB) {
+				// b.mat_copy_vec(idx, param->b.val);
+				// /*for (int idy = 0; idy < outDim; idy++) {
+				// b[idx][idy] = param->b.val.v[idy];
+				// }*/
+			// }
+		// }
 
-        if (param->bUseB) {
-            for (int idx = 0; idx < count; idx++) {
-				param->b.grad.vec_add_mat(param->b.grad, lty, idx);
-               /* for (int idy = 0; idy < outDim; idy++) {
-                    param->b.grad.v[idy] += lty[idx][idy];
-                }*/
-            }
-        }
+		// ty.product(1, 0, false, false, param->W.val, x);
+		// /*ty.mat() = param->W.val.mat() * x.mat();*/
 
-		lx.product(1, 1, true, false, param->W.val, lty);
-       /* lx.mat() += param->W.val.mat().transpose() * lty.mat();*/
+		// if (param->bUseB) {
+			// ty.add(ty, b);
+			// /*ty.vec() = ty.vec() + b.vec();*/
+		// }
 
-        for (int idx = 0; idx < count; idx++) {
-            UniNode* ptr = (UniNode*)batch[idx];
-			ptr->in->loss.vec_add_mat(ptr->in->loss, lx, idx);
-            /*for (int idy = 0; idy < inDim; idy++) {
-                ptr->in->loss.v[idy] += lx[idx][idy];
-            }*/
-        }
-    }
+		// y.activate(ty, activate_function);
+		// /*y.vec() = ty.vec().unaryExpr(ptr_fun(activate));*/
+
+		// for (int idx = 0; idx < count; idx++) {
+			// UniNode* ptr = (UniNode*)batch[idx];
+			// ptr->val.vec_copy_mat(y, idx);
+			// /* for (int idy = 0; idy < outDim; idy++) {
+			// ptr->val[idy] = y[idx][idy];
+			// }*/
+			// ptr->forward_drop(bTrain);
+		// }
+	// }
+
+
+	inline void backward() {
+		int count = batch.size();
+		for (int idx = 0; idx < count; idx++) {
+			UniNode *ptr = (UniNode*)batch[idx];
+			ptr->backward_drop();
+#if USE_GPU
+			gpu_matrix lty;
+#else
+			cpu_matrix lty;
+#endif
+			lty.resize(outDim, 1);
+			ptr->backward(ty[idx], lty);
+		}
+
+	}
+    // inline void backward() {
+        // int count = batch.size();
+// #if USE_GPU
+		// gpu_matrix lx, lty, ly;
+// #else
+		// cpu_matrix lx, lty, ly;
+// #endif
+        // lx.init(inDim, count);
+        // lty.init(outDim, count);
+        // ly.init(outDim, count);
+
+        // for (int idx = 0; idx < count; idx++) {
+            // UniNode* ptr = (UniNode*)batch[idx];
+            // ptr->backward_drop();
+          // /*  for (int idy = 0; idy < outDim; idy++) {
+                // ly[idx][idy] = ptr->loss[idy];
+            // }*/
+			// ly.mat_copy_vec(idx, ptr->loss);
+        // }
+
+// #if USE_GPU
+		// gpu_matrix tmp;
+// #else
+		// cpu_matrix tmp;
+// #endif
+		// tmp.init(outDim, count);
+		// tmp.dactivate(ty, y, derivate_function);
+		// lty.multiply(ly, tmp);
+        // /*lty.vec() = ly.vec() * ty.vec().binaryExpr(y.vec(), ptr_fun(derivate));*/
+
+		// param->W.grad.product(1, 1, false, true, lty, x);
+        // /*param->W.grad.mat() += lty.mat() * x.mat().transpose();*/
+
+        // if (param->bUseB) {
+            // for (int idx = 0; idx < count; idx++) {
+				// param->b.grad.vec_add_mat(param->b.grad, lty, idx);
+                // /*for (int idy = 0; idy < outDim; idy++) {
+                    // param->b.grad.v[idy] += lty[idx][idy];
+                // }*/
+            // }
+        // }
+
+		// lx.product(1, 1, true, false, param->W.val, lty);
+        // /*lx.mat() += param->W.val.mat().transpose() * lty.mat();*/
+
+        // for (int idx = 0; idx < count; idx++) {
+            // UniNode* ptr = (UniNode*)batch[idx];
+			// ptr->in->loss.vec_add_mat(ptr->in->loss, lx, idx);
+           // /* for (int idy = 0; idy < inDim; idy++) {
+                // ptr->in->loss[idy] += lx[idx][idy];
+            // }*/
+        // }
+    // }
 };
 
 //class LinearUniExecute :public Execute {
@@ -482,69 +539,95 @@ class UniExecute :public Execute {
 
 
 class LinearExecute :public Execute {
-  public:
-    matrix x, y;
-    int inDim, outDim, count;
-    UniParams* param;
-    bool bTrain;
+public:
+#if USE_GPU
+	gpu_matrix x, y;
+#else
+	cpu_matrix x, y;
+#endif
+	int inDim, outDim, count;
+	UniParams* param;
+	bool bTrain;
 
-  public:
-    inline void  forward() {
-        count = batch.size();
-        x.init(inDim, count);
-        y.init(outDim, count);
+public:
+	inline void  forward() {
+		count = batch.size();
+		for (int idx = 0; idx < count; idx++) {
+			LinearNode* ptr = (LinearNode*)batch[idx];
+			ptr->compute();
+			ptr->forward_drop(bTrain);
+		}
+	}
+	  // inline void  forward() {
+	      // count = batch.size();
+	      // x.init(inDim, count);
+	      // y.init(outDim, count);
 
 
-        for (int idx = 0; idx < count; idx++) {
-            LinearNode* ptr = (LinearNode*)batch[idx];
-			x.mat_copy_vec(idx, ptr->in->val);
-           /* for (int idy = 0; idy < inDim; idy++) {
-                x[idx][idy] = ptr->in->val.v[idy];
-            }*/
-        }
+	      // for (int idx = 0; idx < count; idx++) {
+	          // LinearNode* ptr = (LinearNode*)batch[idx];
+		  	// x.mat_copy_vec(idx, ptr->in->val);
+	         // /* for (int idy = 0; idy < inDim; idy++) {
+	              // x[idx][idy] = ptr->in->val[idy];
+	          // }*/
+	      // }
 
-		y.product(1, 0, false, false, param->W.val, x);
-        /*y.mat() = param->W.val.mat() * x.mat();*/
+		  // y.product(1, 0, false, false, param->W.val, x);
+	     // /* y.mat() = param->W.val.mat() * x.mat();*/
 
-        for (int idx = 0; idx < count; idx++) {
-            LinearNode* ptr = (LinearNode*)batch[idx];
-			ptr->val.vec_copy_mat(y, idx);
-            /*for (int idy = 0; idy < outDim; idy++) {
-                ptr->val.v[idy] = y[idx][idy];
-            }*/
-            ptr->forward_drop(bTrain);
-        }
-    }
+	      // for (int idx = 0; idx < count; idx++) {
+	          // LinearNode* ptr = (LinearNode*)batch[idx];
+		  	// ptr->val.vec_copy_mat(y, idx);
+	         // /* for (int idy = 0; idy < outDim; idy++) {
+	              // ptr->val[idy] = y[idx][idy];
+	          // }*/
+	          // ptr->forward_drop(bTrain);
+	      // }
+	  // }
 
-    inline void backward() {
-        matrix lx, ly;
-        lx.init(inDim, count);
-        ly.init(outDim, count);
 
-        for (int idx = 0; idx < count; idx++) {
-            LinearNode* ptr = (LinearNode*)batch[idx];
-            ptr->backward_drop();
-			ly.mat_copy_vec(idx, ptr->loss);
-          /*  for (int idy = 0; idy < outDim; idy++) {
-                ly[idx][idy] = ptr->loss.v[idy];
-            }*/
-        }
 
-		param->W.grad.product(1, 1, false, true, ly, x);
-      /*  param->W.grad.mat() += ly.mat() * x.mat().transpose();*/
+	inline void backward() {
+		for (int idx = 0; idx < count; idx++) {
+			LinearNode *ptr = (LinearNode*)batch[idx];
+			ptr->backward_drop();
+			ptr->backward();
+		}
+	}
 
-		lx.product(1, 1, true, false, param->W.val, ly);
-        /*lx.mat() += param->W.val.mat().transpose() * ly.mat();*/
+    // inline void backward() {
+// #if USE_GPU
+		// gpu_matrix lx, ly;
+// #else
+		// cpu_matrix lx, ly;
+// #endif
+        // lx.init(inDim, count);
+        // ly.init(outDim, count);
 
-        for (int idx = 0; idx < count; idx++) {
-            LinearNode* ptr = (LinearNode*)batch[idx];
-			ptr->in->loss.vec_add_mat(ptr->in->loss, lx, idx);
-           /* for (int idy = 0; idy < inDim; idy++) {
-                ptr->in->loss.v[idy] += lx[idx][idy];
-            }*/
-        }
+        // for (int idx = 0; idx < count; idx++) {
+            // LinearNode* ptr = (LinearNode*)batch[idx];
+            // ptr->backward_drop();
+			// ly.mat_copy_vec(idx, ptr->loss);
+           // /* for (int idy = 0; idy < outDim; idy++) {
+                // ly[idx][idy] = ptr->loss[idy];
+            // }*/
+        // }
 
-    }
+		// param->W.grad.product(1, 1, false, true, ly, x);
+        // /*param->W.grad.mat() += ly.mat() * x.mat().transpose();*/
+
+		// lx.product(1, 1, true, false, param->W.val, ly);
+        // /*lx.mat() += param->W.val.mat().transpose() * ly.mat();*/
+
+        // for (int idx = 0; idx < count; idx++) {
+            // LinearNode* ptr = (LinearNode*)batch[idx];
+			// ptr->in->loss.vec_add_mat(ptr->in->loss, lx, idx);
+            // /*for (int idy = 0; idy < inDim; idy++) {
+                // ptr->in->loss[idy] += lx[idx][idy];
+            // }*/
+        // }
+
+    // // }
 };
 
 
@@ -554,8 +637,9 @@ inline PExecute UniNode::generate(bool bTrain) {
     exec->inDim = param->W.inDim();
     exec->outDim = param->W.outDim();
     exec->param = param;
-	exec->activate = activate;
-	exec->derivate = derivate;
+    exec->activate = activate;
+    exec->derivate = derivate;
+
 	exec->activate_function = activate_function;
 	exec->derivate_function = derivate_function;
 
@@ -583,7 +667,6 @@ inline PExecute LinearNode::generate(bool bTrain) {
     exec->bTrain = bTrain;
     return exec;
 }
-
 
 
 #endif /* UNIOP_H_ */

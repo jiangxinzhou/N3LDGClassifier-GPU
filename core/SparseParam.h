@@ -14,8 +14,11 @@
 // The in-out dimension definiation is different with dense parameters.
 class SparseParam : public BaseParam {
   public:
-    matrix aux_square;
-    matrix aux_mean;
+#if USE_GPU
+	  gpu_matrix aux_square, aux_mean;
+#else
+	  cpu_matrix aux_square, aux_mean;
+#endif
     NRVec<bool> indexers;
     NRVec<int> last_update;
 
@@ -24,8 +27,6 @@ class SparseParam : public BaseParam {
     inline void initial(int outDim, int inDim) {
         //not in the aligned memory pool
         val.init(outDim, inDim);
-        dtype bound = sqrt(3.0 / (outDim));
-        val.random(bound);
         grad.init(outDim, inDim);
         aux_square.init(outDim, inDim);
         aux_mean.init(outDim, inDim);
@@ -33,6 +34,15 @@ class SparseParam : public BaseParam {
         indexers = false;
         last_update.resize(inDim);
         last_update = 0;
+		dtype bound = sqrt(3.0 / (outDim));
+#if USE_GPU
+		cval.init(outDim, inDim);
+		cgrad.init(outDim, inDim);
+		cval.random(bound);
+		dump2gpu();
+#else
+		val.random(bound);
+#endif
     }
 
     inline void clearGrad() {
@@ -40,7 +50,7 @@ class SparseParam : public BaseParam {
         for (int index = 0; index < inDim; index++) {
             if (!indexers[index]) continue;
 			grad.zeros(index);
-          /*  for (int idx = 0; idx < grad.row; idx++) {
+           /* for (int idx = 0; idx < grad.row; idx++) {
                 grad[index][idx] = 0;
             }*/
         }
@@ -70,7 +80,7 @@ class SparseParam : public BaseParam {
         }
     }
 
-  /*  inline void updateAdam(dtype belta1, dtype belta2, dtype alpha, dtype reg, dtype eps) {
+ /*   inline void updateAdam(dtype belta1, dtype belta2, dtype alpha, dtype reg, dtype eps) {
         dtype lr_t;
         int inDim = indexers.size();
         for (int index = 0; index < inDim; index++) {
@@ -84,8 +94,8 @@ class SparseParam : public BaseParam {
             }
             last_update[index]++;
         }
-    }
-*/
+    }*/
+
     inline void randpoint(int& idx, int &idy) {
         //select indexes randomly
         std::vector<int> idRows, idCols;
@@ -133,52 +143,57 @@ class SparseParam : public BaseParam {
         }
     }
 
-    inline void value(const int& featId, matrix& out) {
+	template<class Matrix>
+    inline void value(const int& featId, Matrix& out) {
         if (out.size != val.row) {
             std::cout << "warning: output dim not equal lookup param dim." << std::endl;
         }
+        /*for (int idx = 0; idx < val.row; idx++) {
+            out[idx] = val[featId][idx];
+        }*/
 		out.lookup(val, featId);
     }
 
-    //inline void value(const vector<int>& featIds, Tensor1D& out) {
-    //    if (out.dim != val.row) {
-    //        std::cout << "warning: output dim not equal lookup param dim." << std::endl;
-    //    }
-    //    int featNum = featIds.size();
-    //    int featId;
-    //    for (int i = 0; i < featNum; i++) {
-    //        featId = featIds[i];
-    //        for (int idx = 0; idx < val.row; idx++) {
-    //            out[idx] += val[featId][idx];
-    //        }
-    //    }
-    //}
+ /*   inline void value(const vector<int>& featIds, Tensor1D& out) {
+        if (out.dim != val.row) {
+            std::cout << "warning: output dim not equal lookup param dim." << std::endl;
+        }
+        int featNum = featIds.size();
+        int featId;
+        for (int i = 0; i < featNum; i++) {
+            featId = featIds[i];
+            for (int idx = 0; idx < val.row; idx++) {
+                out[idx] += val[featId][idx];
+            }
+        }
+    }*/
 
-    inline void loss(const int& featId, const matrix& loss) {
+	template<class Matrix>
+    inline void loss(const int& featId, const Matrix& loss) {
         if (loss.size != val.row) {
             std::cout << "warning: loss dim not equal lookup param dim." << std::endl;
         }
         indexers[featId] = true;
 		grad.mat_add_vec(grad, featId, loss);
         /*for (int idx = 0; idx < val.row; idx++) {
-            grad[featId][idx] += loss.v[idx];
+            grad[featId][idx] += loss[idx];
         }*/
     }
 
-    //inline void loss(const vector<int>& featIds, const matrix& loss) {
-    //    if (loss.dim != val.row) {
-    //        std::cout << "warning: loss dim not equal lookup param dim." << std::endl;
-    //    }
-    //    int featNum = featIds.size();
-    //    int featId;
-    //    for (int i = 0; i < featNum; i++) {
-    //        featId = featIds[i];
-    //        indexers[featId] = true;
-    //        for (int idx = 0; idx < val.row; idx++) {
-    //            grad[featId][idx] += loss[idx];
-    //        }
-    //    }
-    //}
+  /*  inline void loss(const vector<int>& featIds, const Tensor1D& loss) {
+        if (loss.dim != val.row) {
+            std::cout << "warning: loss dim not equal lookup param dim." << std::endl;
+        }
+        int featNum = featIds.size();
+        int featId;
+        for (int i = 0; i < featNum; i++) {
+            featId = featIds[i];
+            indexers[featId] = true;
+            for (int idx = 0; idx < val.row; idx++) {
+                grad[featId][idx] += loss[idx];
+            }
+        }
+    }*/
 
     inline void save(std::ofstream &os)const {
         val.save(os);

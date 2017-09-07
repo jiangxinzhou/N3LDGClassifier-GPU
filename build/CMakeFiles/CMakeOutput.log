@@ -1,3 +1,341 @@
+The system is: Windows - 10.0.14393 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2017/9/6 11:43:17��
+�ڵ� 1 �ϵ���Ŀ��E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdC.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdC.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=D:\vs2015\VC\bin\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdC.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:00.56
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/3.8.2/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2017/9/6 11:43:18��
+�ڵ� 1 �ϵ���Ŀ��E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdCXX.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdCXX.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=D:\vs2015\VC\bin\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdCXX.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\3.8.2\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:00.52
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/3.8.2/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_e2e24.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/9/6 11:43:18。
+节点 1 上的项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_e2e24.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_e2e24.dir\Debug\”。
+  正在创建目录“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_e2e24.dir\Debug\cmTC_e2e24.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_e2e24.dir\Debug\cmTC_e2e24.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2e24.dir\Debug\\" /Fd"cmTC_e2e24.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2e24.dir\Debug\\" /Fd"cmTC_e2e24.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  
+  testCCompiler.c
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_e2e24.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_e2e24.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_e2e24.lib" /MACHINE:X86 /SAFESEH   /machine:X86 cmTC_e2e24.dir\Debug\testCCompiler.obj
+  cmTC_e2e24.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_e2e24.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_e2e24.dir\Debug\cmTC_e2e24.tlog\unsuccessfulbuild”。
+  正在对“cmTC_e2e24.dir\Debug\cmTC_e2e24.tlog\cmTC_e2e24.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_e2e24.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.83
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_610ce.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/9/6 11:43:19。
+节点 1 上的项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_610ce.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_610ce.dir\Debug\”。
+  正在创建目录“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_610ce.dir\Debug\cmTC_610ce.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_610ce.dir\Debug\cmTC_610ce.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_610ce.dir\Debug\\" /Fd"cmTC_610ce.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "D:\cmake-3.8.2\share\cmake-3.8\Modules\CMakeCCompilerABI.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_610ce.dir\Debug\\" /Fd"cmTC_610ce.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "D:\cmake-3.8.2\share\cmake-3.8\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_610ce.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_610ce.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_610ce.lib" /MACHINE:X86 /SAFESEH   /machine:X86 cmTC_610ce.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_610ce.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_610ce.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_610ce.dir\Debug\cmTC_610ce.tlog\unsuccessfulbuild”。
+  正在对“cmTC_610ce.dir\Debug\cmTC_610ce.tlog\cmTC_610ce.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_610ce.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.49
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_ad532.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/9/6 11:43:20。
+节点 1 上的项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_ad532.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_ad532.dir\Debug\”。
+  正在创建目录“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_ad532.dir\Debug\cmTC_ad532.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_ad532.dir\Debug\cmTC_ad532.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ad532.dir\Debug\\" /Fd"cmTC_ad532.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ad532.dir\Debug\\" /Fd"cmTC_ad532.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  
+  testCXXCompiler.cxx
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_ad532.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_ad532.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_ad532.lib" /MACHINE:X86 /SAFESEH   /machine:X86 cmTC_ad532.dir\Debug\testCXXCompiler.obj
+  cmTC_ad532.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_ad532.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_ad532.dir\Debug\cmTC_ad532.tlog\unsuccessfulbuild”。
+  正在对“cmTC_ad532.dir\Debug\cmTC_ad532.tlog\cmTC_ad532.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_ad532.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.54
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_7832d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/9/6 11:43:21。
+节点 1 上的项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_7832d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_7832d.dir\Debug\”。
+  正在创建目录“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_7832d.dir\Debug\cmTC_7832d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_7832d.dir\Debug\cmTC_7832d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7832d.dir\Debug\\" /Fd"cmTC_7832d.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "D:\cmake-3.8.2\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7832d.dir\Debug\\" /Fd"cmTC_7832d.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "D:\cmake-3.8.2\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_7832d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_7832d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_7832d.lib" /MACHINE:X86 /SAFESEH   /machine:X86 cmTC_7832d.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_7832d.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_7832d.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_7832d.dir\Debug\cmTC_7832d.tlog\unsuccessfulbuild”。
+  正在对“cmTC_7832d.dir\Debug\cmTC_7832d.tlog\cmTC_7832d.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_7832d.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.49
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_a9b7f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/9/6 11:43:21。
+节点 1 上的项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_a9b7f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_a9b7f.dir\Debug\”。
+  正在创建目录“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_a9b7f.dir\Debug\cmTC_a9b7f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_a9b7f.dir\Debug\cmTC_a9b7f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\vs2015\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a9b7f.dir\Debug\\" /Fd"cmTC_a9b7f.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\feature_tests.cxx"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a9b7f.dir\Debug\\" /Fd"cmTC_a9b7f.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\feature_tests.cxx"
+  
+  feature_tests.cxx
+Link:
+  D:\vs2015\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_a9b7f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_a9b7f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/vs-project/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/Debug/cmTC_a9b7f.lib" /MACHINE:X86 /SAFESEH   /machine:X86 cmTC_a9b7f.dir\Debug\feature_tests.obj
+  cmTC_a9b7f.vcxproj -> E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\Debug\cmTC_a9b7f.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_a9b7f.dir\Debug\cmTC_a9b7f.tlog\unsuccessfulbuild”。
+  正在对“cmTC_a9b7f.dir\Debug\cmTC_a9b7f.tlog\cmTC_a9b7f.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\vs-project\N3LDGClassifier-change-for-gpu-second-time\build\CMakeFiles\CMakeTmp\cmTC_a9b7f.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.55
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
 The system is: Linux - 3.16.0-33-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
@@ -10,7 +348,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/3.7.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/3.7.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +361,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/3.7.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/3.7.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0313f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0313f.dir/build.make CMakeFiles/cmTC_0313f.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0313f.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_0313f.dir/testCCompiler.c.o   -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_0313f
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0313f.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_0313f.dir/testCCompiler.c.o  -o cmTC_0313f -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_c6cac/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c6cac.dir/build.make CMakeFiles/cmTC_c6cac.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6cac.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c6cac.dir/testCCompiler.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c6cac
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6cac.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_c6cac.dir/testCCompiler.c.o  -o cmTC_c6cac -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c16b6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c16b6.dir/build.make CMakeFiles/cmTC_c16b6.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.7/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_c16b6
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c16b6.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o  -o cmTC_c16b6 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_73ab7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_73ab7.dir/build.make CMakeFiles/cmTC_73ab7.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.7/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_73ab7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73ab7.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o  -o cmTC_73ab7 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -59,23 +397,23 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c16b6' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c16b6 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_73ab7' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_73ab7 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c16b6/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c16b6.dir/build.make CMakeFiles/cmTC_c16b6.dir/build]
-  ignore line: [make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_c16b6]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c16b6.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o  -o cmTC_c16b6 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_73ab7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_73ab7.dir/build.make CMakeFiles/cmTC_73ab7.dir/build]
+  ignore line: [make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_73ab7]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73ab7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o  -o cmTC_73ab7 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -85,8 +423,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c16b6' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c16b6 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_73ab7' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_73ab7 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -100,7 +438,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_c16b6] ==> ignore
+    arg [cmTC_73ab7] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -112,7 +450,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_c16b6.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_73ab7.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -144,17 +482,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_10ec9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_10ec9.dir/build.make CMakeFiles/cmTC_10ec9.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_10ec9.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_10ec9.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_10ec9
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10ec9.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_10ec9.dir/feature_tests.c.o  -o cmTC_10ec9 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9a42d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9a42d.dir/build.make CMakeFiles/cmTC_9a42d.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a42d.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_9a42d.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9a42d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a42d.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_9a42d.dir/feature_tests.c.o  -o cmTC_9a42d -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -164,17 +502,17 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4bbd7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4bbd7.dir/build.make CMakeFiles/cmTC_4bbd7.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4bbd7.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_4bbd7.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_4bbd7
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bbd7.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_4bbd7.dir/feature_tests.c.o  -o cmTC_4bbd7 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_8b68f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8b68f.dir/build.make CMakeFiles/cmTC_8b68f.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8b68f.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_8b68f.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8b68f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b68f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_8b68f.dir/feature_tests.c.o  -o cmTC_8b68f -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -184,17 +522,17 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5d335/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5d335.dir/build.make CMakeFiles/cmTC_5d335.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5d335.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_5d335.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5d335
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d335.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_5d335.dir/feature_tests.c.o  -o cmTC_5d335 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3d0bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3d0bb.dir/build.make CMakeFiles/cmTC_3d0bb.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d0bb.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_3d0bb.dir/feature_tests.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3d0bb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d0bb.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3d0bb.dir/feature_tests.c.o  -o cmTC_3d0bb -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -202,30 +540,30 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f8aec/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f8aec.dir/build.make CMakeFiles/cmTC_f8aec.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f8aec.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_f8aec.dir/testCXXCompiler.cxx.o -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_f8aec
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8aec.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_f8aec.dir/testCXXCompiler.cxx.o  -o cmTC_f8aec -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_5fe40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5fe40.dir/build.make CMakeFiles/cmTC_5fe40.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5fe40.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_5fe40.dir/testCXXCompiler.cxx.o -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5fe40
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fe40.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_5fe40.dir/testCXXCompiler.cxx.o  -o cmTC_5fe40 -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_358f3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_358f3.dir/build.make CMakeFiles/cmTC_358f3.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_358f3
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_358f3.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_358f3 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_8c814/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c814.dir/build.make CMakeFiles/cmTC_8c814.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_8c814
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c814.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8c814 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -235,23 +573,23 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_358f3' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_358f3 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c814' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8c814 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_358f3/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_358f3.dir/build.make CMakeFiles/cmTC_358f3.dir/build]
-  ignore line: [make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_358f3]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_358f3.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_358f3 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8c814/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8c814.dir/build.make CMakeFiles/cmTC_8c814.dir/build]
+  ignore line: [make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_8c814]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c814.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8c814 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -261,8 +599,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_358f3' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_358f3 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c814' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8c814 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -276,7 +614,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_358f3] ==> ignore
+    arg [cmTC_8c814] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -288,7 +626,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_358f3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_8c814.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -318,17 +656,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_103e2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_103e2.dir/build.make CMakeFiles/cmTC_103e2.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_103e2.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_103e2.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_103e2
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_103e2.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_103e2.dir/feature_tests.cxx.o  -o cmTC_103e2 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6755e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6755e.dir/build.make CMakeFiles/cmTC_6755e.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6755e.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_6755e.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6755e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6755e.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_6755e.dir/feature_tests.cxx.o  -o cmTC_6755e -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -391,17 +729,17 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ceeb6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ceeb6.dir/build.make CMakeFiles/cmTC_ceeb6.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ceeb6.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_ceeb6.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ceeb6
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ceeb6.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_ceeb6.dir/feature_tests.cxx.o  -o cmTC_ceeb6 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_b2b49/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b2b49.dir/build.make CMakeFiles/cmTC_b2b49.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b2b49.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_b2b49.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b2b49
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2b49.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_b2b49.dir/feature_tests.cxx.o  -o cmTC_b2b49 -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -464,17 +802,17 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cecae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_cecae.dir/build.make CMakeFiles/cmTC_cecae.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_cecae.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_cecae.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_cecae
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cecae.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_cecae.dir/feature_tests.cxx.o  -o cmTC_cecae -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_c1358/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c1358.dir/build.make CMakeFiles/cmTC_c1358.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c1358.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_c1358.dir/feature_tests.cxx.o -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c1358
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1358.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_c1358.dir/feature_tests.cxx.o  -o cmTC_c1358 -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -535,58 +873,142 @@ make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CM
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9a3af/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9a3af.dir/build.make CMakeFiles/cmTC_9a3af.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9a3af.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_9a3af.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_9a3af
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a3af.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC     CMakeFiles/cmTC_9a3af.dir/CheckIncludeFile.c.o  -o cmTC_9a3af -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_7933c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7933c.dir/build.make CMakeFiles/cmTC_7933c.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7933c.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_7933c.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_7933c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7933c.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_7933c.dir/CheckIncludeFile.c.o  -o cmTC_7933c -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a1986/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a1986.dir/build.make CMakeFiles/cmTC_a1986.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a1986.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a1986.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a1986
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1986.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_a1986.dir/CheckFunctionExists.c.o  -o cmTC_a1986 -rdynamic -lpthread 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/Matrix/final-matrix/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_bf28c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf28c.dir/build.make CMakeFiles/cmTC_bf28c.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf28c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bf28c.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bf28c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf28c.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_bf28c.dir/CheckFunctionExists.c.o  -o cmTC_bf28c -rdynamic -lpthread 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_52472/fast"
-/usr/bin/make -f CMakeFiles/cmTC_52472.dir/build.make CMakeFiles/cmTC_52472.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_52472.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_52472.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_52472
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52472.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC     CMakeFiles/cmTC_52472.dir/CheckIncludeFile.c.o  -o cmTC_52472 -rdynamic 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_718e2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_718e2.dir/build.make CMakeFiles/cmTC_718e2.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_718e2.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_718e2.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_718e2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_718e2.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_718e2.dir/CheckIncludeFile.c.o  -o cmTC_718e2 -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e76bc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e76bc.dir/build.make CMakeFiles/cmTC_e76bc.dir/build
-make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e76bc.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e76bc.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
-Linking C executable cmTC_e76bc
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e76bc.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e76bc.dir/CheckFunctionExists.c.o  -o cmTC_e76bc -rdynamic -lpthread 
-make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_cea51/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cea51.dir/build.make CMakeFiles/cmTC_cea51.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cea51.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_cea51.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cea51
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cea51.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_cea51.dir/CheckFunctionExists.c.o  -o cmTC_cea51 -rdynamic -lpthread 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c826f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c826f.dir/build.make CMakeFiles/cmTC_c826f.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c826f.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_c826f.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c826f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c826f.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_c826f.dir/CheckIncludeFile.c.o  -o cmTC_c826f -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f7d60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f7d60.dir/build.make CMakeFiles/cmTC_f7d60.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7d60.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f7d60.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f7d60
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7d60.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_f7d60.dir/CheckFunctionExists.c.o  -o cmTC_f7d60 -rdynamic -lpthread 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bc365/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bc365.dir/build.make CMakeFiles/cmTC_bc365.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bc365.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_bc365.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_bc365
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc365.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_bc365.dir/CheckIncludeFile.c.o  -o cmTC_bc365 -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_011bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_011bb.dir/build.make CMakeFiles/cmTC_011bb.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_011bb.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_011bb.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_011bb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_011bb.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_011bb.dir/CheckFunctionExists.c.o  -o cmTC_011bb -rdynamic -lpthread 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e7d4b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e7d4b.dir/build.make CMakeFiles/cmTC_e7d4b.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7d4b.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_e7d4b.dir/CheckIncludeFile.c.o   -c /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e7d4b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7d4b.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_e7d4b.dir/CheckIncludeFile.c.o  -o cmTC_e7d4b -rdynamic 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ae474/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ae474.dir/build.make CMakeFiles/cmTC_ae474.dir/build
+make[1]: Entering directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae474.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ae474.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ae474
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae474.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ae474.dir/CheckFunctionExists.c.o  -o cmTC_ae474 -rdynamic -lpthread 
+make[1]: Leaving directory `/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/CMakeFiles/CMakeTmp'
 
 

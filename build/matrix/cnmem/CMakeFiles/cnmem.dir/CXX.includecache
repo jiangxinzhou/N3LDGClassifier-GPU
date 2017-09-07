@@ -14,9 +14,9 @@ stdio.h
 cuda_runtime_api.h
 ../matrix/cnmem/include/cuda_runtime_api.h
 
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/cnmem/src/cnmem.cpp
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/cnmem/src/cnmem.cpp
 cnmem.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/cnmem/src/cnmem.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/cnmem/src/cnmem.h
 cstddef
 -
 vector

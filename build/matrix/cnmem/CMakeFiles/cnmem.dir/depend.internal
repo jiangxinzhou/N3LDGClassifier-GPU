@@ -3,7 +3,7 @@
 
 matrix/cnmem/CMakeFiles/cnmem.dir/src/cnmem.cpp.o
  ../matrix/cnmem/include/cnmem.h
- /data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/cnmem/src/cnmem.cpp
+ /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/cnmem/src/cnmem.cpp
  /usr/local/cuda-8.0/include/builtin_types.h
  /usr/local/cuda-8.0/include/cuda_device_runtime_api.h
  /usr/local/cuda-8.0/include/cuda_runtime_api.h

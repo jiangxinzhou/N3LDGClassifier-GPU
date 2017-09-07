@@ -56,18 +56,18 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/usr/local/bin/cmake") # path
-set(source_file "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/gpu_matrix.cu") # path
-set(NVCC_generated_dependency_file "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/CMakeFiles/matrix.dir/src/matrix_generated_gpu_matrix.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/CMakeFiles/matrix.dir/src/matrix_generated_gpu_matrix.cu.o.depend") # path
+set(source_file "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/src/gpu_matrix.cu") # path
+set(NVCC_generated_dependency_file "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/CMakeFiles/matrix.dir/src/matrix_generated_gpu_matrix.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/CMakeFiles/matrix.dir/src/matrix_generated_gpu_matrix.cu.o.depend") # path
 set(CUDA_make2cmake "/usr/local/share/cmake-3.7/Modules/FindCUDA/make2cmake.cmake") # path
 set(CUDA_parse_cubin "/usr/local/share/cmake-3.7/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/CMakeFiles/matrix.dir/src/.") # path
-set(generated_file_internal "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/CMakeFiles/matrix.dir/src/./matrix_generated_gpu_matrix.cu.o") # path
-set(generated_cubin_file_internal "/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/matrix/CMakeFiles/matrix.dir/src/./matrix_generated_gpu_matrix.cu.o.cubin.txt") # path
+set(generated_file_path "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/CMakeFiles/matrix.dir/src/.") # path
+set(generated_file_internal "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/CMakeFiles/matrix.dir/src/./matrix_generated_gpu_matrix.cu.o") # path
+set(generated_cubin_file_internal "/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/matrix/CMakeFiles/matrix.dir/src/./matrix_generated_gpu_matrix.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda-8.0/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS  ;; ) # list
@@ -77,7 +77,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64;--std;c++11) # list
-set(CUDA_NVCC_INCLUDE_DIRS "/usr/local/cuda-8.0/include;/usr/local/cuda-8.0/samples/common/inc;/usr/local/cuda-8.0/include;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/cnmem/include;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/eigen;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/core;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/include;/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/cnmem/include") # list (needs to be in quotes to handle spaces properly).
+set(CUDA_NVCC_INCLUDE_DIRS "/usr/local/cuda-8.0/include;/usr/local/cuda-8.0/samples/common/inc;/usr/local/cuda-8.0/include;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/include;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/cnmem/include;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/eigen;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/core;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/include;/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/cnmem/include") # list (needs to be in quotes to handle spaces properly).
 set(CUDA_NVCC_COMPILE_DEFINITIONS "USE_GPU") # list (needs to be in quotes to handle spaces properly).
 set(format_flag "-c") # string
 set(cuda_language_flag ) # list
@@ -102,7 +102,7 @@ endif()
 
 # This is the list of host compilation flags.  It C or CXX should already have
 # been chosen by FindCUDA.cmake.
-set(CMAKE_HOST_FLAGS  -fPIC -funroll-loops -fno-finite-math-only -Wall -Wno-missing-braces  -Ofast -g -march=native -DEIGEN_HAS_CUDA_FP16 -DEIGEN_USE_GPU )
+set(CMAKE_HOST_FLAGS  -fPIC -funroll-loops -fno-finite-math-only -Wall -Wno-missing-braces  -Ofast -g -march=native -fPIC -funroll-loops -w  -Ofast -march=native -DEIGEN_HAS_CUDA_FP16 -DEIGEN_USE_GPU )
 set(CMAKE_HOST_FLAGS_DEBUG -g)
 set(CMAKE_HOST_FLAGS_MINSIZEREL -Os -DNDEBUG)
 set(CMAKE_HOST_FLAGS_RELEASE -O3 -DNDEBUG)

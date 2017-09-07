@@ -1,4 +1,4 @@
-# Install script for directory: /data/xzjiang/GPU-study/N3LDG-classifier-gpu/src
+# Install script for directory: /data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/data/xzjiang/GPU-study/N3LDG-classifier-gpu/build/src/NNCNNLabeler/cmake_install.cmake")
+  include("/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/build/src/NNCNNLabeler/cmake_install.cmake")
 
 endif()
 

@@ -1542,11 +1542,11 @@ iostream
 vector
 -
 
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.cc
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/src/cpu_matrix.cc
 cpu_matrix.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/cpu_matrix.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/src/cpu_matrix.h
 functors.h
-/data/xzjiang/GPU-study/N3LDG-classifier-gpu/matrix/src/functors.h
+/data/xzjiang/GPU-study/N3LDGClassifier-change-for-gpu-second-time/matrix/src/functors.h
 cstring
 -
 iostream
