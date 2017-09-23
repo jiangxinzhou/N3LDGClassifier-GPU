@@ -18,6 +18,9 @@ class ConcatNode : public Node {
   public:
     vector<int> inDims;
     vector<PNode> ins;
+	
+	//
+	int nSize;
 
   public:
     ConcatNode() : Node() {
@@ -43,7 +46,7 @@ class ConcatNode : public Node {
         }
 
         degree = 0;
-        int nSize = ins.size();
+        nSize = ins.size();
         for (int i = 0; i < nSize; ++i) {
             ins[i]->addParent(this);
         }
@@ -63,6 +66,7 @@ class ConcatNode : public Node {
         }
 
         cg->addNode(this);
+		nSize = 2;
     }
 
     void forward(Graph *cg, PNode x1, PNode x2, PNode x3) {
@@ -77,6 +81,7 @@ class ConcatNode : public Node {
         }
 
         cg->addNode(this);
+		nSize = 3;
     }
 
     void forward(Graph *cg, PNode x1, PNode x2, PNode x3, PNode x4) {
@@ -92,6 +97,7 @@ class ConcatNode : public Node {
         }
 
         cg->addNode(this);
+		nSize = 4;
     }
 
     void forward(Graph *cg, PNode x1, PNode x2, PNode x3, PNode x4, PNode x5) {
@@ -108,6 +114,8 @@ class ConcatNode : public Node {
         }
 
         cg->addNode(this);
+		
+		nSize = 5;
     }
 
     void forward(Graph *cg, PNode x1, PNode x2, PNode x3, PNode x4, PNode x5, PNode x6) {
@@ -125,6 +133,8 @@ class ConcatNode : public Node {
         }
 
         cg->addNode(this);
+		
+		nSize = 6;
     }
 
 
@@ -133,13 +143,13 @@ class ConcatNode : public Node {
     inline PExecute generate(bool bTrain);
 
     // better to rewrite for deep understanding
-    inline bool typeEqual(PNode other) {
-        return Node::typeEqual(other);
+    inline bool typeEqual(PNode other) {    //  ?? the same nSize
+        return Node::typeEqual(other); //&& (nSize == ((ConcatNode*)other)->nSize);
     }
 
   public:
     inline void compute() {
-        int nSize = ins.size();
+        nSize = ins.size();
         inDims.clear();
         int curDim = 0;
         for (int i = 0; i < nSize; ++i) {
@@ -163,13 +173,13 @@ class ConcatNode : public Node {
 
 
     void backward() {
-        int nSize = ins.size();
+        //int nSize = ins.size();
         int offset = 0;
         for (int i = 0; i < nSize; ++i) {
 			ins[i]->loss.short_add_long(ins[i]->loss, loss, offset);
-           /* for (int idx = 0; idx < inDims[i]; idx++) {
-                ins[i]->loss[idx] += loss[offset + idx];
-            }*/
+            // for (int idx = 0; idx < inDims[i]; idx++) {
+                // ins[i]->loss[idx] += loss[offset + idx];
+            // }
             offset += inDims[i];
         }
     }
@@ -211,18 +221,69 @@ class ConcatNode : public Node {
 class ConcatExecute : public Execute {
   public:
     bool bTrain;
+	int nSize;
   public:
     inline void  forward() {
+		///***time test***
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+		// std::cout << "Concat" << endl;
         int count = batch.size();
 //#pragma omp parallel for schedule(static,1)
+		
+		
         for (int idx = 0; idx < count; idx++) {
             ConcatNode* ptr = (ConcatNode*)batch[idx];
             ptr->compute();
             ptr->forward_drop(bTrain);
         }
+		
+		
+		// ofstream outf("out", ios::app);
+		// outf << "count: " << count <<  "nSize: " << nSize << endl;
+		
+		// vector<gpu_matrix*> in(count * nSize);
+		// vector<gpu_matrix*> out(count);
+		// int index = 0;
+		
+		
+		// ConcatNode* ptr = (ConcatNode*)batch[1];
+		// for(int i=0; i<nSize; i++) {
+			// ptr->ins[i]->val.save(outf);
+		// }
+		
+		// outf << "xxxxxx" << endl;
+		
+		
+		// for (int idx = 0; idx < count; idx++) {
+			// ConcatNode* ptr = (ConcatNode*)batch[idx];
+			// assert(nSize == ptr->ins.size());
+			// for(int idy = 0; idy < nSize; idy++) { 
+				// in[index++] = &(ptr->ins[idy]->val);
+			// }
+			// out[idx] = &(ptr->val);
+        // }
+		
+		// concatenate(in, nSize, out);
+		
+		// ptr->val.save(outf);
+		
+		// for(int idx = 0; idx < count; idx++) {
+			// ConcatNode* ptr = (ConcatNode*)batch[idx];
+			// ptr->compute();
+			// ptr->forward_drop(bTrain);
+		// }
+		
+		auto end = std::chrono::high_resolution_clock::now();
+		out << "concat-forward " << std::chrono::duration<double>(end - start).count() << endl; 
+		
     }
 
     inline void backward() {
+		//  *** time test ***
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+		
         int count = batch.size();
 //#pragma omp parallel for schedule(static,1)
         for (int idx = 0; idx < count; idx++) {
@@ -230,6 +291,9 @@ class ConcatExecute : public Execute {
             ptr->backward_drop();
             ptr->backward();
         }
+		
+		auto end = std::chrono::high_resolution_clock::now();
+		out << "concat-backward " << std::chrono::duration<double>(end - start).count() << endl; 
     }
 };
 
@@ -237,6 +301,7 @@ inline PExecute ConcatNode::generate(bool bTrain) {
     ConcatExecute* exec = new ConcatExecute();
     exec->batch.push_back(this);
     exec->bTrain = bTrain;
+	exec->nSize = nSize;
     return exec;
 }
 //#endif

@@ -16,10 +16,10 @@ struct GraphBuilder {
     vector<UniNode> _hidden;
 
     AvgPoolNode _avg_pooling;
-    MaxPoolNode _max_pooling;
-    MinPoolNode _min_pooling;
+  /*  MaxPoolNode _max_pooling;
+    MinPoolNode _min_pooling;*/
 
-    ConcatNode _concat;
+    //ConcatNode _concat;
 
     LinearNode _neural_output;
 
@@ -39,8 +39,8 @@ struct GraphBuilder {
         _hidden.resize(sent_length);
 
         _avg_pooling.setParam(sent_length);
-        _max_pooling.setParam(sent_length);
-        _min_pooling.setParam(sent_length);
+       /* _max_pooling.setParam(sent_length);
+        _min_pooling.setParam(sent_length);*/
     }
 
     inline void clear() {
@@ -59,9 +59,9 @@ struct GraphBuilder {
         }
         _word_window.init(opts.wordDim, opts.wordContext);
         _avg_pooling.init(opts.hiddenSize, -1);
-        _max_pooling.init(opts.hiddenSize, -1);
-        _min_pooling.init(opts.hiddenSize, -1);
-        _concat.init(opts.hiddenSize * 3, -1);
+       /* _max_pooling.init(opts.hiddenSize, -1);
+        _min_pooling.init(opts.hiddenSize, -1);*/
+        //_concat.init(opts.hiddenSize * 3, -1);
         _neural_output.setParam(&model.olayer_linear);
         _neural_output.init(opts.labelSize, -1);
     }
@@ -84,11 +84,10 @@ struct GraphBuilder {
             _hidden[i].forward(pcg, &_word_window._outputs[i]);
         }
         _avg_pooling.forward(pcg, getPNodes(_hidden, words_num));
-        _max_pooling.forward(pcg, getPNodes(_hidden, words_num));
-        _min_pooling.forward(pcg, getPNodes(_hidden, words_num));
-        _concat.forward(pcg, &_avg_pooling, &_max_pooling, &_min_pooling);
-        _neural_output.forward(pcg, &_concat);
-
+        /*_max_pooling.forward(pcg, getPNodes(_hidden, words_num));
+        _min_pooling.forward(pcg, getPNodes(_hidden, words_num));*/
+        //_concat.forward(pcg, &_avg_pooling, &_max_pooling, &_min_pooling);
+        _neural_output.forward(pcg, &_avg_pooling);
     }
 };
 

@@ -197,11 +197,36 @@ public:
 		CCE(cudaMemcpy(v, tv, sizeof(size), cudaMemcpyHostToDevice));
 		delete []tv;
 	}
+	
+	
 	// void sqrt(const gpu_matrix &a);
+	void mat_combine_from_vecs(const vector<gpu_matrix*> &ins);
+	void dense_to_sparse_block_assign(vector<gpu_matrix*> &outs, vector<int> &indices, int n);
+	void sparse_to_dense_block_add(vector<gpu_matrix*> &losses, vector<int> &indices, int n);
+	void vec_accumulate_from_mat(vector<gpu_matrix*> &outs);
+	void vec_accumulate_from_mat(gpu_matrix* out);
+	void vec_separate_from_mat(vector<gpu_matrix*> &outs);
+	
+		void save(int icol, std::ofstream &os){
+		dtype *tv = new dtype[row];
+		CCE(cudaMemcpy(tv, v + row*icol, sizeof(dtype) * row, cudaMemcpyDeviceToHost));
+		os << size << " " << row << " " << col << std::endl;
+		os << tv[0];
+		for (int idx = 1; idx < row; idx++) {
+			os << " " << tv[idx];
+		}
+		os << std::endl;
+		delete[] tv;
+	}
 };
 
+void concatenate(vector<gpu_matrix*> &in, int stride, vector<gpu_matrix*> &out);
 void max_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask);
 void min_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask);
+inline int n_blocks(int size, int block_size) {
+		return size / block_size + ((size % block_size == 0)? 0 : 1);
+	}
+
 
 // template <typename T>
 // gpu_matrix<T> gpu_matrix<T>::operator * (const device_matrix<T>& rhs) const

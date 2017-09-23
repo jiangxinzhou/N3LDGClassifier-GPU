@@ -1,6 +1,7 @@
 #ifndef N3LDG_ALL
 #define N3LDG_ALL
 
+#include <chrono>
 #include "Graph.h"
 #include "Node.h"
 #include "Alphabet.h"

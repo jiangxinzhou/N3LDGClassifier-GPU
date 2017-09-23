@@ -1,7 +1,7 @@
 #include "NNCNNLabeler.h"
-
 #include <chrono>
 #include "Argument_helper.h"
+//#include <cuda_profiler_api.h>
 
 Classifier::Classifier(): m_driver(){
 	// TODO Auto-generated constructor stub
@@ -213,7 +213,15 @@ void Classifier::train(const string& trainFile, const string& devFile, const str
 	vector<Example> subExamples;
 	vector<string> result_labels;
 	int devNum = devExamples.size(), testNum = testExamples.size();
+	
+	auto _start_ = std::chrono::high_resolution_clock::now();
+
 	for (int iter = 0; iter < m_options.maxIter; ++iter) {
+		if(iter == 20){
+			auto _end_ = std::chrono::high_resolution_clock::now();
+			std::cout << "TOTAL_TIME:"  << std::chrono::duration<double>(_end_ - _start_).count() << std::endl;
+		}
+
 		std::cout << "##### Iteration " << iter << std::endl;
 		bool bEvaluate = false;
 		if (m_options.batchSize == 1) {
@@ -234,7 +242,7 @@ void Classifier::train(const string& trainFile, const string& devFile, const str
 					std::cout << "current: " << idy + 1 << ", Cost = " << cost << ", Correct(%) = " << eval.getAccuracy()
 						<< ", time = " << std::chrono::duration<double>(t_end_train - t_start_train).count() << std::endl;
 				}
-				m_driver.checkgrad(subExamples, iter * inputSize + idy);
+				//m_driver.checkgrad(subExamples, iter * inputSize + idy);
 				m_driver.updateModel();
 			}
 			{
@@ -248,7 +256,7 @@ void Classifier::train(const string& trainFile, const string& devFile, const str
 			auto t_start_train = std::chrono::high_resolution_clock::now();
 			bEvaluate = true;
 			for (int idk = 0; idk < (inputSize + m_options.batchSize - 1) / m_options.batchSize; idk++) {
-				random_shuffle(indexes.begin(), indexes.end());
+				//random_shuffle(indexes.begin(), indexes.end());
 				subExamples.clear();
 				for (int idy = 0; idy < m_options.batchSize; idy++) {
 					subExamples.push_back(trainExamples[indexes[idy]]);
@@ -475,6 +483,7 @@ int main(int argc, char* argv[]) {
 }
 #if USE_GPU
 		FinalizeGPU();
+//		cudaProfilerStop();
 #endif
 }
 

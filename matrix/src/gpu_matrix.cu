@@ -11,6 +11,8 @@
 #include <thrust/transform_reduce.h>
 #include <thrust/reduce.h>
 
+#define threadsize  32
+
 class CUBLAS_HANDLE {
 private:
 	cublasHandle_t handle;
@@ -516,15 +518,17 @@ void gpu_matrix::concat(const vector<gpu_matrix> &rhs_vec){
 	
 	
 void gpu_matrix::big_copy_small(int offset, const gpu_matrix &rhs){
-		thrust::device_ptr<dtype> ptr_a(v + offset);
-		thrust::device_ptr<dtype> ptr_b(rhs.v);
-		thrust::transform(ptr_b, ptr_b + rhs.size, ptr_a, Assignab());
+		// thrust::device_ptr<dtype> ptr_a(v + offset);
+		// thrust::device_ptr<dtype> ptr_b(rhs.v);
+		// thrust::transform(ptr_b, ptr_b + rhs.size, ptr_a, Assignab());
+		CCE(cudaMemcpy(v+offset, rhs.v, rhs.size*sizeof(dtype), cudaMemcpyDeviceToDevice));
 }
 	
 void gpu_matrix::small_copy_big(const gpu_matrix &rhs, int offset){
-	thrust::device_ptr<dtype> ptr_a(v);
-	thrust::device_ptr<dtype> ptr_b(rhs.v + offset);
-	thrust::transform(ptr_b, ptr_b + size, ptr_a, Assignab());
+	// thrust::device_ptr<dtype> ptr_a(v);
+	// thrust::device_ptr<dtype> ptr_b(rhs.v + offset);
+	// thrust::transform(ptr_b, ptr_b + size, ptr_a, Assignab());
+	CCE(cudaMemcpy(v, rhs.v+offset, size*sizeof(dtype), cudaMemcpyDeviceToDevice));
 }
 	
 	
@@ -721,3 +725,328 @@ void min_pooling_helper(vector<gpu_matrix> &ins, vector<gpu_matrix> &mask) {
 		mask[min_iter].assign(0, i, 1.0);
 	}
 }
+
+#if __CUDA_ARCH__ < 600 
+static __inline__ __device__ double m_atomicAdd(double* address, double val) 
+{ 
+	unsigned long long int* address_as_ull = (unsigned long long int*)address; 
+	unsigned long long int old = *address_as_ull, assumed; 
+	do { 
+		assumed = old; 
+		old = atomicCAS(address_as_ull, assumed, 
+		__double_as_longlong(val + 
+		__longlong_as_double(assumed))); 
+		
+		// Note: uses integer comparison to avoid hang in case of NaN (since NaN != NaN) 
+		} while (assumed != old); 
+		
+		return __longlong_as_double(old); 
+}
+#endif
+
+
+template<typename Real>
+__global__ void _mat_combine_from_vecs(Real* trg, Real** srcs, int row, int col) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  int index_out = i + j * row;
+  
+  if (i < row && j < col){
+    trg[index_out] = static_cast<Real>(srcs[j][i]);
+  }
+}
+
+
+
+void gpu_matrix::mat_combine_from_vecs(const vector<gpu_matrix*> &ins){
+	int ins_size = ins.size();
+	
+	
+	assert(col == ins.size());
+	void *ptr;
+	
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr, sizeof(dtype*) * ins_size, NULL));	
+	
+	dtype** srcs = static_cast<dtype**>(ptr);
+	
+	
+	vector<dtype*> locs(ins_size);
+	
+	for(int i=0; i<ins_size; i++){
+		
+		locs[i] = ins[i]->v;
+	}
+	
+	CCE(cudaMemcpy(srcs, &(locs)[0], sizeof(dtype**) * ins_size, cudaMemcpyHostToDevice));
+	
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(col,  threadsize));
+	
+	_mat_combine_from_vecs<<<dimGrid , dimBlock>>>(v, srcs, row, col);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr, NULL));
+}
+
+
+template<typename Real>
+__global__ void _vec_accumulate_from_mat(Real** trgs, Real* src, int row, int col) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  int index_out = i + j * row;
+  
+  if (i < row && j < col){
+    trgs[j][i] += static_cast<Real>(src[index_out]);
+  }
+}
+
+void gpu_matrix::vec_accumulate_from_mat(vector<gpu_matrix*> &outs) {
+	int outs_size = outs.size();
+	assert(outs_size == col && row == outs[0]->row);
+	
+	void *ptr;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr, sizeof(dtype*) * outs_size, NULL));	
+	dtype** trgs = static_cast<dtype**>(ptr);
+	
+	vector<dtype*> locs(outs_size);
+	
+	for(int i=0; i<outs_size; i++){
+		locs[i] = outs[i]->v;
+	}
+	
+	CCE(cudaMemcpy(trgs, &(locs)[0], sizeof(dtype**) * outs_size, cudaMemcpyHostToDevice));
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(col,  threadsize));
+	
+	_vec_accumulate_from_mat<<<dimGrid , dimBlock>>>(trgs, v, row, col);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr, NULL));
+}
+
+template<typename Real>
+__global__ void _vec_accumulate_from_mat(Real* trgs, Real* src, int row, int col) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  int src_index = i + j * row;
+  
+  if (i < row && j < col){
+	m_atomicAdd(trgs+i, src[src_index]);
+  }
+}
+
+
+void gpu_matrix::vec_accumulate_from_mat(gpu_matrix* out){
+	assert(row == out->row);
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(col,  threadsize));
+	
+	_vec_accumulate_from_mat<<<dimGrid, dimBlock>>>(out->v, v, row, col);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+}
+
+
+
+__global__ void _vec_separate_from_mat(dtype** trgs, dtype* src, int row, int col) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  int index_out = i + j * row;
+  
+  if (i < row && j < col){
+    trgs[j][i] = src[index_out];
+  }
+}
+
+
+void gpu_matrix::vec_separate_from_mat(vector<gpu_matrix*> &outs) {
+	int outs_size = outs.size();
+	assert(outs_size == col && row == outs[0]->row);
+	
+	void *ptr;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr, sizeof(dtype*) * outs_size, NULL));	
+	dtype** trgs = static_cast<dtype**>(ptr);
+	
+	vector<dtype*> locs(outs_size);
+	
+	for(int i=0; i<outs_size; i++){
+		locs[i] = outs[i]->v;
+	}
+	
+	CCE(cudaMemcpy(trgs, &(locs)[0], sizeof(dtype**) * outs_size, cudaMemcpyHostToDevice));
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(col,  threadsize));
+	
+	_vec_separate_from_mat<<<dimGrid , dimBlock>>>(trgs, v, row, col);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr, NULL));
+}
+
+// template<typename Real>
+// __global__ void _dense_to_sparse_block_assign(Real** trg, Real* src, int *idx, int bsize, int n) {
+  // int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  // int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  
+  // if (id < n*bsize){
+    // trg[][id%bsize] = src[idx[id/bsize]*bsize + id%bsize];
+  // }
+// }
+
+template<typename Real>
+__global__ void _dense_to_sparse_block_assign(Real** trg, Real* src, int *idx, int row, int n) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  
+  if (i<row && j<n){
+    trg[j][i] = src[idx[j]*row+i];
+  }
+}
+
+void gpu_matrix::dense_to_sparse_block_assign(vector<gpu_matrix*> &outs, vector<int> &indices, int n){
+	void* ptr_a;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr_a, sizeof(dtype*) * n, NULL));
+	dtype** trg = static_cast<dtype**>(ptr_a);
+	void* ptr_b;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr_b, sizeof(int) * n, NULL));
+	int* idx =   static_cast<int*>(ptr_b);
+	
+	vector<dtype*> locs(n);
+	for(int i=0; i<n; i++){
+		locs[i] = outs[i]->v;
+	}
+	
+	
+	CCE(cudaMemcpy(trg, &(locs)[0], sizeof(dtype**) * n, cudaMemcpyHostToDevice));
+	CCE(cudaMemcpy(idx, &(indices)[0], sizeof(int) * n, cudaMemcpyHostToDevice));
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(n,  threadsize));
+	
+	_dense_to_sparse_block_assign<<<dimGrid , dimBlock>>>(trg, v, idx, row, n);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr_a, NULL));
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr_b, NULL));
+}
+
+
+
+__global__ void _sparse_to_dense_block_add(dtype* trg, dtype** srcs, int *idx, int bsize, int n) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  
+  if (i<bsize && j<n){
+	 m_atomicAdd(trg + idx[j]*bsize + i, srcs[j][i]);
+  }
+}
+
+void gpu_matrix::sparse_to_dense_block_add(vector<gpu_matrix*> &losses, vector<int> &indices, int n){
+	void* ptr_a;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr_a, sizeof(dtype*) * n, NULL));
+	dtype** srcs = static_cast<dtype**>(ptr_a);
+	void* ptr_b;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr_b, sizeof(int) * n, NULL));
+	int* idx =   static_cast<int*>(ptr_b);
+	
+	vector<dtype*> locs(n);
+	for(int i=0; i<n; i++){
+		locs[i] = losses[i]->v;
+	}
+	
+	
+	CCE(cudaMemcpy(srcs, &(locs)[0], sizeof(dtype**) * n, cudaMemcpyHostToDevice));
+	CCE(cudaMemcpy(idx, &(indices)[0], sizeof(int) * n, cudaMemcpyHostToDevice));
+	
+	dim3 dimBlock( threadsize,  threadsize);
+	dim3 dimGrid(n_blocks(row,  threadsize), n_blocks(n,  threadsize));
+	
+	_sparse_to_dense_block_add<<<dimGrid , dimBlock>>>(v, srcs, idx, row, n);
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr_a, NULL));
+	assert(CNMEM_STATUS_SUCCESS == cnmemFree(ptr_b, NULL));
+}
+
+__global__ void concatenate(dtype** srcs, dtype **trgs, dtype **len, int stride, int n, int m) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x; // row-index
+  int j = blockIdx.y * blockDim.y + threadIdx.y; // col-index.
+  
+  // srcs[0][0] = 1.0;
+  // srcs[3][0] = 1.0;
+  // srcs[6][0] = 1.0;
+  
+  // trgs[0][0] = 1.0;
+  // trgs[1][0] = 1.0;
+  // trgs[2][0] = 1.0;
+  
+  if(i<n && (i/stride)<m  && j<(unsigned long)len[i]) {
+	  int offset = 0;
+	  for(int index = i - i%stride; index < i; index++) {
+		  offset += (unsigned long)len[index];
+	  }
+	  trgs[i/stride][offset+j] = srcs[i][j];
+  }
+}
+
+void concatenate(vector<gpu_matrix*> &in, int stride, vector<gpu_matrix*> &out) {
+	int n = in.size();
+	int m = out.size();
+	assert(m == n/stride);
+	
+	size_t* len = new size_t[n];
+	size_t max_len = 0;
+	
+	for(int i=0; i<n; i++) {
+		len[i] = in[i]->size;
+		if(max_len < len[i]) {
+			max_len = len[i];
+		}
+	}
+	
+	vector<dtype*> locs(2*n+m);
+	for(int i=0; i<n; i++) {
+		locs[i] = in[i]->v;
+	}
+	for(int i=0; i<m; i++) {
+		locs[i+n] = out[i]->v;
+	}
+	for(int i=0; i<n; i++) {
+		locs[i+n+m] = (dtype*)len[i];
+	}
+	
+	void *ptr;
+	assert(CNMEM_STATUS_SUCCESS == cnmemMalloc((void**)&ptr, sizeof(dtype*) * (locs.size()), NULL));
+	dtype **srcs = static_cast<dtype**>(ptr);
+	CCE(cudaMemcpy(srcs, &(locs)[0], sizeof(dtype**) * locs.size(), cudaMemcpyHostToDevice));
+	
+	dtype **trgs = srcs + n;
+	dtype **lens = srcs + n + m;
+	
+	
+	dim3 dimBlock(32, 32);
+	dim3 dimGrid(n_blocks(n, 32), n_blocks(max_len, 32));
+	
+	concatenate<<<dimBlock, dimBlock>>>(srcs, trgs, lens, stride, n, m);
+	
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) 
+		printf("Error: %s\n", cudaGetErrorString(err));
+	
+	
+	delete [] len;
+}
+
+

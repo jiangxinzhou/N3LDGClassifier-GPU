@@ -20,6 +20,7 @@ class SparseParam : public BaseParam {
 	  cpu_matrix aux_square, aux_mean;
 #endif
     NRVec<bool> indexers;
+	vector<int> indices;
     NRVec<int> last_update;
 
 
@@ -46,15 +47,20 @@ class SparseParam : public BaseParam {
     }
 
     inline void clearGrad() {
-        int inDim = indexers.size();
-        for (int index = 0; index < inDim; index++) {
-            if (!indexers[index]) continue;
+        
+#if USE_GPU
+		grad.zeros();
+#else 
+		int inDim = indexers.size();
+		for (int index = 0; index < inDim; index++) {
+			if (!indexers[index]) continue;
 			grad.zeros(index);
-           /* for (int idx = 0; idx < grad.row; idx++) {
-                grad[index][idx] = 0;
-            }*/
-        }
-        indexers = false;
+		   /* for (int idx = 0; idx < grad.row; idx++) {
+				grad[index][idx] = 0;
+			}*/
+		}
+		indexers = false;
+#endif
     }
 
     inline int outDim() {
@@ -66,18 +72,30 @@ class SparseParam : public BaseParam {
     }
 
     inline void updateAdagrad(dtype alpha, dtype reg, dtype eps) {
-        int inDim = indexers.size();
+       
+#if USE_GPU
+		grad.special_add(grad, 1, val, reg);
+		aux_square.special_add1(aux_square, grad);
+		val.special_add2(val, grad, aux_square, alpha, eps);
+#else
+		int inDim = indexers.size();
         for (int index = 0; index < inDim; index++) {
             if (!indexers[index]) continue;
 			grad.special_add(index, grad, 1, val, reg);
 			aux_square.special_add1(index, aux_square, grad);
 			val.special_add2(index, val, grad, aux_square, alpha, eps);
-           /* for (int idx = 0; idx < grad.row; idx++) {
-                grad[index][idx] = grad[index][idx] + val[index][idx] * reg;
-                aux_square[index][idx] = aux_square[index][idx] + grad[index][idx] * grad[index][idx];
-                val[index][idx] = val[index][idx] - grad[index][idx] * alpha / sqrt(aux_square[index][idx] + eps);
-            }*/
-        }
+		}
+           // for (int idx = 0; idx < grad.row; idx++) {
+                // grad[index][idx] = grad[index][idx] + val[index][idx] * reg;
+                // aux_square[index][idx] = aux_square[index][idx] + grad[index][idx] * grad[index][idx];
+                // val[index][idx] = val[index][idx] - grad[index][idx] * alpha / sqrt(aux_square[index][idx] + eps);
+            // }
+#endif
+			// for(int index = 0; index < indexers.size(); index++){
+				// grad.special_add(indexers[index], grad, 1, val, reg);
+				// aux_square.special_add1(indexers[index], aux_square, grad);
+				// val.special_add2(indexers[index], val, grad, aux_square, alpha, eps);
+			// }
     }
 
  /*   inline void updateAdam(dtype belta1, dtype belta2, dtype alpha, dtype reg, dtype eps) {
@@ -98,6 +116,11 @@ class SparseParam : public BaseParam {
 
     inline void randpoint(int& idx, int &idy) {
         //select indexes randomly
+		indexers.resize(val.col);
+        indexers = false;
+		for(int i=0; i<indices.size(); i++){
+			indexers[indices[i]] = true;
+		}
         std::vector<int> idRows, idCols;
         idRows.clear();
         idCols.clear();
@@ -106,6 +129,9 @@ class SparseParam : public BaseParam {
             if (!indexers[index]) continue;
             idCols.push_back(index);
         }
+		// for(int index = 0; index < indexers.size(); index++) {
+			// idCols.push_back(indexers[index]);
+		// }
 
         for (int i = 0; i < val.row; i++) {
             idRows.push_back(i);
@@ -120,27 +146,39 @@ class SparseParam : public BaseParam {
 
     inline dtype squareGradNorm() {
         dtype sumNorm = 0.0;
-        int inDim = indexers.size();
-        for (int index = 0; index < inDim; index++) {
-            if (!indexers[index]) continue;
+#if USE_GPU
+		sumNorm = grad.square_sum();
+     
+#else
+		int inDim = indexers.size();
+		for (int index = 0; index < inDim; index++) {
+			if (!indexers[index]) continue;
 			sumNorm += grad.square_sum(index);
-           /* for (int idx = 0; idx < val.row; idx++) {
-                sumNorm += grad[index][idx] * grad[index][idx];
-            }*/
-        }
+	   /* for (int idx = 0; idx < val.row; idx++) {
+			sumNorm += grad[index][idx] * grad[index][idx];
+		}*/
+		}
+#endif
 
-        return sumNorm;
-    }
+		return sumNorm;
+	}
 
     inline void rescaleGrad(dtype scale) {
-        int inDim = indexers.size();
-        for (int index = 0; index < inDim; index++) {
-            if (!indexers[index]) continue;
+#if USE_GPU
+		grad.multiply(grad, scale);
+		// for(int index = 0; index < indexers.size(); index++) {
+			// grad.multiply(grad, indexers[index], scale);
+		// }
+#else
+		int inDim = indexers.size();
+		for (int index = 0; index < inDim; index++) {
+			if (!indexers[index]) continue;
 			grad.multiply(grad, index, scale);
-           /* for (int idx = 0; idx < val.row; idx++) {
-                grad[index][idx] = grad[index][idx] * scale;
-            }*/
-        }
+		   /* for (int idx = 0; idx < val.row; idx++) {
+				grad[index][idx] = grad[index][idx] * scale;
+			}*/
+		}
+#endif
     }
 
 	template<class Matrix>
@@ -174,7 +212,9 @@ class SparseParam : public BaseParam {
             std::cout << "warning: loss dim not equal lookup param dim." << std::endl;
         }
         indexers[featId] = true;
+		
 		grad.mat_add_vec(grad, featId, loss);
+		
         /*for (int idx = 0; idx < val.row; idx++) {
             grad[featId][idx] += loss[idx];
         }*/

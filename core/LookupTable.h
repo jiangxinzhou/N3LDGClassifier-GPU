@@ -301,26 +301,83 @@ class LookupNode : public Node {
 class LookupExecute :public Execute {
   public:
     bool bTrain;
+	LookupTable* param;
+	vector<gpu_matrix*> val_vec;
+	vector<gpu_matrix*> loss_vec;
   public:
     inline void  forward() {
         int count = batch.size();
 //#pragma omp parallel for schedule(static,1)
-        for (int idx = 0; idx < count; idx++) {
+// test the time
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+#if USE_GPU
+		param->E.indices.resize(count);
+		val_vec.resize(count);
+	
+		for (int idx = 0; idx < count; idx++) {
             LookupNode* ptr = (LookupNode*)batch[idx];
-            ptr->compute();
-            ptr->forward_drop(bTrain);
+			if(ptr->xid >= 0){
+				param->E.indices[idx] = ptr->xid;
+				val_vec[idx] = &(ptr->val);
+			}else{
+				std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+				ptr->val.zeros();
+			}	
         }
+		
+		param->E.val.dense_to_sparse_block_assign(val_vec, param->E.indices, count);  // count ??
+		
+		for (int idx = 0; idx < count; idx++) {
+			LookupNode* ptr = (LookupNode*)batch[idx];
+			ptr->forward_drop(bTrain);
+		}
+#else
+		for (int idx = 0; idx < count; idx++) {
+			LookupNode* ptr = (LookupNode*)batch[idx];
+			ptr->compute();
+			ptr->forward_drop(bTrain);
+		}
+#endif
+		auto end = std::chrono::high_resolution_clock::now();
+		out << endl;
+		out << "lookup-forward " << std::chrono::duration<double>(end - start).count() << endl; 
     }
 
     inline void backward() {
         int count = batch.size();
 //#pragma omp parallel for schedule(static,1)
-        for (int idx = 0; idx < count; idx++) {
+        
+		//ofstream outmm("count", ios::app);
+		//outmm <<  count << std::endl;
+		// ***test time***
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+#if USE_GPU		
+		for (int idx = 0; idx < count; idx++) {
             LookupNode* ptr = (LookupNode*)batch[idx];
             ptr->backward_drop();
-            ptr->backward();
         }
-    }
+		
+		loss_vec.resize(count);
+		for (int idx = 0; idx < count; idx++) {
+            LookupNode* ptr = (LookupNode*)batch[idx];
+            loss_vec[idx] = &(ptr->loss);
+        }
+		
+		param->E.grad.sparse_to_dense_block_add(loss_vec, param->E.indices, count);
+#else
+		for (int idx = 0; idx < count; idx++) {
+				LookupNode* ptr = (LookupNode*)batch[idx];
+				ptr->backward_drop();
+				ptr->backward();
+		}
+#endif
+		auto end = std::chrono::high_resolution_clock::now();
+		out << "lookup-backward " << std::chrono::duration<double>(end - start).count() << endl;
+	}
+//test the time	
+	
 };
 
 
@@ -328,6 +385,7 @@ inline PExecute LookupNode::generate(bool bTrain) {
     LookupExecute* exec = new LookupExecute();
     exec->batch.push_back(this);
     exec->bTrain = bTrain;
+	exec->param = param;
     return exec;
 }
 //#endif

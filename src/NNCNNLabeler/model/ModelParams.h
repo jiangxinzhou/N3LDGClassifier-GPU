@@ -28,7 +28,8 @@ class ModelParams {
         opts.windowOutput = opts.wordDim * opts.wordWindow;
         opts.labelSize = labelAlpha.size();
         hidden_linear.initial(opts.hiddenSize, opts.windowOutput, true);
-        opts.inputSize = opts.hiddenSize * 3;
+       /* opts.inputSize = opts.hiddenSize * 3;*/
+	    opts.inputSize = opts.hiddenSize;
         olayer_linear.initial(opts.labelSize, opts.inputSize, false);
         return true;
     }

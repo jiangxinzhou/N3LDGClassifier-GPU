@@ -96,7 +96,7 @@ class PoolNode : public Node {
 		gpu_matrix t;
 #else
 		cpu_matrix t;
-#endif
+#endif  
 		t.init(val.row, val.col);
 		for (int i = 0; i < nSize; ++i) {
 			t.multiply(masks[i], ins[i]->val);
@@ -283,16 +283,25 @@ class PoolExecute : public Execute {
     bool bTrain;
   public:
     inline void  forward() {
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+		
         int count = batch.size();
+		// std::cout << "pooling" << endl;
 //#pragma omp parallel for schedule(static,1)
         for (int idx = 0; idx < count; idx++) {
             PoolNode* ptr = (PoolNode*)batch[idx];
             ptr->compute();
             ptr->forward_drop(bTrain);
         }
+		auto end = std::chrono::high_resolution_clock::now();
+		out << "pooling-forward " << std::chrono::duration<double>(end - start).count() << endl; 
     }
 
     inline void backward() {
+		ofstream out("time", ios::app);
+	    auto start = std::chrono::high_resolution_clock::now();
+		
         int count = batch.size();
 //#pragma omp parallel for schedule(static,1)
         for (int idx = 0; idx < count; idx++) {
@@ -300,6 +309,9 @@ class PoolExecute : public Execute {
             ptr->backward_drop();
             ptr->backward();
         }
+		
+		auto end = std::chrono::high_resolution_clock::now();
+		out << "pooling-backward " << std::chrono::duration<double>(end - start).count() << endl; 
     }
 };
 
